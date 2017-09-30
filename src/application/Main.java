@@ -3,6 +3,7 @@ package application;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -15,6 +16,17 @@ public class Main extends Application {
 	
 	@Override
 	public void start(Stage primaryStage) {
+		
+		try {
+		AnchorPane root = FXMLLoader.load(getClass().getResource("/SBUserInterface.fxml"));
+		
+		primaryStage.setTitle("DineOut");
+		primaryStage.setScene(new Scene(root, 1000, 700));
+		primaryStage.show();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
 //		try {
 //			this.stage = primaryStage;
 //			this.stage.setTitle("DineOut");
@@ -28,6 +40,8 @@ public class Main extends Application {
 			
 			//show
 		
+		
+		/*
 		try {	
 			BorderPane root = new BorderPane();
 			Scene scene = new Scene(root,1000,700);
@@ -39,6 +53,8 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 	}
+	*/
+	
 	
 //	public void initLayout() {
 //		try {
