@@ -72,5 +72,8 @@ public class Main extends Application {
 	
 	public static void main(String[] args) {
 		launch(args);
+		RestaurantArray restaurant = new RestaurantArray();
+		restaurant.fillArrayList();
+		restaurant.printRestaurantInfo();
 	}
 }

@@ -1,5 +1,3 @@
-Name,Price,Rating,Cuisine ,Website,Address
-,,,,,
 The Block SA,0,4.5,Truck,http://www.theblocksa.com,"14530 Roadrunner Way, San Antonio, TX 78249"
 Taco Palenque UTSA,0,4.2,Dine In,http://www.tacopalenque.com,"13719 I-10, San Antonio, TX 78249"
 Singapore Chinese & Indochina Restaurant,0,4.1,Dine In,http://www.singaporechineseindochinarestaurant.com,"7114 UTSA Boulevard #105, San Antonio, TX 78249"
