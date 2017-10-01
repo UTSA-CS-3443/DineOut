@@ -11,7 +11,7 @@ public class RestaurantArray {
 	private int restaurantCount;
 	
 	public RestaurantArray() {
-		this.restaurantList = null;
+		this.restaurantList.clear();
 		this.restaurantCount = 0;
 	}
 	
@@ -20,12 +20,12 @@ public class RestaurantArray {
 		try {
 		    in = new Scanner(new File("restaurants.txt"));
 		} catch (FileNotFoundException exception) {
-		    throw new RuntimeException("failed to open data.txt");
+		    throw new RuntimeException("failed to open restaurants.txt");
 		}
 		while(in.hasNextLine())
 		{
-			String line = in.next();
-			String[] lineArray = line.split(",");
+			String line = in.nextLine();
+			String[] lineArray = line.split("\\s*,\\s*");
 			String name = lineArray[0]; 
 			int price = Integer.parseInt(lineArray[1]);
 			double rating = Double.parseDouble(lineArray[2]);

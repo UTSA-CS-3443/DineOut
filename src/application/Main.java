@@ -1,5 +1,7 @@
 package application;
 	
+import java.util.ArrayList;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -10,7 +12,7 @@ import javafx.scene.layout.BorderPane;
 
 
 public class Main extends Application {
-	
+	 
 	public Stage stage;
 	public AnchorPane layout;
 	
@@ -25,7 +27,7 @@ public class Main extends Application {
 		primaryStage.show();
 		}catch(Exception e) {
 			e.printStackTrace();
-		}
+		} 
 	}
 //		try {
 //			this.stage = primaryStage;
@@ -72,8 +74,8 @@ public class Main extends Application {
 	
 	public static void main(String[] args) {
 		launch(args);
-		RestaurantArray restaurant = new RestaurantArray();
-		restaurant.fillArrayList();
-		restaurant.printRestaurantInfo();
+		RestaurantArray restaurantList = new RestaurantArray();
+		restaurantList.fillArrayList();
+		restaurantList.printRestaurantInfo();
 	}
 }
