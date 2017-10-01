@@ -1,6 +1,6 @@
 package application;
 
-public class Restaurant {
+public class Restaurant{
 	
 	// Restraunts name
 	private String name;
@@ -34,6 +34,7 @@ public class Restaurant {
 		this.address = address;
 		this.selected = false;
 	}
+	
 	
 	public String getName(){
 		return name;
