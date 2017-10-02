@@ -56,6 +56,11 @@
                                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                  <children>
+                                    <Pane fx:id="user1LabelBackground" prefHeight="200.0" prefWidth="200.0">
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="3.0" top="5.0" />
+                                       </GridPane.margin>
+                                    </Pane>
                                     <Label fx:id="user1Label" text="user1">
                                        <font>
                                           <Font size="16.0" />
@@ -136,11 +141,6 @@
                                           <Insets left="10.0" />
                                        </GridPane.margin>
                                     </Label>
-                                    <Pane fx:id="user1LabelBackground" prefHeight="200.0" prefWidth="200.0">
-                                       <GridPane.margin>
-                                          <Insets bottom="5.0" left="3.0" top="5.0" />
-                                       </GridPane.margin>
-                                    </Pane>
                                     <Pane fx:id="user3LabelBackground" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                                        <GridPane.margin>
                                           <Insets bottom="5.0" left="3.0" top="5.0" />
@@ -250,7 +250,7 @@
                            <children>
                               <HBox alignment="CENTER" prefHeight="44.0" prefWidth="657.0">
                                  <children>
-                                    <Button fx:id="previousRestaurantButton" contentDisplay="TOP" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" text="Previous" textAlignment="CENTER">
+                                    <Button fx:id="previousRestaurantButton" contentDisplay="TOP" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#previousRestaurant" text="Previous" textAlignment="CENTER">
                                        <HBox.margin>
                                           <Insets right="20.0" />
                                        </HBox.margin>
@@ -260,7 +260,7 @@
                                           <Font size="32.0" />
                                        </font>
                                     </Label>
-                                    <Button fx:id="nextRestaurantButton" mnemonicParsing="false" text="Next">
+                                    <Button fx:id="nextRestaurantButton" mnemonicParsing="false" onAction="#nextRestaurant" text="Next">
                                        <HBox.margin>
                                           <Insets left="20.0" />
                                        </HBox.margin>

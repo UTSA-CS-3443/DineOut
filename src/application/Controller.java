@@ -1,5 +1,6 @@
 package application;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -123,5 +124,53 @@ public class Controller {
 
     @FXML
     private Label priceLabel;
+    
+    @FXML
+    public void nextRestaurant(ActionEvent e) {
+    	// Goto next restaurant when nextRestaurantButton is clicked
+    	// set number in sequence in title
+    	user1Label.setText("Mark");
+    	user1LabelBackground.setOpacity(.3);
+    	user1LabelBackground.setStyle("-fx-background-color: red;");
+    	user1IndicatorBackground.setOpacity(.3);
+    	user1IndicatorBackground.setStyle("-fx-background-color: red;");
+    	//restaurantNameLabel.setText(RestaurantList().getRestaurantList());
+    	// set name
+    	// set cuisine
+    	// set price
+    	// set website
+    	// set rating
+    	// set map
+    }
+    
+    @FXML
+    public void previousRestaurant() {
+    	// Goto previous restaurant when nextRestaurantButton is clicked
+    	// set number in sequence in title
+    	// set name
+    	// set cuisine
+    	// set price
+    	// set website
+    	// set rating
+    	// set map
+    }
+    
+    @FXML
+    public void addUser() {
+    	// add user when they connect to session
+    	// add name
+    	// set name label opacity
+    	// set name label background pane opacity
+    	// set indicator opacity
+    	// set Indicator background pane opacity
+    }
+    
+    @FXML
+    public void toRestaurantWebsite() {
+    	// goto restaurant website given URL
+    }
+    
+    
+    
 
 }

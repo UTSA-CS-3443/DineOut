@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class RestaurantArray {
 	
 	private ArrayList<Restaurant> restaurantList = new ArrayList<Restaurant>();
-	private int restaurantCount;
+	protected int restaurantCount;
 	
 	public RestaurantArray() {
 		this.restaurantList.clear();
@@ -41,6 +41,10 @@ public class RestaurantArray {
 		
 	}
 	
+	// not sure why tf i made this
+	public ArrayList<Restaurant> getRestaurantList() {
+		return restaurantList;
+	}
 	
 	public void printRestaurantInfo(){
 		for(int i = 0; i < this.restaurantCount; i++) {

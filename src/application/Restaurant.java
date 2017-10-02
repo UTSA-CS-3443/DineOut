@@ -36,7 +36,7 @@ public class Restaurant{
 	}
 
 	public String getName() {
-		return name;
+		return this.name;
 	}
 
 	public void setName(String name) {
@@ -44,7 +44,7 @@ public class Restaurant{
 	}
 
 	public int getPrice() {
-		return price;
+		return this.price;
 	}
 
 	public void setPrice(int price) {
@@ -52,7 +52,7 @@ public class Restaurant{
 	}
 
 	public double getRating() {
-		return rating;
+		return this.rating;
 	}
 
 	public void setRating(double rating) {
@@ -60,7 +60,7 @@ public class Restaurant{
 	}
 
 	public String getCuisine() {
-		return cuisine;
+		return this.cuisine;
 	}
 
 	public void setCuisine(String cuisine) {
@@ -68,7 +68,7 @@ public class Restaurant{
 	}
 
 	public String getWebsite() {
-		return website;
+		return this.website;
 	}
 
 	public void setWebsite(String website) {
@@ -76,7 +76,7 @@ public class Restaurant{
 	}
 
 	public String getAddress() {
-		return address;
+		return this.address;
 	}
 
 	public void setAddress(String address) {
@@ -84,7 +84,7 @@ public class Restaurant{
 	}
 
 	public boolean isSelected() {
-		return selected;
+		return this.selected;
 	}
 
 	public void setSelected(boolean selected) {
