@@ -34,7 +34,7 @@ public class Main extends Application {
 			// creating FXMLLoader to pass in .fxml file
 			FXMLLoader loader = new FXMLLoader();
 			// getting .fxml resource
-			loader.setLocation(Main.class.getResource("/SBUserInterface.fxml"));
+			loader.setLocation(Main.class.getResource("SBUserInterface.fxml"));
 			// loading the .fxml file into the rootLayout
 			rootLayout = loader.load();
 			// Creating scene with the base as rootLayout (Parent of the scene graph)

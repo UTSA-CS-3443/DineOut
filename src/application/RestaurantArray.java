@@ -41,8 +41,8 @@ public class RestaurantArray {
 		
 	}
 	
-	public void printRestaurantInfo()
-	{
+	
+	public void printRestaurantInfo(){
 		for(int i = 0; i < this.restaurantCount; i++) {
 			Restaurant temp = this.restaurantList.get(i);
 			System.out.println("Name = " + temp.getName());
@@ -52,9 +52,9 @@ public class RestaurantArray {
 			System.out.println("Website = " + temp.getWebsite());
 			System.out.println("Address" + temp.getAddress());
 			System.out.println("");
-			
-			
 		}
 	}
+	
+	
 
 }
