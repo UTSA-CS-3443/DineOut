@@ -12,65 +12,44 @@ import javafx.scene.layout.BorderPane;
 
 
 public class Main extends Application {
-	 
-	public Stage stage;
-	public AnchorPane layout;
+	
+	public Stage primaryStage;
+	//public Stage stage;
+	public AnchorPane rootLayout;
 	
 	@Override
 	public void start(Stage primaryStage) {
+		this.primaryStage = primaryStage;
+		this.primaryStage.setTitle("DineOut");
+		this.primaryStage.setResizable(false);
 		
-		try {
-		AnchorPane root = FXMLLoader.load(getClass().getResource("/SBUserInterface.fxml"));
+		// calling initLayout() to configure the rootLayout within the scene graph
+		initLayout();
 		
-		primaryStage.setTitle("DineOut");
-		primaryStage.setScene(new Scene(root, 1000, 700));
-		primaryStage.show();
-		}catch(Exception e) {
-			e.printStackTrace();
-		} 
 	}
-//		try {
-//			this.stage = primaryStage;
-//			this.stage.setTitle("DineOut");
-//			initLayout();
-//		} catch(Exception e) {
-//			e.printStackTrace();
-//		}
-			// load up fx file
-			
-			//set fxml file location
-			
-			//show
-		
-		
-		/*
-		try {	
-			BorderPane root = new BorderPane();
-			Scene scene = new Scene(root,1000,700);
+	
+	
+	public void initLayout() {
+		try {
+			// creating FXMLLoader to pass in .fxml file
+			FXMLLoader loader = new FXMLLoader();
+			// getting .fxml resource
+			loader.setLocation(Main.class.getResource("/SBUserInterface.fxml"));
+			// loading the .fxml file into the rootLayout
+			rootLayout = loader.load();
+			// Creating scene with the base as rootLayout (Parent of the scene graph)
+			Scene scene = new Scene( rootLayout );
+			// Appending .css style sheet to scene
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			// Setting scene for primaryStage with newly created scene
 			primaryStage.setScene(scene);
+			// "Raising the curtains" - allowing primaryStage to show the scene
 			primaryStage.show();
-		} 
-		catch(Exception e) {
+			
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
-	*/
-	
-	
-//	public void initLayout() {
-//		try {
-//			FXMLLoader loader = new FXMLLoader();
-//			loader.setLocation( Main.class.getResource("application/SBUserInterface.fxml"));
-//			this.layout = (AnchorPane) loader.load();
-//			
-//			Scene scene = new Scene( layout );
-//			this.stage.setScene( scene );
-//			this.stage.show();
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-//	}
+	}	
 	
 	public static void main(String[] args) {
 		launch(args);
