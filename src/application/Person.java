@@ -1,6 +1,11 @@
 package application;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Person {
 	private String szName;
@@ -10,13 +15,79 @@ public class Person {
 	private ArrayList<Integer> answersM = new ArrayList<Integer>();
 
 
-	public Person(String name, String phone, String email)
+	public Person()
 	{
-		this.szName = name;
-		this.szEmail = email;
-		this.szPhoneNum = phone;
+		this.szName = null;
+		this.szEmail = null;
+		this.szPhoneNum = null;
 		this.szPassword = null;
 		this.answersM = null;
+	}	
+	
+	public void addUser()
+	{
+		Scanner reader = new Scanner(System.in);	
+		System.out.println("Enter your first name last name(First Last):");
+		setSzName(reader.nextLine());
+		System.out.println("Enter your email: ");
+		setSzEmail(reader.nextLine());
+		System.out.println("Enter Password: ");
+		setSzPassword(reader.nextLine());
+		System.out.println("Enter Phone Number: (XXX)XXX-XXXX) ");
+		setSzPhoneNum(reader.nextLine());
+		System.out.println("USER CREATED");
+		try {
+			File file = new File("userlist.csv");
+			String user = this.szName + "," + this.szEmail + "," + this.szPassword;
+			FileWriter fw = new FileWriter(file,true);
+			BufferedWriter bw = new BufferedWriter(fw);
+			bw.write(user);
+			bw.close();
+			fw.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		reader.close();
+	}
+
+	public String getSzName() {
+		return szName;
+	}
+
+	public void setSzName(String szName) {
+		this.szName = szName;
+	}
+
+	public String getSzPhoneNum() {
+		return szPhoneNum;
+	}
+
+	public void setSzPhoneNum(String szPhoneNum) {
+		this.szPhoneNum = szPhoneNum;
+	}
+
+	public String getSzEmail() {
+		return szEmail;
+	}
+
+	public void setSzEmail(String szEmail) {
+		this.szEmail = szEmail;
+	}
+
+	public String getSzPassword() {
+		return szPassword;
+	}
+
+	public void setSzPassword(String szPassword) {
+		this.szPassword = szPassword;
+	}
+
+	public ArrayList<Integer> getAnswersM() {
+		return answersM;
+	}
+
+	public void setAnswersM(ArrayList<Integer> answersM) {
+		this.answersM = answersM;
 	}
 	
 }
