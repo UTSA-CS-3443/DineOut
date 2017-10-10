@@ -3,8 +3,10 @@ package application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 
 public class Controller {
 
@@ -125,8 +127,23 @@ public class Controller {
     @FXML
     private Label priceLabel;
     
+    // This method is automatically called by FXMLLoader when it gets loaded into the root layout
+    // MUST BE NO ARGS
+    @FXML
+    private void initialize() {
+    	friendsInvitedLabel.setStyle("-fx-background-color: lightblue");
+    }
+    
+    
     @FXML
     public void nextRestaurant(ActionEvent e) {
+    	
+    	//restaurantNameLabel.setText(restaurantChoices.get(i).getName());
+    	//cuisineTypeLabel.setText(restaurantChoices.get(i).getCuisine());
+    	//priceLabel.setText("");
+    	//websiteButton.
+    	
+    	
     	// Goto next restaurant when nextRestaurantButton is clicked
     	// set number in sequence in title
     	user1Label.setText("Mark");
@@ -166,7 +183,9 @@ public class Controller {
     }
     
     @FXML
-    public void toRestaurantWebsite() {
+    public void toRestaurantWebsite(ActionEvent e) {
+    	//Hyperlink  link = new Hyperlink() // 5restaurantChoices.get().getWebsite()
+    	//getHostServices().showDocument("www.google.com");
     	// goto restaurant website given URL
     }
     
