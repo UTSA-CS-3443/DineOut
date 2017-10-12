@@ -11,6 +11,7 @@ public class StartSession {
 	RestaurantArray restaurants = new RestaurantArray();
 	
 	public  void returnArrayList(){
+		/*
 		Random rand = new Random();
 		int randomNumber = rand.nextInt(restaurants.getRestaurantList().size() + 1);
 		for( int i = 0 ; i < 5 ; i++) {
@@ -32,6 +33,25 @@ public class StartSession {
 				}
 			}
 		}
+		*/
 		//return numbers;
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 }
