@@ -19,7 +19,7 @@ public class RestaurantArray {
 	public void fillArrayList() {
 		Scanner in = null;
 		try {
-		    in = new Scanner(new File("restaurants.txt"));
+		    in = new Scanner(new File("restaurants2.txt"));
 		} catch (FileNotFoundException exception) {
 		    throw new RuntimeException("failed to open restaurants.txt");
 		}
@@ -32,7 +32,7 @@ public class RestaurantArray {
 			double rating = Double.parseDouble(lineArray[2]);
 			String cuisine = lineArray[3];
 			String website= lineArray[4]; 
-			String address = lineArray[5].substring(1);
+			String address = lineArray[5];
 			Restaurant newRest = new Restaurant(name, price, rating, cuisine, website, address);
 			this.restaurantList.add(newRest);
 			this.restaurantCount++;
