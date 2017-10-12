@@ -53,10 +53,10 @@ public class Main extends Application {
 	
 	public static void main(String[] args) {
 		launch(args);
-		//RestaurantArray restaurantList = new RestaurantArray();
+		RestaurantArray restaurantList = new RestaurantArray();
 		//restaurantList.fillArrayList();
-		//restaurantList.printRestaurantInfo();
-		Person person = new Person();
-		person.addUser();
+		restaurantList.printRestaurantInfo();
+		//Person person = new Person();
+		//person.addUser();
 	}
 }

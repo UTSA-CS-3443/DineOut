@@ -32,7 +32,7 @@ public class RestaurantArray {
 			double rating = Double.parseDouble(lineArray[2]);
 			String cuisine = lineArray[3];
 			String website= lineArray[4]; 
-			String address = lineArray[5];
+			String address = lineArray[5].substring(1);
 			Restaurant newRest = new Restaurant(name, price, rating, cuisine, website, address);
 			this.restaurantList.add(newRest);
 			this.restaurantCount++;
@@ -55,7 +55,7 @@ public class RestaurantArray {
 			System.out.println("Rating = " + temp.getRating());
 			System.out.println("Cuisine = " + temp.getCuisine());
 			System.out.println("Website = " + temp.getWebsite());
-			System.out.println("Address" + temp.getAddress());
+			System.out.println("Address = " + temp.getAddress());
 			System.out.println("");
 		}
 	}
