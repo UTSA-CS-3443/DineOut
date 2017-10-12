@@ -42,7 +42,7 @@ public class Person {
 		System.out.println("USER CREATED");
 		try {
 			File file = new File("userlist.csv");
-			String user = this.szName + "," + this.szEmail + "," + this.szPassword;
+			String user = this.szName + "," + this.szEmail + "," + this.szPassword + "\n";
 			FileWriter fw = new FileWriter(file,true);
 			BufferedWriter bw = new BufferedWriter(fw);
 			bw.write(user);
