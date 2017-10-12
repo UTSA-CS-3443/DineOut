@@ -13,6 +13,7 @@ public class RestaurantArray {
 	public RestaurantArray() {
 		this.restaurantList.clear();
 		this.restaurantCount = 0;
+		fillArrayList();
 	}
 	
 	public void fillArrayList() {
