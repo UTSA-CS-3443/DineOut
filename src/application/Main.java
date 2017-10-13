@@ -54,7 +54,7 @@ public class Main extends Application {
 	public static void main(String[] args) {
 		launch(args);
 		RestaurantArray restaurantList = new RestaurantArray();
-		restaurantList.printRestaurantInfo();
+		//restaurantList.printRestaurantInfo();
 		//Person person = new Person();
 		//person.addUser();
 	}

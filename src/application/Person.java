@@ -15,17 +15,17 @@ public class Person {
 	private String szName;
 	private String szPhoneNum;
 	private String szEmail;
-	private String szPassword;
+	private ArrayList<Person> people;
 	private ArrayList<Integer> answersM = new ArrayList<Integer>();
-
-
-	public Person()
+	
+	public Person(String name)
 	{
-		this.szName = null;
+		this.szName = name;
 		this.szEmail = null;
 		this.szPhoneNum = null;
-		this.szPassword = null;
 		this.answersM = null;
+		
+		this.people = new ArrayList<Person>();
 	}	
 	
 	public void addUser()
@@ -35,14 +35,12 @@ public class Person {
 		setSzName(reader.nextLine());
 		System.out.println("Enter your email: ");
 		setSzEmail(reader.nextLine());
-		System.out.println("Enter Password: ");
-		setSzPassword(reader.nextLine());
 		System.out.println("Enter Phone Number: (XXX)XXX-XXXX) ");
 		setSzPhoneNum(reader.nextLine());
 		System.out.println("USER CREATED");
 		try {
 			File file = new File("userlist.csv");
-			String user = this.szName + "," + this.szEmail + "," + this.szPassword + "\n";
+			String user = this.szName + "," + this.szEmail;
 			FileWriter fw = new FileWriter(file,true);
 			BufferedWriter bw = new BufferedWriter(fw);
 			bw.write(user);
@@ -78,14 +76,6 @@ public class Person {
 		this.szEmail = szEmail;
 	}
 
-	public String getSzPassword() {
-		return szPassword;
-	}
-
-	public void setSzPassword(String szPassword) {
-		this.szPassword = szPassword;
-	}
-
 	public ArrayList<Integer> getAnswersM() {
 		return answersM;
 	}
@@ -93,6 +83,8 @@ public class Person {
 	public void setAnswersM(ArrayList<Integer> answersM) {
 		this.answersM = answersM;
 	}
+	
+	
 	
 }
 
