@@ -1,5 +1,7 @@
 package application;
 
+import java.util.ArrayList;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -127,18 +129,33 @@ public class SessionController {
     @FXML
     private Label priceLabel;
     
+    public ArrayList<Label> userLabelListMaker(){
+    	ArrayList<Label> userLabels = new ArrayList<Label>();
+    	userLabels.add(user1Label);
+    	userLabels.add(user2Label);
+    	userLabels.add(user3Label);
+    	userLabels.add(user4Label);
+    	userLabels.add(user5Label);
+    	userLabels.add(user6Label);
+    	userLabels.add(user7Label);
+    	userLabels.add(user8Label);
+    	userLabels.add(user9Label);
+    	userLabels.add(user10Label);
+    	return userLabels;
+    }
+    
+    
     // This method is automatically called by FXMLLoader when it gets loaded into the root layout
     // MUST BE NO ARGS
     @FXML
     private void initialize() {
     	friendsInvitedLabel.setStyle("-fx-background-color: lightblue");
+    	//initalize user list here
+    	for(int i = 0 ; i < LoginController.getUsers().size() ; i++) {
+    			userLabelListMaker().get(i).setText(LoginController.getUsers().get(i).getName());
+    	}
+    
     	
-    	//needs more work to populate all userLabels.
-       	String p = LoginController.getUsers().get(0).getName();
-    			user1Label.setText(p);
-    		Person p1 = LoginController.getUsers().get(1);
-    			user2Label.setText(p1.toString());
-    				
     }
     
     
