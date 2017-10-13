@@ -134,8 +134,8 @@ public class SessionController {
     	friendsInvitedLabel.setStyle("-fx-background-color: lightblue");
     	
     	//needs more work to populate all userLabels.
-       	Person p = LoginController.getUsers().get(0);
-    			user1Label.setText(p.toString());
+       	String p = LoginController.getUsers().get(0).getName();
+    			user1Label.setText(p);
     		Person p1 = LoginController.getUsers().get(1);
     			user2Label.setText(p1.toString());
     				

@@ -34,13 +34,15 @@ public class LoginController {
     public void addPerson(ActionEvent e) {
     		Person p = new Person(userNameTextField.getText(), twitterHandleTextField.getText());
     		tempUsers.add(p);
+    		userNameTextField.setText("");
+    		twitterHandleTextField.setText("");
     		//for testing purposes
-    		for(Person j : tempUsers) {
+/*    		for(Person j : tempUsers) {
     			System.out.println(j);
-    		}
+    		}*/
     }
-    
-    public static ArrayList<Person> getUsers(){
+
+	public static ArrayList<Person> getUsers(){
     		return tempUsers;
     }
     
