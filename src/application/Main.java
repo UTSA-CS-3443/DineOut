@@ -54,12 +54,17 @@ public class Main extends Application {
 	
 	public static void main(String[] args) {
 		launch(args);
-		//StartSession session = new StartSession();
-		
-		//for(int i = 0 ; i < session.getFiveChoices().size() ; i++) {
-		//	System.out.println(session.getFiveChoices().get(i));
-		//}
-	
+		StartSession session = new StartSession();
+		for(int i = 0 ; i < session.getFiveChoices().size() ; i++) {
+			Restaurant temp = session.getFiveChoices().get(i);
+			System.out.println("Name = " + temp.getName());
+			System.out.println("Price = " + temp.getPrice());
+			System.out.println("Rating = " + temp.getRating());
+			System.out.println("Cuisine = " + temp.getCuisine());
+			System.out.println("Website = " + temp.getWebsite());
+			System.out.println("Address = " + temp.getAddress());
+			System.out.println("");
+		}
 		//RestaurantArray restaurantList = new RestaurantArray();
 		//restaurantList.printRestaurantInfo();
 		//Person person = new Person();
