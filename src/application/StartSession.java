@@ -41,5 +41,9 @@ public class StartSession {
 		return users;
 	}
 	
+	public void addUser(Person p) {
+		users.add(p);
+	}
+	
 	
 }
