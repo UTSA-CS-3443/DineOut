@@ -5,11 +5,13 @@ import java.util.ArrayList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 public class LoginController {
@@ -52,6 +54,11 @@ public class LoginController {
 	        	Parent loadSession = FXMLLoader.load(getClass().getResource("SessionInterface.fxml"));
 	        	Scene sessionScene = new Scene(loadSession);
 	        	Stage primaryStage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+	        	//------------------Centering SessionInterface on screen --------------------------------
+	        	Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
+	        	primaryStage.setX(primaryScreenBounds.getMinX() + primaryScreenBounds.getWidth() / 4);
+	        	primaryStage.setY(primaryScreenBounds.getMinY() + primaryScreenBounds.getHeight() / 4.5);
+	        	//----------------------------------------------------------------------------------------
 	        	primaryStage.setScene(sessionScene);
 	        	primaryStage.show();
 	    	} catch (IOException e1) {
