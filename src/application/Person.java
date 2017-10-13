@@ -82,6 +82,10 @@ public class Person {
 		this.answersM = answersM;
 	}
 	
+	public String toString() {
+		return this.szName;
+	}
+	
 	
 	
 }
