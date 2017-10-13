@@ -129,7 +129,7 @@ public class SessionController {
     @FXML
     private Label priceLabel;
     
-    public ArrayList<Label> userLabelListMaker(){
+    public void addUsers(){
     	ArrayList<Label> userLabels = new ArrayList<Label>();
     	userLabels.add(user1Label);
     	userLabels.add(user2Label);
@@ -141,7 +141,10 @@ public class SessionController {
     	userLabels.add(user8Label);
     	userLabels.add(user9Label);
     	userLabels.add(user10Label);
-    	return userLabels;
+
+    	for(int i = 0 ; i < LoginController.getUsers().size() ; i++) {
+			userLabels.get(i).setText(LoginController.getUsers().get(i).getName());
+    	}
     }
     
     
@@ -151,11 +154,7 @@ public class SessionController {
     private void initialize() {
     	friendsInvitedLabel.setStyle("-fx-background-color: lightblue");
     	//initalize user list here
-    	for(int i = 0 ; i < LoginController.getUsers().size() ; i++) {
-    			userLabelListMaker().get(i).setText(LoginController.getUsers().get(i).getName());
-    	}
-    
-    	
+    	addUsers();
     }
     
     
