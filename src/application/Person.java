@@ -22,9 +22,7 @@ public class Person {
 	{
 		this.szName = name;
 		this.szEmail = null;
-		this.szPhoneNum = null;
 		this.answersM = null;
-		
 		this.people = new ArrayList<Person>();
 	}	
 	
