@@ -36,7 +36,7 @@ public class LoginController {
     @FXML
     public void done(ActionEvent e) {
     	try {
-        	Parent loadSession = FXMLLoader.load(getClass().getResource("SBUserInterface.fxml"));
+        	Parent loadSession = FXMLLoader.load(getClass().getResource("SessionInterface.fxml"));
         	Scene sessionScene = new Scene(loadSession);
         	Stage primaryStage = (Stage) ((Node) e.getSource()).getScene().getWindow();
         	primaryStage.setScene(sessionScene);

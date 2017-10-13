@@ -8,7 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 
-public class Controller {
+public class SessionController {
 
     @FXML
     private Label dineOutTitleLabel;
