@@ -2,7 +2,6 @@ package application;
 
 import java.io.IOException;
 import java.util.ArrayList;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,14 +10,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class LoginController {
 	
-	private StartSession session;
+	private StartSession session = new StartSession();
 	
-	private ArrayList<Person> tempUsers;
+	private static ArrayList<Person> tempUsers = new ArrayList<Person>();
 	
     @FXML
     private TextField userNameTextField;
@@ -34,12 +32,16 @@ public class LoginController {
 
     @FXML
     public void addPerson(ActionEvent e) {
-    		Person p = new Person(userNameTextField.getText());
-    		tempUsers = new ArrayList<Person>();
+    		Person p = new Person(userNameTextField.getText(), twitterHandleTextField.getText());
     		tempUsers.add(p);
+    		//for testing purposes
     		for(Person j : tempUsers) {
     			System.out.println(j);
     		}
+    }
+    
+    public static ArrayList<Person> getUsers(){
+    		return tempUsers;
     }
     
     @FXML
@@ -53,10 +55,10 @@ public class LoginController {
 	    	} catch (IOException e1) {
 	    		e1.printStackTrace();
 	    	}
-    	session = new StartSession();
-    	for(Person p : tempUsers) {
-    		session.addUser(p);
-    	}
-    		
+	    	
+	    	for(Person p : tempUsers) {
+	    		session.addUser(p);
+	    	}    
     }
+    
 }

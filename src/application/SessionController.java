@@ -9,7 +9,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 
 public class SessionController {
-
+	
     @FXML
     private Label dineOutTitleLabel;
 
@@ -132,6 +132,13 @@ public class SessionController {
     @FXML
     private void initialize() {
     	friendsInvitedLabel.setStyle("-fx-background-color: lightblue");
+    	
+    	//needs more work to populate all userLabels.
+       	Person p = LoginController.getUsers().get(0);
+    			user1Label.setText(p.toString());
+    		Person p1 = LoginController.getUsers().get(1);
+    			user2Label.setText(p1.toString());
+    				
     }
     
     
@@ -147,11 +154,13 @@ public class SessionController {
     	
     	// Goto next restaurant when nextRestaurantButton is clicked
     	// set number in sequence in title
-    	user1Label.setText("Mark");
-    	user1LabelBackground.setOpacity(.3);
-    	user1LabelBackground.setStyle("-fx-background-color: red;");
-    	user1IndicatorBackground.setOpacity(.3);
-    	user1IndicatorBackground.setStyle("-fx-background-color: red;");
+/*   	Person p = LoginController.getUsers().get(0);
+			user1Label.setText(p.toString());*/
+	
+//  	user1LabelBackground.setOpacity(.3);
+//  user1LabelBackground.setStyle("-fx-background-color: red;");
+//  user1IndicatorBackground.setOpacity(.3);
+//  user1IndicatorBackground.setStyle("-fx-background-color: red;");
     	//restaurantNameLabel.setText(RestaurantList().getRestaurantList());
     	// set name
     	// set cuisine
@@ -171,16 +180,6 @@ public class SessionController {
     	// set website
     	// set rating
     	// set map
-    }
-    
-    @FXML
-    public void addUser(ActionEvent e) {
-    	// add user when they connect to session
-    	// add name
-    	// set name label opacity
-    	// set name label background pane opacity
-    	// set indicator opacity
-    	// set Indicator background pane opacity
     }
     
     @FXML

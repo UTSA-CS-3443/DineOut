@@ -38,7 +38,7 @@ public class StartSession {
 	}
 
 	public ArrayList<Person> getUsers() {
-		return users;
+		return this.users;
 	}
 	
 	public void addUser(Person p) {

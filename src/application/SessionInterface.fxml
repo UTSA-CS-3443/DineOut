@@ -62,7 +62,7 @@
                                           <Insets bottom="5.0" left="3.0" top="5.0" />
                                        </GridPane.margin>
                                     </Pane>
-                                    <Label fx:id="user1Label" text="user1">
+                                    <Label fx:id="user1Label" onDragDetected="#addUser" text="user1">
                                        <font>
                                           <Font size="16.0" />
                                        </font>
