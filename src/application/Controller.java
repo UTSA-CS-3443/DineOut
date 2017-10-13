@@ -138,6 +138,7 @@ public class Controller {
     @FXML
     public void nextRestaurant(ActionEvent e) {
     	
+    	//Main.restaurantList.getRestaurantList();
     	//restaurantNameLabel.setText(restaurantChoices.get(i).getName());
     	//cuisineTypeLabel.setText(restaurantChoices.get(i).getCuisine());
     	//priceLabel.setText("");
@@ -161,7 +162,7 @@ public class Controller {
     }
     
     @FXML
-    public void previousRestaurant() {
+    public void previousRestaurant(ActionEvent e) {
     	// Goto previous restaurant when nextRestaurantButton is clicked
     	// set number in sequence in title
     	// set name
@@ -173,7 +174,7 @@ public class Controller {
     }
     
     @FXML
-    public void addUser() {
+    public void addUser(ActionEvent e) {
     	// add user when they connect to session
     	// add name
     	// set name label opacity

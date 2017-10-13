@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="275.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="275.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginController">
    <children>
       <AnchorPane prefHeight="283.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -28,7 +28,7 @@
             </Label>
             <TextField fx:id="twitterHandleTextField" layoutX="66.0" layoutY="172.0" />
             <Button fx:id="addUserButton" layoutX="88.0" layoutY="208.0" mnemonicParsing="false" text="Add" />
-            <Button fx:id="doneWithScene" layoutX="149.0" layoutY="208.0" mnemonicParsing="false" text="Done" />
+            <Button fx:id="doneWithScene" layoutX="149.0" layoutY="208.0" mnemonicParsing="false" onAction="#done" text="Done" />
          </children>
       </AnchorPane>
    </children>

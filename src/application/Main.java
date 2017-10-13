@@ -34,7 +34,7 @@ public class Main extends Application {
 			// creating FXMLLoader to pass in .fxml file
 			FXMLLoader loader = new FXMLLoader();
 			// getting .fxml resource
-			loader.setLocation(Main.class.getResource("SBUserInterface.fxml"));
+			loader.setLocation(Main.class.getResource("LoginInterface.fxml"));
 			// loading the .fxml file into the rootLayout
 			rootLayout = loader.load();
 			// Creating scene with the base as rootLayout (Parent of the scene graph)
@@ -51,9 +51,16 @@ public class Main extends Application {
 		}
 	}	
 	
+	
 	public static void main(String[] args) {
 		launch(args);
-		RestaurantArray restaurantList = new RestaurantArray();
+		//StartSession session = new StartSession();
+		
+		//for(int i = 0 ; i < session.getFiveChoices().size() ; i++) {
+		//	System.out.println(session.getFiveChoices().get(i));
+		//}
+	
+		//RestaurantArray restaurantList = new RestaurantArray();
 		//restaurantList.printRestaurantInfo();
 		//Person person = new Person();
 		//person.addUser();
