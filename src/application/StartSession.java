@@ -18,16 +18,17 @@ public class StartSession {
 	public void fillRandomList(){
 		RestaurantArray restaurants = new RestaurantArray();
 		Random rand = new Random();
-		int randomNumber = rand.nextInt(restaurants.getRestaurantList().size() + 1);
-
-		for(int count = 0 ; count < 5 ; count++) {
-			int i = randomNumber;
-			if(restaurants.getRestaurantList().get(i).isSelected() == true) {
-				continue;
-			}else { // meaning its false
-				fiveChoices.add(restaurants.getRestaurantList().get(i));
+		int i = rand.nextInt(restaurants.getRestaurantList().size() - 1);
+		int count = 0;
+		while (count < 5) {
+			Restaurant tempRest = restaurants.getRestaurantList().get(i);
+			if(tempRest.isSelected() == false) 
+			{ // meaning its false
+				fiveChoices.add(tempRest);
 				restaurants.getRestaurantList().get(i).setSelected(true);
+				count++;
 			}
+			i = rand.nextInt(restaurants.getRestaurantList().size() - 1);	
 		}
 		
 	}
