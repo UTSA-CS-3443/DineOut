@@ -29,7 +29,7 @@ public class LoginController {
 
     @FXML
     public void addPerson(ActionEvent e) {
-    	Person p = new Person(userNameTextField.getText());
+    		Person p = new Person(userNameTextField.getText());
     	//add person to session or somwhere...
     }
     
