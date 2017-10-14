@@ -12,6 +12,7 @@ public class Main extends Application {
 	public Stage primaryStage;
 	//public Stage stage;
 	public AnchorPane rootLayout;
+	static Session session = new Session();
 	
 	@Override
 	public void start(Stage primaryStage) {
@@ -50,7 +51,7 @@ public class Main extends Application {
 	
 	public static void main(String[] args) {
 		launch(args);
-		StartSession session = new StartSession();
+		
 		for(int i = 0 ; i < session.getFiveChoices().size() ; i++) {
 			Restaurant temp = session.getFiveChoices().get(i);
 			System.out.println("Name = " + temp.getName());

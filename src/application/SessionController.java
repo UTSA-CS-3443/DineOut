@@ -14,10 +14,10 @@ public class SessionController {
 	
     @FXML
     private Label dineOutTitleLabel;
-
+    
     @FXML
     private Label friendsInvitedLabel;
-
+    
     @FXML
     private Label user1Label;
 
@@ -48,8 +48,13 @@ public class SessionController {
     @FXML
     private Label user10Label;
 
+    // --------------Scrapping backgrounds for now until we can get entire program running---------
+    
     @FXML
     private Pane user1LabelBackground;
+    
+    @FXML
+    private Pane user2LabelBackground;
 
     @FXML
     private Pane user3LabelBackground;
@@ -105,9 +110,8 @@ public class SessionController {
     @FXML
     private Pane user10IndicatorBackground;
 
-    @FXML
-    private Pane user2LabelBackground;
-
+    //---------------------------------------------------------------------------------------------
+    
     @FXML
     private Button previousRestaurantButton;
 
@@ -129,6 +133,7 @@ public class SessionController {
     @FXML
     private Label priceLabel;
     
+    // Method for adding users to arraylist to iterate and set userLabels
     public void addUsers(){
     	ArrayList<Label> userLabels = new ArrayList<Label>();
     	userLabels.add(user1Label);
@@ -141,25 +146,65 @@ public class SessionController {
     	userLabels.add(user8Label);
     	userLabels.add(user9Label);
     	userLabels.add(user10Label);
-
+    	
+    	// Loop for setting users from LoginController to labels in order
     	for(int i = 0 ; i < LoginController.getUsers().size() ; i++) {
 			userLabels.get(i).setText(LoginController.getUsers().get(i).getName());
     	}
     }
     
+    //Sets initial restaurant on opening scene, will probably need redoing with multiple users
+    public void setInitialRestaurant() {
+    	restaurantNumberLabel.setText("Choice 1");
+    	restaurantNameLabel.setText(Main.session.getFiveChoices().get(0).getName());
+    	cuisineTypeLabel.setText(Main.session.getFiveChoices().get(0).getCuisine());
+    	priceLabel.setText(String.valueOf(Main.session.getFiveChoices().get(0).getPrice()));
+    	
+    	// Need to initialize website button somehow
+    }
+    
+   // public void getRestaurant
+    
     
     // This method is automatically called by FXMLLoader when it gets loaded into the root layout
     // MUST BE NO ARGS
+    // Initialize will need to set users and first restaurant. 
     @FXML
     private void initialize() {
     	friendsInvitedLabel.setStyle("-fx-background-color: lightblue");
     	//initalize user list here
     	addUsers();
+    	setInitialRestaurant();
     }
     
-    
+    // VERY BASIC CRAPPY UNOPTIMIZED WAY OF GRABBING NEXT RESTAURANT. NEED TO ADD IMPLEMENT
+    // DIFFERENT APPROACH AND METHOD FOR EASIER GRABBING.
     @FXML
     public void nextRestaurant(ActionEvent e) {
+    	if(restaurantNameLabel.getText().equals(Main.session.getFiveChoices().get(0).getName())) {
+    		restaurantNumberLabel.setText("Choice 2");
+        	restaurantNameLabel.setText(Main.session.getFiveChoices().get(1).getName());
+        	cuisineTypeLabel.setText(Main.session.getFiveChoices().get(1).getCuisine());
+        	priceLabel.setText(String.valueOf(Main.session.getFiveChoices().get(1).getPrice()));
+        	
+    	}else if(restaurantNameLabel.getText().equals(Main.session.getFiveChoices().get(1).getName())) {
+    		restaurantNumberLabel.setText("Choice 3");
+        	restaurantNameLabel.setText(Main.session.getFiveChoices().get(2).getName());
+        	cuisineTypeLabel.setText(Main.session.getFiveChoices().get(2).getCuisine());
+        	priceLabel.setText(String.valueOf(Main.session.getFiveChoices().get(2).getPrice()));
+        	
+    	}else if(restaurantNameLabel.getText().equals(Main.session.getFiveChoices().get(2).getName())) {
+    		restaurantNumberLabel.setText("Choice 4");
+        	restaurantNameLabel.setText(Main.session.getFiveChoices().get(3).getName());
+        	cuisineTypeLabel.setText(Main.session.getFiveChoices().get(3).getCuisine());
+        	priceLabel.setText(String.valueOf(Main.session.getFiveChoices().get(3).getPrice()));
+        	
+    	}else if(restaurantNameLabel.getText().equals(Main.session.getFiveChoices().get(3).getName())) {
+    		restaurantNumberLabel.setText("Choice 5");
+        	restaurantNameLabel.setText(Main.session.getFiveChoices().get(4).getName());
+        	cuisineTypeLabel.setText(Main.session.getFiveChoices().get(4).getCuisine());
+        	priceLabel.setText(String.valueOf(Main.session.getFiveChoices().get(4).getPrice()));
+    	}
     	
     	//Main.restaurantList.getRestaurantList();
     	//restaurantNameLabel.setText(restaurantChoices.get(i).getName());
@@ -167,16 +212,7 @@ public class SessionController {
     	//priceLabel.setText("");
     	//websiteButton.
     	
-    	
-    	// Goto next restaurant when nextRestaurantButton is clicked
-    	// set number in sequence in title
-/*   	Person p = LoginController.getUsers().get(0);
-			user1Label.setText(p.toString());*/
-	
-//  	user1LabelBackground.setOpacity(.3);
-//  user1LabelBackground.setStyle("-fx-background-color: red;");
-//  user1IndicatorBackground.setOpacity(.3);
-//  user1IndicatorBackground.setStyle("-fx-background-color: red;");
+
     	//restaurantNameLabel.setText(RestaurantList().getRestaurantList());
     	// set name
     	// set cuisine
@@ -188,14 +224,30 @@ public class SessionController {
     
     @FXML
     public void previousRestaurant(ActionEvent e) {
-    	// Goto previous restaurant when nextRestaurantButton is clicked
-    	// set number in sequence in title
-    	// set name
-    	// set cuisine
-    	// set price
-    	// set website
-    	// set rating
-    	// set map
+    	if(restaurantNameLabel.getText().equals(Main.session.getFiveChoices().get(4).getName())) {
+    		restaurantNumberLabel.setText("Choice 4");
+        	restaurantNameLabel.setText(Main.session.getFiveChoices().get(3).getName());
+        	cuisineTypeLabel.setText(Main.session.getFiveChoices().get(3).getCuisine());
+        	priceLabel.setText(String.valueOf(Main.session.getFiveChoices().get(3).getPrice()));
+        	
+    	}else if(restaurantNameLabel.getText().equals(Main.session.getFiveChoices().get(3).getName())) {
+    		restaurantNumberLabel.setText("Choice 3");
+        	restaurantNameLabel.setText(Main.session.getFiveChoices().get(2).getName());
+        	cuisineTypeLabel.setText(Main.session.getFiveChoices().get(2).getCuisine());
+        	priceLabel.setText(String.valueOf(Main.session.getFiveChoices().get(2).getPrice()));
+        	
+    	}else if(restaurantNameLabel.getText().equals(Main.session.getFiveChoices().get(2).getName())) {
+    		restaurantNumberLabel.setText("Choice 2");
+        	restaurantNameLabel.setText(Main.session.getFiveChoices().get(1).getName());
+        	cuisineTypeLabel.setText(Main.session.getFiveChoices().get(1).getCuisine());
+        	priceLabel.setText(String.valueOf(Main.session.getFiveChoices().get(1).getPrice()));
+        	
+    	}else if(restaurantNameLabel.getText().equals(Main.session.getFiveChoices().get(1).getName())) {
+    		restaurantNumberLabel.setText("Choice 1");
+        	restaurantNameLabel.setText(Main.session.getFiveChoices().get(0).getName());
+        	cuisineTypeLabel.setText(Main.session.getFiveChoices().get(0).getCuisine());
+        	priceLabel.setText(String.valueOf(Main.session.getFiveChoices().get(0).getPrice()));
+    	}
     }
     
     @FXML

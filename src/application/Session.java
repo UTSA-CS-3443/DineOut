@@ -3,12 +3,15 @@ package application;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class StartSession {
+public class Session {
 	
 	private ArrayList<Restaurant> fiveChoices = new ArrayList<Restaurant>();
-	private ArrayList<Person> users = new ArrayList<Person>();
 	
-	public StartSession() {
+	// Couldn't pull users from here in SessionController, handling users in LoginController and 
+	// grabbing then displaying users in SessionController.
+	//private ArrayList<Person> users = new ArrayList<Person>();
+	
+	public Session() {
 		fillRandomList();
 	}
 	
@@ -38,13 +41,14 @@ public class StartSession {
 		return this.fiveChoices;
 	}
 
-	public ArrayList<Person> getUsers() {
-		return this.users;
-	}
+	//Not needed here -REMOVED-
+	//public ArrayList<Person> getUsers() {
+	//	return this.users;
+	//}
 	
-	public void addUser(Person p) {
-		users.add(p);
-	}
+	//public void addUser(Person p) {
+	//	users.add(p);
+	//}
 	
 	
 }

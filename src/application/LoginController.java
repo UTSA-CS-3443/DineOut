@@ -16,9 +16,12 @@ import javafx.stage.Stage;
 
 public class LoginController {
 	
-	private StartSession session = new StartSession();
+	//Removed, don't neeed Session here.
+	//private Session session = new Session();
 	
-	private static ArrayList<Person> tempUsers = new ArrayList<Person>();
+	// We'll handle the users here, then SessionController
+	// will pass to screen via initialize() method
+	private static ArrayList<Person> users = new ArrayList<Person>();
 	
     @FXML
     private TextField userNameTextField;
@@ -35,17 +38,13 @@ public class LoginController {
     @FXML
     public void addPerson(ActionEvent e) {
     		Person p = new Person(userNameTextField.getText(), twitterHandleTextField.getText());
-    		tempUsers.add(p);
+    		users.add(p);
     		userNameTextField.setText("");
     		twitterHandleTextField.setText("");
-    		//for testing purposes
-/*    		for(Person j : tempUsers) {
-    			System.out.println(j);
-    		}*/
     }
 
 	public static ArrayList<Person> getUsers(){
-    		return tempUsers;
+    		return users;
     }
     
     @FXML
@@ -65,9 +64,10 @@ public class LoginController {
 	    		e1.printStackTrace();
 	    	}
 	    	
-	    	for(Person p : tempUsers) {
-	    		session.addUser(p);
-	    	}    
+	    	// -- Removed, handling users inside LoginController itself rather than Session
+	    	//for(Person p : users) {
+	    	//	session.addUser(p);
+	    	//}    
     }
     
 }
