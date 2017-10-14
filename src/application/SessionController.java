@@ -1,7 +1,12 @@
 package application;
 
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 
+import javafx.application.HostServices;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -9,6 +14,7 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 
 public class SessionController {
 	
@@ -153,6 +159,22 @@ public class SessionController {
     	}
     }
     
+
+    //TEST METHOD TO OPEN WEBPAGE ON BUTTON CLICK
+    public static void openWebpage(String url) {
+    	if(Desktop.isDesktopSupported())
+        {
+            try {
+                Desktop.getDesktop().browse(new URI(url));
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            } catch (URISyntaxException e1) {
+                e1.printStackTrace();
+            }
+        }
+    }
+
+   
     //Sets initial restaurant on opening scene, will probably need redoing with multiple users
     public void setInitialRestaurant() {
     	restaurantNumberLabel.setText("Choice 1");
@@ -163,8 +185,6 @@ public class SessionController {
     	// Need to initialize website button somehow
     }
     
-   // public void getRestaurant
-    
     
     // This method is automatically called by FXMLLoader when it gets loaded into the root layout
     // MUST BE NO ARGS
@@ -174,7 +194,9 @@ public class SessionController {
     	friendsInvitedLabel.setStyle("-fx-background-color: lightblue");
     	//initalize user list here
     	addUsers();
+    	//initialize first restaurant
     	setInitialRestaurant();
+    	
     }
     
     // VERY BASIC CRAPPY UNOPTIMIZED WAY OF GRABBING NEXT RESTAURANT. NEED TO ADD IMPLEMENT
@@ -205,21 +227,6 @@ public class SessionController {
         	cuisineTypeLabel.setText(Main.session.getFiveChoices().get(4).getCuisine());
         	priceLabel.setText(String.valueOf(Main.session.getFiveChoices().get(4).getPrice()));
     	}
-    	
-    	//Main.restaurantList.getRestaurantList();
-    	//restaurantNameLabel.setText(restaurantChoices.get(i).getName());
-    	//cuisineTypeLabel.setText(restaurantChoices.get(i).getCuisine());
-    	//priceLabel.setText("");
-    	//websiteButton.
-    	
-
-    	//restaurantNameLabel.setText(RestaurantList().getRestaurantList());
-    	// set name
-    	// set cuisine
-    	// set price
-    	// set website
-    	// set rating
-    	// set map
     }
     
     @FXML
@@ -250,14 +257,19 @@ public class SessionController {
     	}
     }
     
+    //RUDIMENTARY IF ELSE STATEMENTS JUST TO CHECK IF LABELS / CSV IS WORKING. NEED REWORK
     @FXML
     public void toRestaurantWebsite(ActionEvent e) {
-    	//Hyperlink  link = new Hyperlink() // 5restaurantChoices.get().getWebsite()
-    	//getHostServices().showDocument("www.google.com");
-    	// goto restaurant website given URL
+    	if(restaurantNameLabel.getText().equals(Main.session.getFiveChoices().get(0).getName())) {
+    		openWebpage(Main.session.getFiveChoices().get(0).getWebsite());
+    	} else if(restaurantNameLabel.getText().equals(Main.session.getFiveChoices().get(1).getName())) {
+    		openWebpage(Main.session.getFiveChoices().get(1).getWebsite());
+    	} else if(restaurantNameLabel.getText().equals(Main.session.getFiveChoices().get(2).getName())) {
+    		openWebpage(Main.session.getFiveChoices().get(2).getWebsite());
+    	} else if(restaurantNameLabel.getText().equals(Main.session.getFiveChoices().get(3).getName())) {
+    		openWebpage(Main.session.getFiveChoices().get(3).getWebsite());
+    	} else if(restaurantNameLabel.getText().equals(Main.session.getFiveChoices().get(4).getName())) {
+    		openWebpage(Main.session.getFiveChoices().get(4).getWebsite());
+    	}
     }
-    
-    
-    
-
 }

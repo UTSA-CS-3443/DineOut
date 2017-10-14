@@ -37,7 +37,7 @@ public class Main extends Application {
 			// Creating scene with the base as rootLayout (Parent of the scene graph)
 			Scene scene = new Scene( rootLayout );
 			// Appending .css style sheet to scene
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());			
 			// Setting scene for primaryStage with newly created scene
 			primaryStage.setScene(scene);
 			// "Raising the curtains" - allowing primaryStage to show the scene
