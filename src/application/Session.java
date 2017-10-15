@@ -2,9 +2,10 @@ package application;
 
 import java.util.ArrayList;
 import java.util.Random;
+import com.lynden.gmapsfx.javascript.object.GoogleMap;
 
 public class Session {
-	
+		
 	private ArrayList<Restaurant> fiveChoices = new ArrayList<Restaurant>();
 	
 	// Couldn't pull users from here in SessionController, handling users in LoginController and 

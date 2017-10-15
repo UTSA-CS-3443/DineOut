@@ -62,9 +62,5 @@ public class Main extends Application {
 			System.out.println("Address = " + temp.getAddress());
 			System.out.println("");
 		}
-		//RestaurantArray restaurantList = new RestaurantArray();
-		//restaurantList.printRestaurantInfo();
-		//Person person = new Person();
-		//person.addUser();
 	}
 }
