@@ -60,6 +60,40 @@ public class RestaurantArray {
 		}
 	}
 	
+	//Might not be in the correct location, so let me know. --Marcus
+	public String voteResults()
+	{
+		/**
+		 * Iterate though arrayList for selected = true
+		 * Add to votes[] for each true
+		 * Store highest votes[] ---> choice
+		 * return RestaurantList<choice> for winner
+		 */
+		int voteNum = -1;
+		int choice = -1;
+		int[] votes = new int[restaurantCount];
+		
+		for(int i = 0; i < restaurantCount; i++)
+		{
+			if(restaurantList.get(i).isSelected())
+				votes[i]+=1;
+		}
+				
+		for(int j = 0; j < restaurantCount; j++)
+		{
+			if(votes[j] > voteNum)
+			{
+				voteNum = votes[j];
+				choice = j;
+			}
+						
+		}
+		
+		if(choice == -1) return "Error: votes did not register.\n";
+		
+		return this.restaurantList.get(choice).toString() + " has the most votes.\n";
+	}
+	
 	
 
 }
