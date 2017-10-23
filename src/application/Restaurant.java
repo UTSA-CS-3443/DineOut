@@ -1,31 +1,29 @@
 package application;
 
-public class Restaurant{
-	
+public class Restaurant {
+
 	// Restraunts name
 	private String name;
-	
+
 	// General price range
 	private int price;
-	
+
 	// Rating
 	private double rating;
-	
+
 	// Type of cuisine
 	private String cuisine;
-	
+
 	// Website of restaurant
 	private String website;
-	
+
 	// Address of restaurant
 	private String address;
-	
+
 	// Boolean var which says if restraunt was selected.
 	private boolean selected;
-	
-	public Restaurant(
-			String name, int price, double rating, String cuisine, 
-			String website, String address) {
+
+	public Restaurant(String name, int price, double rating, String cuisine, String website, String address) {
 		this.name = name;
 		this.price = price;
 		this.rating = rating;
@@ -90,15 +88,5 @@ public class Restaurant{
 	public void setSelected(boolean selected) {
 		this.selected = selected;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 }
