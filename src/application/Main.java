@@ -66,7 +66,7 @@ public class Main extends Application {
 		PersonArray person = new PersonArray();
 		Restaurant selected = session.getFiveChoices().get(1);
 		TwitterClass test = new TwitterClass(person, selected);
-		test.sendTweet();
+		//test.sendTweet();
 		
 		
 		
