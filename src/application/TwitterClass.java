@@ -12,10 +12,10 @@ public class TwitterClass {
 			private Restaurant selectedRestaurant;
 			
 			public TwitterClass(PersonArray users, Restaurant selected) {
-				this.consumerKey="q1PHv8z2xR6jAgRXGcP1vZ3d2";
-				this.consumerSecret="pnpB1tWk61yUCl6QmEw8e1b8hqBxsY1Alg2fkiuRK8OQLe82Ju";
-				this.accessToken="3776551345-6os2NODhS0IZadIWIDns8Y8uIIwPt70OsNi6mqt";
-				this.accessTokenSecret="D5hM1gshMGo3RUFNvdhBgIr99o5iqbxn8msWqbgpe2jQQ";
+				this.consumerKey="YXRc3rKIpIz3vxxS9qjgp4ndQ";
+				this.consumerSecret="zmnmimOKqfB0fILN0VcrJB0TGyZB2339kECPk02cF0sVmkGTOb";
+				this.accessToken="922922886708506625-jz5RY1aAZq9id2CDEpO45tHpXMfQc4v";
+				this.accessTokenSecret="9X5App0pwzeZ1mvXrtPlZre85zYCPq0T5KPjPhpUs4oTH";
 				this.selectedRestaurant = selected;
 				this.userList = users;
 				
