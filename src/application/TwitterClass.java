@@ -1,10 +1,5 @@
 package application;
-import twitter4j.util.*;
 import twitter4j.*;
-import twitter4j.management.*;
-import twitter4j.api.*;
-import twitter4j.conf.*;
-import twitter4j.json.*;
 import twitter4j.auth.*;
 
 public class TwitterClass {
@@ -27,15 +22,27 @@ public class TwitterClass {
 			}
 			
 			
+			@SuppressWarnings("unused")
 			public void sendTweet()
 			{
 				
-				AccessToken accessToken = new AccessToken(ACCESS_TOKEN, ACCESS_TOKEN_SECRET);
-			    OAuthAuthorization authorization = new OAuthAuthorization(ConfigurationContext.getInstance(), CONSUMER_KEY, CONSUMER_SECRET, accessToken);
-			    Twitter twitter = new TwitterFactory().getInstance(authorization);
+				String directMessage="Hi, this is just a test message.";
+				String twitterName =  "@BrandonLwowski";
+
 				
 				
-				
+				TwitterFactory factory = new TwitterFactory();
+				Twitter twitter = factory.getInstance();
+				twitter.setOAuthConsumer(this.consumerKey, this.consumerSecret);
+				AccessToken accessToken = new AccessToken(this.accessToken, this.accessTokenSecret);
+				twitter.setOAuthAccessToken(accessToken);
+				try {
+					DirectMessage message = twitter.sendDirectMessage(twitterName, directMessage);
+				} catch (TwitterException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
 			}
 			
 			
