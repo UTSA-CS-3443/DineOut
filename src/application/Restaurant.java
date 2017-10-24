@@ -88,5 +88,11 @@ public class Restaurant {
 	public void setSelected(boolean selected) {
 		this.selected = selected;
 	}
-
+	
+	//Added toString for better print format
+	public String toString(){
+		return this.name + "is located at " + this.address + "and features " + this.cuisine + "."
+				+ " It is rated " + this.rating + " and costs " + this.price + "." + " View the menu at " + this.website + ".\n";
+				
+	}
 }

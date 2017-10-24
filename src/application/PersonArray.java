@@ -2,7 +2,9 @@ package application;
 
 import java.util.ArrayList;
 
-public class PersonArray {
+//Had to extend ArrayList to access size() and other methods --Marcus
+@SuppressWarnings("rawtypes")
+public class PersonArray extends ArrayList {
 	private ArrayList<Person> userList = new ArrayList<Person>();
 	
 	
