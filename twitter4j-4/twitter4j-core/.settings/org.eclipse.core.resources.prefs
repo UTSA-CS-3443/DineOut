@@ -1,0 +1,12 @@
+eclipse.preferences.version=1
+encoding//src/internal-async/java=UTF-8
+encoding//src/internal-http/java=UTF-8
+encoding//src/internal-json/java=UTF-8
+encoding//src/internal-logging/java=UTF-8
+encoding//src/internal-util/java=UTF-8
+encoding//src/jmx/java=UTF-8
+encoding//src/main/java=UTF-8
+encoding//src/main/resources=UTF-8
+encoding//src/test/java=UTF-8
+encoding//src/test/resources=UTF-8
+encoding/<project>=UTF-8
