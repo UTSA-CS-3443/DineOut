@@ -63,10 +63,15 @@ public class Main extends Application {
 			System.out.println("");
 		}
 		
-		PersonArray person = new PersonArray();
+		PersonArray userlist = new PersonArray();
 		Restaurant selected = session.getFiveChoices().get(1);
-		TwitterClass test = new TwitterClass(person, selected);
-		//test.sendTweet();
+		Person current = new Person("Brandon Lwowski", "@BrandonLwowski");
+		userlist.addUser(current);
+		
+		
+		
+		TwitterClass test = new TwitterClass(userlist, selected);
+		test.sendTweet();
 		
 		
 		

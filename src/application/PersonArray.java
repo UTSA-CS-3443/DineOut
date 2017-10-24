@@ -21,5 +21,15 @@ public class PersonArray extends ArrayList {
 		this.userList.add(person);
 	}
 	
+	public String getName(int i)
+	{
+		return this.userList.get(i).getName();
+	}
+	
+	public String getHandle(int i)
+	{
+		return this.userList.get(i).getHandle();
+	}
+	
 
 }

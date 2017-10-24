@@ -26,8 +26,9 @@ public class TwitterClass {
 			public void sendTweet()
 			{
 				
-				String directMessage="Hi, this is just a test message.";
-				String twitterName =  "@BrandonLwowski";
+				
+				String directMessage=this.createMessage();
+				String twitterName =  this.userList.getHandle(0);
 
 				
 				
@@ -42,7 +43,17 @@ public class TwitterClass {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
+				
 
+			}
+			
+			public String createMessage()
+			{
+				String name = this.userList.getName(0);
+				String message = "Thanks for using DineOut: The results are in " + name + ". Your group is going to meet at "
+						+ this.selectedRestaurant.getName() + " located at " + this.selectedRestaurant.getAddress() ;
+				
+				return message;
 			}
 			
 			

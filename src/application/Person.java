@@ -14,7 +14,6 @@ import java.util.Scanner;
 public class Person {
 	private String name;
 	private String handle;
-	private ArrayList<Person> people; //Appears redundant
 	private ArrayList<Integer> answersM;
 	
 	public Person(String name, String handle)
@@ -22,7 +21,7 @@ public class Person {
 		this.name = name;
 		this.handle = handle;
 		this.answersM = new ArrayList<Integer>();
-		this.people = new ArrayList<Person>();
+
 	}	
 	
 	public String getName() {

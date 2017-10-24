@@ -1,10 +1,10 @@
-The Block SA,2,4.5,Truck,http://www.theblocksa.com,"14530 Roadrunner Way, San Antonio, TX 78249"
-Taco Palenque UTSA,1,4.2,Dine In,http://www.tacopalenque.com,"13719 I-10, San Antonio, TX 78249"
-Singapore Chinese & Indochina Restaurant,1,4.1,Dine In,http://www.singaporechineseindochinarestaurant.com,"7114 UTSA Boulevard #105, San Antonio, TX 78249"
-Whiskey Cake,3,4.2,Dine In,http://whiskeycakesa.com,"15900 Via La Cantera #21200, San Antonio, TX 78256"
-Little Caesars Pizza,1,4.3,Fast Food,https://littlecaesars.com/en-us,"7280 UTSA Boulevard ste 105, San Antonio, TX 78249"
-Crazy Carl's Burger Truck,1,4.2,Truck,http://www.crazycarlssa.com,"14530 Roadrunner Way, San Antonio, TX 78249"
-Picnikins Patio Cafe,2,4.6,Dine In,http://www.picnikinspatiocafe.com/home,"5811 University Heights Blvd, San Antonio, TX 78249"
+The Block SA,2,4.5,Truck,http://www.theblocksa.com,14530 Roadrunner Way, San Antonio, TX 78249"
+Taco Palenque UTSA,1,4.2,Dine In,http://www.tacopalenque.com,13719 I-10, San Antonio, TX 78249"
+Singapore Chinese & Indochina Restaurant,1,4.1,Dine In,http://www.singaporechineseindochinarestaurant.com,7114 UTSA Boulevard #105, San Antonio, TX 78249"
+Whiskey Cake,3,4.2,Dine In,http://whiskeycakesa.com,15900 Via La Cantera #21200, San Antonio, TX 78256"
+Little Caesars Pizza,1,4.3,Fast Food,https://littlecaesars.com/en-us,7280 UTSA Boulevard ste 105, San Antonio, TX 78249"
+Crazy Carl's Burger Truck,1,4.2,Truck,http://www.crazycarlssa.com,14530 Roadrunner Way, San Antonio, TX 78249"
+Picnikins Patio Cafe,2,4.6,Dine In,http://www.picnikinspatiocafe.com/home,5811 University Heights Blvd, San Antonio, TX 78249"
 Einstein Bros. Bagels,1,4.2,Coffee,http://www.einsteinbros.com,Engineering Building
 Greens To Go,2,4.2,Health,N/A,John Peace Library
 Chick-fil-A,1,3.4,Fast Food,http://www.chick-fil-a.com,John Peace Library
