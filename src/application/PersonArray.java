@@ -11,7 +11,7 @@ public class PersonArray {
 	{
 		
 		this.userList.clear();
-		this.setArraySize(0);
+		this.arraySize = 0;
 	}
 	
 	

@@ -25,19 +25,17 @@ public class TwitterClass {
 			@SuppressWarnings("unused")
 			public void sendTweet()
 			{
+				TwitterFactory factory = new TwitterFactory();
+				Twitter twitter = factory.getInstance();
+				twitter.setOAuthConsumer(this.consumerKey, this.consumerSecret);
+				AccessToken accessToken = new AccessToken(this.accessToken, this.accessTokenSecret);
+				twitter.setOAuthAccessToken(accessToken);
 				
 				for(int i = 0; i < this.userList.getArraySize(); i++)
 				{
-					String directMessage=this.createMessage(0);
-					String twitterName =  this.setHandle(0);
+					String directMessage=this.createMessage(i);
+					String twitterName =  this.setHandle(i);
 	
-					
-					
-					TwitterFactory factory = new TwitterFactory();
-					Twitter twitter = factory.getInstance();
-					twitter.setOAuthConsumer(this.consumerKey, this.consumerSecret);
-					AccessToken accessToken = new AccessToken(this.accessToken, this.accessTokenSecret);
-					twitter.setOAuthAccessToken(accessToken);
 					try {
 						DirectMessage message = twitter.sendDirectMessage(twitterName, directMessage);
 					} catch (TwitterException e) {
@@ -62,20 +60,7 @@ public class TwitterClass {
 			{
 				return this.userList.getHandle(i);
 			}
-			
-			
-
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+					
 			
 			
 			public Restaurant getSelectedRestaurant() {

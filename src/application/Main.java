@@ -71,7 +71,7 @@ public class Main extends Application {
 		userlist.addUser(current2);
 		
 		TwitterClass test = new TwitterClass(userlist, selected);
-		//test.sendTweet();
+		test.sendTweet();
 		
 		
 		
