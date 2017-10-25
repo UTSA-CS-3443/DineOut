@@ -26,34 +26,41 @@ public class TwitterClass {
 			public void sendTweet()
 			{
 				
-				
-				String directMessage=this.createMessage();
-				String twitterName =  this.userList.getHandle(0);
-
-				
-				
-				TwitterFactory factory = new TwitterFactory();
-				Twitter twitter = factory.getInstance();
-				twitter.setOAuthConsumer(this.consumerKey, this.consumerSecret);
-				AccessToken accessToken = new AccessToken(this.accessToken, this.accessTokenSecret);
-				twitter.setOAuthAccessToken(accessToken);
-				try {
-					DirectMessage message = twitter.sendDirectMessage(twitterName, directMessage);
-				} catch (TwitterException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+				for(int i = 0; i < this.userList.getArraySize(); i++)
+				{
+					String directMessage=this.createMessage(0);
+					String twitterName =  this.setHandle(0);
+	
+					
+					
+					TwitterFactory factory = new TwitterFactory();
+					Twitter twitter = factory.getInstance();
+					twitter.setOAuthConsumer(this.consumerKey, this.consumerSecret);
+					AccessToken accessToken = new AccessToken(this.accessToken, this.accessTokenSecret);
+					twitter.setOAuthAccessToken(accessToken);
+					try {
+						DirectMessage message = twitter.sendDirectMessage(twitterName, directMessage);
+					} catch (TwitterException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}
 				
 
 			}
 			
-			public String createMessage()
+			public String createMessage(int i)
 			{
-				String name = this.userList.getName(0);
+				String name = this.userList.getName(i);
 				String message = "Thanks for using DineOut: The results are in " + name + ". Your group is going to meet at "
 						+ this.selectedRestaurant.getName() + " located at " + this.selectedRestaurant.getAddress() ;
 				
 				return message;
+			}
+			
+			public String setHandle(int i)
+			{
+				return this.userList.getHandle(i);
 			}
 			
 			

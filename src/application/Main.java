@@ -68,10 +68,8 @@ public class Main extends Application {
 		Person current = new Person("Brandon Lwowski", "@BrandonLwowski");
 		userlist.addUser(current);
 		
-		
-		
 		TwitterClass test = new TwitterClass(userlist, selected);
-		test.sendTweet();
+		//test.sendTweet();
 		
 		
 		
