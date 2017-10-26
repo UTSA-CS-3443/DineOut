@@ -1,36 +1,17 @@
 package application;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Person {
-	private String name;
 	private String handle;
 	private ArrayList<Integer> answersM;
 	
-	public Person(String name, String handle)
+	public Person(String handle)
 	{
-		this.name = name;
 		this.handle = handle;
 		this.answersM = new ArrayList<Integer>();
 
 	}	
-	
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
 
 	public String getHandle() {
 		return this.handle;
@@ -44,11 +25,8 @@ public class Person {
 		this.answersM = answersM;
 	}
 	
-	public String toString() {
-		return this.name + " " + this.handle;
-	}
+
 	
-		
-}
+	}
 
 

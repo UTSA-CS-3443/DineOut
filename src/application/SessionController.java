@@ -437,7 +437,7 @@ public class SessionController implements Initializable, MapComponentInitialized
 
 		// Loop for setting users from LoginController to labels in order
 		for (int i = 0; i < LoginController.getUsers().size(); i++) {
-			userLabels.get(i).setText(LoginController.getUsers().get(i).getName());
+			userLabels.get(i).setText(LoginController.getUsers().get(i).getHandle());
 		}
 	}
 

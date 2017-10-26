@@ -33,7 +33,7 @@ public class LoginController {
 
     @FXML
     public void addPerson(ActionEvent e) {
-    		Person p = new Person(userNameTextField.getText(), twitterHandleTextField.getText());
+    		Person p = new Person(twitterHandleTextField.getText());
     		users.add(p);
     		userNameTextField.setText("");
     		twitterHandleTextField.setText("");

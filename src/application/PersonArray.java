@@ -22,10 +22,6 @@ public class PersonArray {
 		this.setArraySize(this.getArraySize() + 1);
 	}
 	
-	public String getName(int i)
-	{
-		return this.userList.get(i).getName();
-	}
 	
 	public String getHandle(int i)
 	{

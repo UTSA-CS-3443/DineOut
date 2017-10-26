@@ -23,7 +23,7 @@ public class TwitterClass {
 			
 			
 			@SuppressWarnings("unused")
-			public void sendTweet() throws TwitterException
+			public void sendTweet()
 			{
 				TwitterFactory factory = new TwitterFactory();
 				Twitter twitter = factory.getInstance();
@@ -34,7 +34,13 @@ public class TwitterClass {
 				for(int i = 0; i < this.userList.getArraySize(); i++)
 				{
 					String twitterName =  this.setHandle(i);
-					User user = twitter.showUser(twitterName);
+					User user = null;
+					try {
+						user = twitter.showUser(twitterName);
+					} catch (TwitterException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 					String name = user.getName();
 					String directMessage=this.createMessage(i, name);
 	
