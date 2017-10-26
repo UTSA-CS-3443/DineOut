@@ -23,7 +23,7 @@ public class TwitterClass {
 			
 			
 			@SuppressWarnings("unused")
-			public void sendTweet()
+			public void sendTweet() throws TwitterException
 			{
 				TwitterFactory factory = new TwitterFactory();
 				Twitter twitter = factory.getInstance();
@@ -33,8 +33,10 @@ public class TwitterClass {
 				
 				for(int i = 0; i < this.userList.getArraySize(); i++)
 				{
-					String directMessage=this.createMessage(i);
 					String twitterName =  this.setHandle(i);
+					User user = twitter.showUser(twitterName);
+					String name = user.getName();
+					String directMessage=this.createMessage(i, name);
 	
 					try {
 						DirectMessage message = twitter.sendDirectMessage(twitterName, directMessage);
@@ -47,9 +49,8 @@ public class TwitterClass {
 
 			}
 			
-			public String createMessage(int i)
+			public String createMessage(int i, String name)
 			{
-				String name = this.userList.getName(i);
 				String message = "Thanks for using DineOut: The results are in " + name + ". Your group is going to meet at "
 						+ this.selectedRestaurant.getName() + " located at " + this.selectedRestaurant.getAddress() ;
 				

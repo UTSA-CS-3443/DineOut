@@ -3,6 +3,7 @@ package application;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
+import twitter4j.TwitterException;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 
@@ -49,7 +50,7 @@ public class Main extends Application {
 	}	
 	
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws TwitterException {
 		launch(args);
 		
 		for(int i = 0 ; i < session.getFiveChoices().size() ; i++) {
