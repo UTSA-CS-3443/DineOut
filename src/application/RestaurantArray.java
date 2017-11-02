@@ -10,6 +10,7 @@ public class RestaurantArray {
 	private ArrayList<Restaurant> restaurantList = new ArrayList<Restaurant>();
 	protected int restaurantCount;
 	
+	
 	public RestaurantArray() {
 		this.restaurantList.clear();
 		this.restaurantCount = 0;
@@ -92,6 +93,10 @@ public class RestaurantArray {
 		if(choice == -1) return "Error: votes did not register.\n";
 		
 		return this.restaurantList.get(choice).toString() + " has the most votes.\n";
+	}
+	
+	public int getRestaurantCount() {
+		return restaurantCount;
 	}
 	
 	

@@ -1,5 +1,7 @@
 package application;
 
+import java.util.ArrayList;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -12,7 +14,7 @@ public class Main extends Application {
 	public Stage primaryStage;
 	//public Stage stage;
 	public AnchorPane rootLayout;
-	static Session session = new Session();
+	public static Session session = new Session();
 	
 	@Override
 	public void start(Stage primaryStage) {
@@ -51,31 +53,37 @@ public class Main extends Application {
 	
 	public static void main(String[] args){
 		launch(args);
+		//Create user array
+		PersonArray userlist1 = new PersonArray();
+		Person user1 = new Person("@BrandonLwowski");
+		Person user2 = new Person("@JHorwath18");
+		Person user3 = new Person("@albertjasso1");
+		Person user4 = new Person("@CookiesKoo1aid");
+		Person user5 = new Person("@possumIsGoodEat");
+		Person user6 = new Person("@strongho1d");
+		userlist1.addUser(user1);
+		userlist1.addUser(user2);
+		userlist1.addUser(user3);
+		userlist1.addUser(user4);
+		userlist1.addUser(user5);
+		userlist1.addUser(user6);
 		
-		for(int i = 0 ; i < session.getFiveChoices().size() ; i++) {
-			Restaurant temp = session.getFiveChoices().get(i);
-			System.out.println("Name = " + temp.getName());
-			System.out.println("Price = " + temp.getPrice());
-			System.out.println("Rating = " + temp.getRating());
-			System.out.println("Cuisine = " + temp.getCuisine());
-			System.out.println("Website = " + temp.getWebsite());
-			System.out.println("Address = " + temp.getAddress());
-			System.out.println("");
-		}
-		
-		PersonArray userlist = new PersonArray();
-		Restaurant selected = session.getFiveChoices().get(1);
-		
-		//TODO Loop through csv find groupname and save users into list
-		Person current = new Person("@BrandonLwowski");
-		Person current2 = new Person("@JHorwath18");
-		userlist.addUser(current);
-		userlist.addUser(current2);
-		
-		TwitterClass test = new TwitterClass(userlist, selected);
-		//test.sendTweet();
+		//Create a group with the array list
+		Group group1 = new Group("CupOfJava", userlist1);
+		String test = group1.createGroupString();
+		System.out.println(test);
+		group1.listOfUsersString();
 		
 		
 		
+		
+		
+		
+		
+		
+		
+
+		
+			
 	}
 }

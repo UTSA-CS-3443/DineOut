@@ -38,5 +38,10 @@ public class PersonArray {
 		this.arraySize = arraySize;
 	}
 	
+	public Person getUser(int i) {
+		Person person = this.userList.get(i);
+		return person;
+	}
+	
 
 }
