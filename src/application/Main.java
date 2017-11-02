@@ -65,13 +65,15 @@ public class Main extends Application {
 		
 		PersonArray userlist = new PersonArray();
 		Restaurant selected = session.getFiveChoices().get(1);
+		
+		//TODO Loop through csv find groupname and save users into list
 		Person current = new Person("@BrandonLwowski");
-		//Person current2 = new Person("@JHorwath18");
+		Person current2 = new Person("@JHorwath18");
 		userlist.addUser(current);
-		//userlist.addUser(current2);
+		userlist.addUser(current2);
 		
 		TwitterClass test = new TwitterClass(userlist, selected);
-		test.sendTweet();
+		//test.sendTweet();
 		
 		
 		
