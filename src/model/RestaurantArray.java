@@ -21,7 +21,7 @@ public class RestaurantArray {
 		try {
 		    in = new Scanner(new File("res/restaurants2.txt"));
 		} catch (FileNotFoundException exception) {
-		    throw new RuntimeException("failed to open restaurants.txt");
+		    throw new RuntimeException("failed to open restaurants2.txt");
 		}
 		while(in.hasNextLine())
 		{

@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class Session {
 
-	private ArrayList<Restaurant> fiveChoices = new ArrayList<Restaurant>();
+	private static ArrayList<Restaurant> fiveChoices = new ArrayList<Restaurant>();
 
 	// Couldn't pull users from here in SessionController, handling users in
 	// LoginController and

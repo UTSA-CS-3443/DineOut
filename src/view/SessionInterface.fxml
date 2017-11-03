@@ -14,7 +14,6 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import com.lynden.gmapsfx.*?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="378.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SessionController">
    <children>
@@ -268,7 +267,6 @@
                                     </Pane>
                                     <Pane prefHeight="430.0" prefWidth="643.0" VBox.vgrow="ALWAYS">
                                        <children>
-                                       	<GoogleMapView fx:id="mapView" layoutX="0.0" layoutY="13.0" prefHeight="300.0" prefWidth="310.0" />
                                           <Label layoutX="323.0" layoutY="6.0" text="Cuisine:">
                                              <font>
                                                 <Font name="System Bold" size="24.0" />
@@ -330,6 +328,12 @@
                                              </image>
                                           </ImageView>
                                           <ComboBox fx:id="rankComboBox" layoutX="477.0" layoutY="233.0" prefWidth="50.0" />
+                                          <ImageView fitHeight="296.0" fitWidth="301.0" layoutX="10.0" layoutY="11.0" pickOnBounds="true" smooth="false">
+                                             <image>
+                                                <Image url="@../../../../Pictures/bXGE2Kw.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <Button layoutX="10.0" layoutY="11.0" mnemonicParsing="false" onAction="#toMapView" prefHeight="296.0" prefWidth="301.0" style="-fx-background-color: transparent;" />
                                        </children>
                                     </Pane>
                                  </children>
