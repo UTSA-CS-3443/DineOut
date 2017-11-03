@@ -19,7 +19,7 @@ public class RestaurantArray {
 	public void fillArrayList() {
 		Scanner in = null;
 		try {
-		    in = new Scanner(new File("restaurants2.txt"));
+		    in = new Scanner(new File("res/restaurants2.txt"));
 		} catch (FileNotFoundException exception) {
 		    throw new RuntimeException("failed to open restaurants.txt");
 		}
