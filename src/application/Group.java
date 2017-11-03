@@ -1,5 +1,6 @@
 package application;
 
+import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,7 +14,7 @@ public class Group {
 	private static final RestaurantArray ALL_REST = new RestaurantArray();
 	private int selectedRest;
 	
-	
+	//<<CONTSTUCTOR>>
 	public Group(String name, PersonArray users)
 	{
 		this.groupName = name;
@@ -25,10 +26,14 @@ public class Group {
 		
 	}
 	
+	
+	//Return the random 5 restaurants
 	public ArrayList<Restaurant> getFiveChoices() {
 		return fiveChoices;
 	}
 
+	
+	//Select 5 random restaurants from the list of restaurants 
 	public void fillRandomList() {
 		RestaurantArray restaurants = new RestaurantArray();
 		Random rand = new Random();
@@ -46,6 +51,7 @@ public class Group {
 
 	}
 	
+	//Creates String the the groupname first then the 5 indices of the restaurant array
 	public String createGroupString()
 	{
 		String groupString = "#"+ this.groupName + ":";
@@ -69,39 +75,63 @@ public class Group {
 		return groupString.substring(0, (groupString.length()) -1 );
 	}
 	
+	// Creates a string with the user handle and a NULL vote for each of the 5 restaurants
 	public String createUserString(Person person)
 	{
 		String userString = person.getHandle() + ":" +"NULL:NULL:NULL:NULL:NULL";
 		return userString;
 	}
 	
-	public void listOfUsersString()
+	
+	
+	//Prints all user strings
+	public String listOfUsersString()
 	{
+		String list = "";
 		for(int i = 0; i < this.listOfUsers.getArraySize(); i++ )
 		{
-			System.out.println(createUserString(listOfUsers.getUser(i)));
+			list += createUserString(listOfUsers.getUser(i)) + "\n";
 		}
+		return list;
 	}
 	
+	
+	
+	// Create a text file title groupname.txt and save it into the group folder
+	//for future searches
 	public void groupToTextfile()
 	{
+		String file = this.groupName + ".txt";
+		String pathToFile = "Groups/"+file;
 		
-		try
-		{
-		    String filename= "groups.txt";
-		    FileWriter fw = new FileWriter(filename,true); //the true will append the new data
-		    fw.write("add a line\n");//appends the string to the file
-		    fw.close();
+		BufferedWriter bw = null;
+		FileWriter fw = null;
+
+		try {
+
+			String content = this.createGroupString() +"\n" + this.listOfUsersString();
+					
+			fw = new FileWriter(pathToFile);
+			bw = new BufferedWriter(fw);
+			bw.write(content);
+
+		} catch (IOException e) {
+
+			e.printStackTrace();
+		}finally {
+				try {
+					if (bw != null)
+						bw.close();
+
+					if (fw != null)
+						fw.close();
+
+				} catch (IOException ex) {
+
+					ex.printStackTrace();
+				}
 		}
-		catch(IOException ioe)
-		{
-		    System.err.println("IOException: " + ioe.getMessage());
-		}
+	
 	}
-	
-	
-	
-	
-	
-	
 }
+	

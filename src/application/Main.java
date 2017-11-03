@@ -71,18 +71,7 @@ public class Main extends Application {
 		//Create a group with the array list
 		Group group1 = new Group("CupOfJava", userlist1);
 		String test = group1.createGroupString();
-		System.out.println(test);
-		group1.listOfUsersString();
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
+		group1.groupToTextfile();
 		
 			
 	}
