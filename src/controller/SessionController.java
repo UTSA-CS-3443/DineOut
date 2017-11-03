@@ -1,4 +1,4 @@
-package application;
+package controller;
 
 import java.awt.Desktop;
 import java.io.IOException;
@@ -24,18 +24,24 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
+import model.Restaurant;
+import model.Session;
 
 public class SessionController implements Initializable, MapComponentInitializedListener {
 
 	// Map for display in mapView
 	private GoogleMap map;
+	
+	// Session
+	private Session session = new Session();
+	
 
 	// ----------------------------- Utility variables------------------------------
-	private Restaurant firstRestaurant = Main.session.getFiveChoices().get(0);
-	private Restaurant secondRestaurant = Main.session.getFiveChoices().get(1);
-	private Restaurant thirdRestaurant = Main.session.getFiveChoices().get(2);
-	private Restaurant fourthRestaurant = Main.session.getFiveChoices().get(3);
-	private Restaurant fifthRestaurant = Main.session.getFiveChoices().get(4);
+	private Restaurant firstRestaurant = session.getFiveChoices().get(0);
+	private Restaurant secondRestaurant = session.getFiveChoices().get(1);
+	private Restaurant thirdRestaurant = session.getFiveChoices().get(2);
+	private Restaurant fourthRestaurant = session.getFiveChoices().get(3);
+	private Restaurant fifthRestaurant = session.getFiveChoices().get(4);
 	// -----------------------------------------------------------------------------
 
 	// MapView container for map
@@ -368,6 +374,7 @@ public class SessionController implements Initializable, MapComponentInitialized
 	}
 
 	// ---------------------------- Utility methods-----------------------
+	
 	/**
 	 * Sets name of restaurant in display
 	 * 
@@ -413,9 +420,9 @@ public class SessionController implements Initializable, MapComponentInitialized
 	 * multiple users
 	 */
 	public void setInitialRestaurant() {
-		restaurantNameLabel.setText(Main.session.getFiveChoices().get(0).getName());
-		cuisineTypeLabel.setText(Main.session.getFiveChoices().get(0).getCuisine());
-		priceLabel.setText(String.valueOf(Main.session.getFiveChoices().get(0).getPrice()));
+		restaurantNameLabel.setText(session.getFiveChoices().get(0).getName());
+		cuisineTypeLabel.setText(session.getFiveChoices().get(0).getCuisine());
+		priceLabel.setText(String.valueOf(session.getFiveChoices().get(0).getPrice()));
 	}
 
 	/**

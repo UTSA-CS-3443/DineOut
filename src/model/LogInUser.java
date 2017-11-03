@@ -1,4 +1,4 @@
-package application;
+package model;
 
 /*
  * Wasn't sure how to use this class for testing -Marcus

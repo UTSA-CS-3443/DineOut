@@ -1,7 +1,8 @@
-package application;
+package controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,6 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import model.Person;
 
 public class LoginController {
 	
@@ -46,7 +48,7 @@ public class LoginController {
     @FXML
     public void done(ActionEvent e) {
 	    	try {
-	        	Parent loadSession = FXMLLoader.load(getClass().getResource("SessionInterface.fxml"));
+	        	Parent loadSession = FXMLLoader.load(getClass().getResource("../view/SessionInterface.fxml"));
 	        	Scene sessionScene = new Scene(loadSession);
 	        	Stage primaryStage = (Stage) ((Node) e.getSource()).getScene().getWindow();
 	        	

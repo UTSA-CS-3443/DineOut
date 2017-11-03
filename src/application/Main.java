@@ -3,6 +3,11 @@ package application;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
+import model.Person;
+import model.PersonArray;
+import model.Restaurant;
+import model.Session;
+import model.TwitterClass;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 
@@ -12,7 +17,7 @@ public class Main extends Application {
 	public Stage primaryStage;
 	//public Stage stage;
 	public AnchorPane rootLayout;
-	static Session session = new Session();
+	public static Session session = new Session();
 	
 	@Override
 	public void start(Stage primaryStage) {
@@ -31,7 +36,7 @@ public class Main extends Application {
 			// creating FXMLLoader to pass in .fxml file
 			FXMLLoader loader = new FXMLLoader();
 			// getting .fxml resource
-			loader.setLocation(Main.class.getResource("LoginInterface.fxml"));
+			loader.setLocation(Main.class.getResource("../view/LoginInterface.fxml"));
 			// loading the .fxml file into the rootLayout
 			rootLayout = loader.load();
 			// Creating scene with the base as rootLayout (Parent of the scene graph)
@@ -51,17 +56,6 @@ public class Main extends Application {
 	
 	public static void main(String[] args){
 		launch(args);
-		
-		for(int i = 0 ; i < session.getFiveChoices().size() ; i++) {
-			Restaurant temp = session.getFiveChoices().get(i);
-			System.out.println("Name = " + temp.getName());
-			System.out.println("Price = " + temp.getPrice());
-			System.out.println("Rating = " + temp.getRating());
-			System.out.println("Cuisine = " + temp.getCuisine());
-			System.out.println("Website = " + temp.getWebsite());
-			System.out.println("Address = " + temp.getAddress());
-			System.out.println("");
-		}
 		
 		PersonArray userlist = new PersonArray();
 		Restaurant selected = session.getFiveChoices().get(1);

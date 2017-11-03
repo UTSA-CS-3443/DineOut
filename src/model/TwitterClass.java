@@ -1,4 +1,4 @@
-package application;
+package model;
 import twitter4j.*;
 import twitter4j.auth.*;
 
