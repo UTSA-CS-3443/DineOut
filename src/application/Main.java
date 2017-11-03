@@ -61,6 +61,8 @@ public class Main extends Application {
 		Person user4 = new Person("@CookiesKoo1aid");
 		Person user5 = new Person("@possumIsGoodEat");
 		Person user6 = new Person("@strongho1d");
+		Person user7 = new Person("@TEST");
+		
 		userlist1.addUser(user1);
 		userlist1.addUser(user2);
 		userlist1.addUser(user3);
@@ -72,6 +74,8 @@ public class Main extends Application {
 		Group group1 = new Group("CupOfJava", userlist1);
 		boolean createfile = group1.groupToTextfile();
 		System.out.println(createfile);
+		boolean check = group1.findUserInFile(user7);
+		System.out.println(check);
 		
 		
 		

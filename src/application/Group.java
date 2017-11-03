@@ -2,10 +2,12 @@ package application;
 
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Group {
 	private String groupName;
@@ -151,6 +153,35 @@ public class Group {
 		File f = new File(pathToFile);
 		if(f.exists() && !f.isDirectory()) { 
 		    return true;
+		}
+		return false;
+	}
+	
+	
+	
+	public boolean findUserInFile(Person person)
+	{
+		String txtFile = "Groups/" + this.groupName + ".txt";
+		File file = new File(txtFile);
+		
+		if(this.groupFileExist())
+		{
+			Scanner SCANNER;
+			try {
+				SCANNER = new Scanner(file);
+				while(SCANNER.hasNextLine()){
+				    String str = SCANNER.nextLine();
+				    String[] strArray = str.split(":");
+				    if(person.getHandle().equals(strArray[0]))
+				    {
+				    		return true;
+				    }
+				}
+				    
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		return false;
 	}
