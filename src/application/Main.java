@@ -70,8 +70,10 @@ public class Main extends Application {
 		
 		//Create a group with the array list
 		Group group1 = new Group("CupOfJava", userlist1);
-		String test = group1.createGroupString();
-		group1.groupToTextfile();
+		boolean createfile = group1.groupToTextfile();
+		System.out.println(createfile);
+		
+		
 		
 			
 	}

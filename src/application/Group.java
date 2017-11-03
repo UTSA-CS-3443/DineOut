@@ -1,6 +1,7 @@
 package application;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -99,39 +100,59 @@ public class Group {
 	
 	// Create a text file title groupname.txt and save it into the group folder
 	//for future searches
-	public void groupToTextfile()
+	public boolean groupToTextfile()
 	{
 		String file = this.groupName + ".txt";
 		String pathToFile = "Groups/"+file;
 		
 		BufferedWriter bw = null;
 		FileWriter fw = null;
+		
+		if( this.groupFileExist() == false) {
 
-		try {
-
-			String content = this.createGroupString() +"\n" + this.listOfUsersString();
-					
-			fw = new FileWriter(pathToFile);
-			bw = new BufferedWriter(fw);
-			bw.write(content);
-
-		} catch (IOException e) {
-
-			e.printStackTrace();
-		}finally {
-				try {
-					if (bw != null)
-						bw.close();
-
-					if (fw != null)
-						fw.close();
-
-				} catch (IOException ex) {
-
-					ex.printStackTrace();
-				}
-		}
+			try {
 	
+				String content = this.createGroupString() +"\n" + this.listOfUsersString();
+						
+				fw = new FileWriter(pathToFile);
+				bw = new BufferedWriter(fw);
+				bw.write(content);
+	
+			} catch (IOException e) {
+	
+				e.printStackTrace();
+			}finally {
+					try {
+						if (bw != null)
+							bw.close();
+	
+						if (fw != null)
+							fw.close();
+	
+					} catch (IOException ex) {
+	
+						ex.printStackTrace();
+					}
+			}
+			return true;
+		}
+		else
+			return false;
+	
+	}
+	
+	
+	//Checks if group file exist
+	public boolean groupFileExist()
+	{
+		String file = this.groupName + ".txt";
+		String pathToFile = "Groups/"+file;
+		
+		File f = new File(pathToFile);
+		if(f.exists() && !f.isDirectory()) { 
+		    return true;
+		}
+		return false;
 	}
 }
 	
