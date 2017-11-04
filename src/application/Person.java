@@ -4,12 +4,15 @@ import java.util.ArrayList;
 
 public class Person {
 	private String handle;
-	private ArrayList<Integer> answersM;
+	private int[] answersM = new int[5];
 	
 	public Person(String handle)
 	{
 		this.handle = handle;
-		this.answersM = new ArrayList<Integer>();
+		for(int i = 0; i<=4; i++)
+		{
+			answersM[i] = 0;
+		}
 
 	}	
 
@@ -21,8 +24,12 @@ public class Person {
 		this.handle = handle;
 	}
 
-	public void setAnswersM(ArrayList<Integer> answersM) {
-		this.answersM = answersM;
+	public void setAnswersM(int[] answers) {
+		this.answersM = answers;
+	}
+	
+	public int getVote(int i) {
+		return this.answersM[i];
 	}
 	
 

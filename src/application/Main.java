@@ -73,9 +73,18 @@ public class Main extends Application {
 		//Create a group with the array list
 		Group group1 = new Group("CupOfJava", userlist1);
 		boolean createfile = group1.groupToTextfile();
-		System.out.println(createfile);
 		boolean check = group1.findUserInFile(user7);
-		System.out.println(check);
+		
+		int[] newVotes = new int[5];
+		newVotes[0] = 1;
+		newVotes[1] = 5;
+		newVotes[2] = 4;
+		newVotes[3] = 3;
+		newVotes[4] = 2;
+		
+		group1.vote(user1, newVotes);
+		
+
 		
 		
 		
