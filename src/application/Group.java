@@ -187,6 +187,7 @@ public class Group {
 				e.printStackTrace();
 			}
 		}
+		System.out.println("User: " + person.getHandle() + " DOES NOT EXIST");
 		return false;
 	}
 	
@@ -226,7 +227,6 @@ public class Group {
 				boolean successful = tempFile.renameTo(inputFile);
 				
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 
@@ -241,25 +241,22 @@ public class Group {
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
-			
 
 			
 			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-		}
+		} else
+			System.out.println("USER DOES NOT EXIST");
 		
 		
 	}
+	
+	//TODO: Create Group Object from txt file
+	
+	//TODO: If person array != 0 skip user
+	
+	//TODO: Send text when vote
+	
+	//TODO: When all users have voted send tweeet to all users thanking them
+	
 }
 	
