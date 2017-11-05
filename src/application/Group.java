@@ -17,7 +17,6 @@ public class Group {
 	private PersonArray listOfUsers;
 	private boolean finishedVoting;
 	private ArrayList<Restaurant> fiveChoices = new ArrayList<Restaurant>();
-	private static final RestaurantArray ALL_REST = new RestaurantArray();
 	private int selectedRest;
 	
 	//<<CONTSTUCTOR>>
@@ -27,7 +26,7 @@ public class Group {
 		this.listOfUsers = users;
 		this.finishedVoting = false;
 		this.selectedRest = -100;
-		fillRandomList();
+		this.fiveChoices.clear();
 		
 		
 	}
@@ -41,20 +40,22 @@ public class Group {
 
 	
 	//Select 5 random restaurants from the list of restaurants 
-	public void fillRandomList() {
+	public ArrayList<Restaurant> fillRandomList() {
 		Random rand = new Random();
-		int i = rand.nextInt(ALL_REST.getRestaurantList().size() - 1);
+		ArrayList<Restaurant> tempList = new ArrayList<Restaurant>();
+		int i = rand.nextInt(GlobalRestList.ALL_REST.getRestaurantList().size() - 1);
 		int count = 0;
+		
 		while (count < 5) {
-			Restaurant tempRest = ALL_REST.getRestaurantList().get(i);
+			Restaurant tempRest = GlobalRestList.ALL_REST.getRestaurantList().get(i);
 			if (tempRest.isSelected() == false) { // meaning its false
-				fiveChoices.add(tempRest);
-				ALL_REST.getRestaurantList().get(i).setSelected(true);
+				tempList.add(tempRest);
+				GlobalRestList.ALL_REST.getRestaurantList().get(i).setSelected(true);
 				count++;
 			}
-			i = rand.nextInt(ALL_REST.getRestaurantList().size() - 1);
+			i = rand.nextInt(GlobalRestList.ALL_REST.getRestaurantList().size() - 1);
 		}
-
+		return tempList;
 	}
 	
 	//Creates String the the groupname first then the 5 indices of the restaurant array
@@ -62,14 +63,14 @@ public class Group {
 	{
 		String groupString = "#"+ this.groupName + ":";
 		
-		for(int i =0; i<fiveChoices.size(); i++)
+		for(int i =0; i<this.fiveChoices.size(); i++)
 		{
-			Restaurant one = fiveChoices.get(i);
+			Restaurant one = this.fiveChoices.get(i);
 			String oneName = one.getName();
 			
-			for(int j = 0; j < ALL_REST.getRestaurantCount(); j++)
+			for(int j = 0; j < GlobalRestList.ALL_REST.getRestaurantCount(); j++)
 			{
-				Restaurant two = ALL_REST.getRestaurantList().get(j);
+				Restaurant two = GlobalRestList.ALL_REST.getRestaurantList().get(j);
 				String twoName = two.getName();
 				
 				if(oneName.equals(twoName))
@@ -279,14 +280,13 @@ public class Group {
 			    String[] strArray = str.split(":");
 			    if(lineNum == 1)
 			    {
-			    		RestaurantArray restaurants = ALL_REST;
 			    		for( int i = 1; i <= 5; i++) {
 			    			int j = Integer.parseInt(strArray[i]);
-			    			Restaurant newRest = restaurants.getRestaurantList().get(j);
+			    			Restaurant newRest = GlobalRestList.ALL_REST.getRestaurant(j);
 			    			choices.add(newRest);
 			    		}
 			    		lineNum = 2;
-			    		this.setFiveChoices(choices);
+			    		group1.setFiveChoices(choices);
 			    }
 			    else {
 			    		currentUser.setHandle(strArray[0]);

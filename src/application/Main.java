@@ -55,6 +55,7 @@ public class Main extends Application {
 		//launch(args);
 		//Create user array
 		PersonArray userlist1 = new PersonArray();
+		//Create 7 users
 		Person user1 = new Person("@BrandonLwowski");
 		Person user2 = new Person("@JHorwath18");
 		Person user3 = new Person("@albertjasso1");
@@ -62,7 +63,7 @@ public class Main extends Application {
 		Person user5 = new Person("@possumIsGoodEat");
 		Person user6 = new Person("@strongho1d");
 		Person user7 = new Person("@TEST");
-		
+		//Add 6 of them to the group
 		userlist1.addUser(user1);
 		userlist1.addUser(user2);
 		userlist1.addUser(user3);
@@ -70,10 +71,20 @@ public class Main extends Application {
 		userlist1.addUser(user5);
 		userlist1.addUser(user6);
 		
-		//Create a group with the array list
+		//Create a group with the array list and 6 users
 		Group group1 = new Group("CupOfJava", userlist1);
+		ArrayList<Restaurant> random5 = group1.fillRandomList();
+		group1.setFiveChoices(random5);
+		
+		//Check if group and user exist exist
 		boolean createfile = group1.groupToTextfile();
 		boolean check = group1.findUserInFile(user7);
+		
+		System.out.println("First Group Object");
+		for(int i = 0; i<= group1.getFiveChoices().size()-1; i++)
+		{
+			System.out.println(group1.getFiveChoices().get(i).getName());
+		}
 		
 		int[] newVotes = new int[5];
 		newVotes[0] = 1;
@@ -87,6 +98,11 @@ public class Main extends Application {
 		Group newGroup = group1.createGroupFromTxt();
 		newGroup.setGroupName("TEST");
 		createfile = newGroup.groupToTextfile();
+		System.out.print("\nGroup Object from txt file\n");
+		for(int j = 0; j<= newGroup.getFiveChoices().size()-1; j++)
+		{
+			System.out.println(newGroup.getFiveChoices().get(j).getName());
+		}
 		
 		
 		

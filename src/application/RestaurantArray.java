@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class RestaurantArray {
 	
-	private ArrayList<Restaurant> restaurantList = new ArrayList<Restaurant>();
+	public ArrayList<Restaurant> restaurantList = new ArrayList<Restaurant>();
 	protected int restaurantCount;
 	
 	
