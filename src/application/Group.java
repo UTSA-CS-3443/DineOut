@@ -25,13 +25,21 @@ public class Group {
 		this.groupName = name;
 		this.listOfUsers = users;
 		this.finishedVoting = false;
-		this.selectedRest = -100;
+		this.selectedRest = 0;
 		this.fiveChoices.clear();
 		
 		
 	}
 	
-	
+	public void sendInviteTweets() {
+
+		TwitterClass Vote = new TwitterClass(this);
+		for(int i = 0; i <= this.listOfUsers.getArraySize()-1; i++)
+		{
+			Vote.sendInviteTweet(this.listOfUsers.getHandle(i));
+		}
+		
+	}
 	
 	//Return the random 5 restaurants
 	public ArrayList<Restaurant> getFiveChoices() {
@@ -251,8 +259,9 @@ public class Group {
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
-
 			
+			TwitterClass Vote = new TwitterClass(this);
+			Vote.sendThanksTweet(personToSearch.getHandle());
 			
 		} else
 			System.out.println("USER DOES NOT EXIST");
@@ -319,20 +328,26 @@ public class Group {
 		group1.setGroupName("NULL");
 		return group1;
 	}
-	//TODO: Return the user index of group object 
-	
-	//TODO: If person array != 0 skip user
-	
-	//TODO: Send text when vote
-	
+
 	//TODO: When all users have voted send tweeet to all users thanking them
 	
 	public void setGroupName(String text){
 		this.groupName = text;
 	}
+	public String getGroupName(){
+		return this.groupName;
+	}
 	
 	public void setFiveChoices(ArrayList<Restaurant> choices) {
 		this.fiveChoices = choices;
+	}
+	
+	public int getSelectedRest() {
+		return this.selectedRest;
+	}
+	
+	public PersonArray getListOfUsers() {
+		return this.listOfUsers;
 	}
 	
 }

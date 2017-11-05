@@ -73,6 +73,7 @@ public class Main extends Application {
 		
 		//Create a group with the array list and 6 users
 		Group group1 = new Group("CupOfJava", userlist1);
+		group1.sendInviteTweets();
 		ArrayList<Restaurant> random5 = group1.fillRandomList();
 		group1.setFiveChoices(random5);
 		
