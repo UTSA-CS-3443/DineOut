@@ -111,41 +111,40 @@ public class Group {
 	{
 		String file = this.groupName + ".txt";
 		String pathToFile = "Groups/"+file;
+		File file1 = new File(pathToFile);
 		
 		BufferedWriter bw = null;
 		FileWriter fw = null;
 		
-		if( this.groupFileExist() == false) {
-
-			try {
-	
-				String content = this.createGroupString() +"\n" + this.listOfUsersString();
-						
-				fw = new FileWriter(pathToFile);
-				bw = new BufferedWriter(fw);
-				bw.write(content);
-	
-			} catch (IOException e) {
-	
-				e.printStackTrace();
-			}finally {
-					try {
-						if (bw != null)
-							bw.close();
-	
-						if (fw != null)
-							fw.close();
-	
-					} catch (IOException ex) {
-	
-						ex.printStackTrace();
-					}
-			}
-			return true;
+		if( this.groupFileExist() == true) {
+			file1.delete();
 		}
-		else
-			return false;
-	
+
+		try {
+
+			String content = this.createGroupString() +"\n" + this.listOfUsersString();
+					
+			fw = new FileWriter(pathToFile);
+			bw = new BufferedWriter(fw);
+			bw.write(content);
+
+		} catch (IOException e) {
+
+			e.printStackTrace();
+		}finally {
+				try {
+					if (bw != null)
+						bw.close();
+
+					if (fw != null)
+						fw.close();
+
+				} catch (IOException ex) {
+
+					ex.printStackTrace();
+				}
+		}
+			return true;
 	}
 	
 	
@@ -309,6 +308,7 @@ public class Group {
 		group1.setGroupName("NULL");
 		return group1;
 	}
+	//TODO: Return the user index of group object 
 	
 	//TODO: If person array != 0 skip user
 	

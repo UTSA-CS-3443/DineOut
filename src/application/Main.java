@@ -80,12 +80,6 @@ public class Main extends Application {
 		boolean createfile = group1.groupToTextfile();
 		boolean check = group1.findUserInFile(user7);
 		
-		System.out.println("First Group Object");
-		for(int i = 0; i<= group1.getFiveChoices().size()-1; i++)
-		{
-			System.out.println(group1.getFiveChoices().get(i).getName());
-		}
-		
 		int[] newVotes = new int[5];
 		newVotes[0] = 1;
 		newVotes[1] = 5;
@@ -93,16 +87,27 @@ public class Main extends Application {
 		newVotes[3] = 3;
 		newVotes[4] = 2;
 		
-		group1.vote(user1, newVotes);
 		
-		Group newGroup = group1.createGroupFromTxt();
-		newGroup.setGroupName("TEST");
-		createfile = newGroup.groupToTextfile();
-		System.out.print("\nGroup Object from txt file\n");
-		for(int j = 0; j<= newGroup.getFiveChoices().size()-1; j++)
-		{
-			System.out.println(newGroup.getFiveChoices().get(j).getName());
-		}
+		group1.vote(user1, newVotes);
+		group1.vote(user2, newVotes);
+		group1.vote(user3, newVotes);
+		
+		
+		group1 = group1.createGroupFromTxt();
+		createfile = group1.groupToTextfile();
+		
+		newVotes[0] = 3;
+		newVotes[1] = 4;
+		newVotes[2] = 5;
+		newVotes[3] = 1;
+		newVotes[4] = 2;
+		
+		group1.vote(user4, newVotes);
+		group1.vote(user5, newVotes);
+		group1.vote(user6, newVotes);
+		
+		group1 = group1.createGroupFromTxt();
+		createfile = group1.groupToTextfile();
 		
 		
 		
