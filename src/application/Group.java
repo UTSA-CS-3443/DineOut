@@ -33,6 +33,7 @@ public class Group {
 	}
 	
 	
+	
 	//Return the random 5 restaurants
 	public ArrayList<Restaurant> getFiveChoices() {
 		return fiveChoices;
@@ -41,18 +42,17 @@ public class Group {
 	
 	//Select 5 random restaurants from the list of restaurants 
 	public void fillRandomList() {
-		RestaurantArray restaurants = new RestaurantArray();
 		Random rand = new Random();
-		int i = rand.nextInt(restaurants.getRestaurantList().size() - 1);
+		int i = rand.nextInt(ALL_REST.getRestaurantList().size() - 1);
 		int count = 0;
 		while (count < 5) {
-			Restaurant tempRest = restaurants.getRestaurantList().get(i);
+			Restaurant tempRest = ALL_REST.getRestaurantList().get(i);
 			if (tempRest.isSelected() == false) { // meaning its false
 				fiveChoices.add(tempRest);
-				restaurants.getRestaurantList().get(i).setSelected(true);
+				ALL_REST.getRestaurantList().get(i).setSelected(true);
 				count++;
 			}
-			i = rand.nextInt(restaurants.getRestaurantList().size() - 1);
+			i = rand.nextInt(ALL_REST.getRestaurantList().size() - 1);
 		}
 
 	}
@@ -183,7 +183,6 @@ public class Group {
 				}
 				    
 			} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -251,12 +250,79 @@ public class Group {
 	}
 	
 	//TODO: Create Group Object from txt file
+	public Group createGroupFromTxt()
+	{
+		Group group1 = new Group(this.groupName, this.listOfUsers);
+		ArrayList<Restaurant> choices = new ArrayList<Restaurant>();
+		
+		//create scanner  and text file
+		Scanner SCANNER;
+		String txtFile = "Groups/" + this.groupName + ".txt";	
+		File file = new File(txtFile);
+		
+		//create dummy variables for person, int array, and person array
+		PersonArray usersFromText = new PersonArray();
+		Person currentUser = new Person("NULL");
+		int[] newAns = new int[5];
+		
+		
+		int lineNum = 1;
+		
+		//Scan through file and save users to group
+		try {
+			SCANNER = new Scanner(file);
+			
+			//Loop through text file
+			while(SCANNER.hasNextLine())
+			{
+			    String str = SCANNER.nextLine();
+			    String[] strArray = str.split(":");
+			    if(lineNum == 1)
+			    {
+			    		RestaurantArray restaurants = ALL_REST;
+			    		for( int i = 1; i <= 5; i++) {
+			    			int j = Integer.parseInt(strArray[i]);
+			    			Restaurant newRest = restaurants.getRestaurantList().get(j);
+			    			choices.add(newRest);
+			    		}
+			    		lineNum = 2;
+			    		this.setFiveChoices(choices);
+			    }
+			    else {
+			    		currentUser.setHandle(strArray[0]);
+				    	for( int i = 1; i <= 5; i++) {
+			    			int j = Integer.parseInt(strArray[i]);
+			    			newAns[i-1] = j;
+			    			
+				    	}
+				    	currentUser.setAnswersM(newAns);
+				    	usersFromText.addUser(currentUser);
+			    	
+			    }
+			    
+			}
+			return group1;
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		// Group did not exist
+		group1.setGroupName("NULL");
+		return group1;
+	}
 	
 	//TODO: If person array != 0 skip user
 	
 	//TODO: Send text when vote
 	
 	//TODO: When all users have voted send tweeet to all users thanking them
+	
+	public void setGroupName(String text){
+		this.groupName = text;
+	}
+	
+	public void setFiveChoices(ArrayList<Restaurant> choices) {
+		this.fiveChoices = choices;
+	}
 	
 }
 	

@@ -52,7 +52,7 @@ public class Main extends Application {
 	
 	
 	public static void main(String[] args){
-		launch(args);
+		//launch(args);
 		//Create user array
 		PersonArray userlist1 = new PersonArray();
 		Person user1 = new Person("@BrandonLwowski");
@@ -84,7 +84,9 @@ public class Main extends Application {
 		
 		group1.vote(user1, newVotes);
 		
-
+		Group newGroup = group1.createGroupFromTxt();
+		newGroup.setGroupName("TEST");
+		createfile = newGroup.groupToTextfile();
 		
 		
 		

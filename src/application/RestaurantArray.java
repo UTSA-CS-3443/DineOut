@@ -99,6 +99,9 @@ public class RestaurantArray {
 		return restaurantCount;
 	}
 	
+	public Restaurant getRestaurant(int i) {
+		return this.restaurantList.get(i);
+	}
 	
 
 }
