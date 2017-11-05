@@ -194,12 +194,23 @@ public class Group {
 	
 	
 	//Replaces the users string with there votes
-	public void vote(Person person, int[] newVotes) {
+	public void vote(String handle, int[] newVotes) {
 		String file = this.groupName + ".txt";
 		String pathToFile = "Groups/"+file;
+		Person personToSearch = new Person("NULL");
+		
+		
+		for(int index = 0; index<=this.listOfUsers.getArraySize()-1; index++) {
+			if(this.listOfUsers.getHandle(index).equals(handle)) {
+				personToSearch = this.listOfUsers.getUser(index);
+				break;
+			}
+		}
+		
+		
 		
 		//if user exist in file
-		if(this.findUserInFile(person))
+		if(this.findUserInFile(personToSearch))
 		{
 			
 			//Create files
@@ -212,7 +223,7 @@ public class Group {
 			try {
 				reader = new BufferedReader(new FileReader(inputFile));
 				BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
-				String lineToRemove = this.createUserString(person);
+				String lineToRemove = this.createUserString(personToSearch);
 				String currentLine;
 
 				while((currentLine = reader.readLine()) != null) {
@@ -230,12 +241,12 @@ public class Group {
 			}
 
 			//set the persons new votes
-			person.setAnswersM(newVotes);
+			personToSearch.setAnswersM(newVotes);
 			try(FileWriter fw = new FileWriter(pathToFile, true);
 				    BufferedWriter bw = new BufferedWriter(fw);
 				    PrintWriter out = new PrintWriter(bw))
 				{
-				    out.println(this.createUserString(person));
+				    out.println(this.createUserString(personToSearch));
 				    
 				} catch (IOException e) {
 					e.printStackTrace();

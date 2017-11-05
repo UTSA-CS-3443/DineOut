@@ -52,7 +52,7 @@ public class Main extends Application {
 	
 	
 	public static void main(String[] args){
-		//launch(args);
+		launch(args);
 		//Create user array
 		PersonArray userlist1 = new PersonArray();
 		//Create 7 users
@@ -88,9 +88,9 @@ public class Main extends Application {
 		newVotes[4] = 2;
 		
 		
-		group1.vote(user1, newVotes);
-		group1.vote(user2, newVotes);
-		group1.vote(user3, newVotes);
+		group1.vote("@BrandonLwowski", newVotes);
+		group1.vote("@JHorwath18", newVotes);
+		group1.vote("@albertjasso1", newVotes);
 		
 		
 		group1 = group1.createGroupFromTxt();
@@ -102,9 +102,9 @@ public class Main extends Application {
 		newVotes[3] = 1;
 		newVotes[4] = 2;
 		
-		group1.vote(user4, newVotes);
-		group1.vote(user5, newVotes);
-		group1.vote(user6, newVotes);
+		group1.vote("@CookiesKoo1aid", newVotes);
+		group1.vote("@possumIsGoodEat", newVotes);
+		group1.vote("@strongho1d", newVotes);
 		
 		group1 = group1.createGroupFromTxt();
 		createfile = group1.groupToTextfile();
