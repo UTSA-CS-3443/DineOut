@@ -92,7 +92,7 @@ public class Main extends Application {
 		group1.vote("@BrandonLwowski", newVotes);
 		group1.vote("@JHorwath18", newVotes);
 		group1.vote("@albertjasso1", newVotes);
-		
+		group1.sendAllUsersAns(group1.allUsersVoted());
 		
 		group1 = group1.createGroupFromTxt();
 		createfile = group1.groupToTextfile();
@@ -106,6 +106,7 @@ public class Main extends Application {
 		group1.vote("@CookiesKoo1aid", newVotes);
 		group1.vote("@possumIsGoodEat", newVotes);
 		group1.vote("@strongho1d", newVotes);
+		group1.sendAllUsersAns(group1.allUsersVoted());
 		
 		group1 = group1.createGroupFromTxt();
 		createfile = group1.groupToTextfile();

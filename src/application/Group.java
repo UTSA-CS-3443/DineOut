@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
+import twitter4j.Twitter;
+
 public class Group {
 	private String groupName;
 	private PersonArray listOfUsers;
@@ -329,6 +331,57 @@ public class Group {
 		return group1;
 	}
 
+	public boolean allUsersVoted()
+	{
+		Scanner SCANNER;
+		String txtFile = "Groups/" + this.groupName + ".txt";	
+		File file = new File(txtFile);
+		
+		//create dummy variables for person, int array, and person array
+		int lineNum = 1;
+		
+		//Scan through file and save users to group
+		try {
+			SCANNER = new Scanner(file);
+			
+			//Loop through text file
+			while(SCANNER.hasNextLine())
+			{
+			    String str = SCANNER.nextLine();
+			    String[] strArray = str.split(":");
+			    if(lineNum == 1)
+			    {
+			    		lineNum = 2;
+			    		continue;
+			    }
+			    else {
+				    	for( int i = 1; i <= 5; i++) {
+			    			int j = Integer.parseInt(strArray[i]);
+			    			if(j == 0)
+			    				return false;
+			    			
+				    	}
+			    }
+			    
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		return true;
+	}
+	
+	public void sendAllUsersAns(boolean send) {
+		if(send == true)
+		{
+			TwitterClass newSend = new TwitterClass(this);
+			for(int i = 0; i<= this.listOfUsers.getArraySize()-1; i++)
+			{
+				newSend.sendFinalAns(this.listOfUsers.getUser(i).getHandle());
+			}
+		}
+	}
+	
+	
 	//TODO: When all users have voted send tweeet to all users thanking them
 	
 	public void setGroupName(String text){
