@@ -9,7 +9,8 @@ import com.lynden.gmapsfx.javascript.object.MarkerOptions;
 
 public class RestaurantMapAttributes {
 	
-	private static Map<String, LatLong> locationMap = new HashMap<String, LatLong>();
+	public static Map<String, LatLong> locationMap = new HashMap<String, LatLong>();
+	public static Map<String, Marker> markerMap = new HashMap<String, Marker>();
 	
 	// Restaurant Locations
 	LatLong theBlockLocation = new LatLong(29.575883, -98.624715);
@@ -88,38 +89,65 @@ public class RestaurantMapAttributes {
 	Marker roadrunnerCafeMarker = new Marker(markerOptions23);
 	Marker rowdyCurbsideMarker = new Marker(markerOptions24);
 	
+	public RestaurantMapAttributes() {
+		fillMap();
+	}
+	
 	public void fillMap() {
-		locationMap.put("theblock", theBlockLocation);
-		locationMap.put("tacoPalenque", tacoPalenqueLocation);
-		locationMap.put("whiskeyCake", whiskeyCakeLocation);
-		locationMap.put("littleCaesars", littleCaesarsLocation);
-		locationMap.put("crazyCarls", crazyCarlsLocation);
-		locationMap.put("picnikinsPatio", picnikinsPatioLocation);
-		locationMap.put("einsteinBros", einsteinBrosLocation);
-		locationMap.put("greensToGo", greensToGoLocation);
-		locationMap.put("chikFilA", chikFilALocation);
-		locationMap.put("papaJohns", papaJohnsLocation);
+		locationMap.put("block", theBlockLocation);
+		locationMap.put("palenque", tacoPalenqueLocation);
+		locationMap.put("whiskey", whiskeyCakeLocation);
+		locationMap.put("caesars", littleCaesarsLocation);
+		locationMap.put("carls", crazyCarlsLocation);
+		locationMap.put("picnikins", picnikinsPatioLocation);
+		locationMap.put("einstein", einsteinBrosLocation);
+		locationMap.put("greens", greensToGoLocation);
+		locationMap.put("chik", chikFilALocation);
+		locationMap.put("papa", papaJohnsLocation);
 		locationMap.put("subway", subwayLocation);
 		locationMap.put("sushic", sushicLocation);
-		locationMap.put("steakNShake", steakNShakeLocation);
-		locationMap.put("smoothieKing", smoothieKingLocation);
-		locationMap.put("jplStarbucks", jplStarbucksLocation);
-		locationMap.put("hebUCSubway", hebUCSubwayLocation);
-		locationMap.put("ucStarbucks", ucStarbucksLocation);
-		locationMap.put("chilis", chilisLocation);
-		locationMap.put("pandaExpress", pandaExpressLocation);
-		locationMap.put("tacoTacoCafe", tacoTacoCafeLocation);
+		locationMap.put("steak", steakNShakeLocation);
+		locationMap.put("smoothie", smoothieKingLocation);
+		locationMap.put("jpl", jplStarbucksLocation);
+		locationMap.put("uC", hebUCSubwayLocation);
+		locationMap.put("starbucks", ucStarbucksLocation);
+		locationMap.put("chili", chilisLocation);
+		locationMap.put("panda", pandaExpressLocation);
+		locationMap.put("taco", tacoTacoCafeLocation);
 		locationMap.put("mooyah", mooyahLocation);
-		locationMap.put("roadrunnerCafe", roadrunnerCafeLocation);
-		locationMap.put("rowdyCurbside", rowdyCurbsideLocation);
+		locationMap.put("roadrunner", roadrunnerCafeLocation);
+		locationMap.put("rowdy", rowdyCurbsideLocation);
+		
+		markerMap.put("block", theBlockMarker);
+		markerMap.put("palenque", tacoPalenqueMarker);
+		markerMap.put("whiskey", whiskeyCakeMarker);
+		markerMap.put("caesars", littleCaesarsMarker);
+		markerMap.put("carls", crazyCarlsMarker);
+		markerMap.put("picnikins", picnikinsPatioMarker);
+		markerMap.put("einstein", einsteinBrosMarker);
+		markerMap.put("greens", greensToGoMarker);
+		markerMap.put("chik", chikFilAMarker);
+		markerMap.put("papa", papaJohnsMarker);
+		markerMap.put("subway", subwayMarker);
+		markerMap.put("sushic", sushicMarker);
+		markerMap.put("smootie", smoothieKingMarker);
+		markerMap.put("jpl", jplStarbucksMarker);
+		markerMap.put("uC", hebUCSubwayMarker);
+		markerMap.put("starbucks", ucStarbucksMarker);
+		markerMap.put("chili", chilisMarker);
+		markerMap.put("panda", pandaExpressMarker);
+		markerMap.put("taco", tacoTacoCafeMarker);
+		markerMap.put("mooyah", mooyahMarker);
+		markerMap.put("roadrunner", roadrunnerCafeMarker);
+		markerMap.put("rowdy", rowdyCurbsideMarker);
 	}
 	
 	public Map<String, LatLong> getLocationMap() {
 		return RestaurantMapAttributes.locationMap;
 	}
 	
-	public RestaurantMapAttributes() {
-		fillMap();
+	public Map<String, Marker> getMarkerMap(){
+		return RestaurantMapAttributes.markerMap;
 	}
 	
 }

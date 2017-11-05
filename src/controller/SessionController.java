@@ -173,6 +173,9 @@ public class SessionController implements Initializable{
 
 	@FXML
 	ComboBox<Integer> rankComboBox = new ComboBox<Integer>();
+	
+	Label testLabel = new Label("");
+	
 	// -----------------------------------------------------------------------------
 
 	/**
@@ -226,6 +229,8 @@ public class SessionController implements Initializable{
 			setCuisineType(fifthRestaurant.getCuisine());
 			setPrice(fifthRestaurant.getPrice());
 		}
+		
+		//testLabel.textProperty().bind(restaurantNameLabel.getText());
 	}
 
 	/**
@@ -287,6 +292,10 @@ public class SessionController implements Initializable{
 	}
 
 	// ---------------------------- Utility methods-----------------------
+	
+	public String getCurrentRestaurant() {
+		return this.restaurantNameLabel.getText();
+	}
 	
 	/**
 	 * Sets name of restaurant in display

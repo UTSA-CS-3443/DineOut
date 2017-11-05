@@ -1,5 +1,6 @@
 package controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
@@ -14,8 +15,12 @@ import com.lynden.gmapsfx.javascript.object.MapTypeIdEnum;
 import com.lynden.gmapsfx.javascript.object.Marker;
 import com.lynden.gmapsfx.javascript.object.MarkerOptions;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.layout.Pane;
+import model.RestaurantMapAttributes;
 import model.Session;
 
 public class MapController implements Initializable, MapComponentInitializedListener {
@@ -29,6 +34,13 @@ public class MapController implements Initializable, MapComponentInitializedList
 	
 	//Session 
 	private Session session = new Session();
+	
+	//SessionController
+	private SessionController sessionController = new SessionController();
+	
+	//LocationMap for markers / locations / etc..
+	//MapAttributes only works here for some reason.
+	//private RestaurantMapAttributes mapAttributes = new RestaurantMapAttributes();
 	
 	/**
 	 * Initializes map markers and sets the MapOptions
@@ -51,23 +63,58 @@ public class MapController implements Initializable, MapComponentInitializedList
 				.mapTypeControl(false);
 
 		map = mapView.createMap(mapOptions);
-		//map.addMarker(theBlockMarker);
-		//mapView.setCenterOnLatLong(theBlockLocation);
+		RestaurantMapAttributes mapAttributes = new RestaurantMapAttributes();
+		
+		//System.out.println(sessionController.getCurrentRestaurant());
+		//System.out.println(sessionController.restaurantNameLabel.getText());
+		
+		
+		
+		for(Map.Entry<String, LatLong> entry : RestaurantMapAttributes.locationMap.entrySet()) {
+			String key = (String) entry.getKey();
+			LatLong value = entry.getValue();
+			
+			
+			if(session.getFiveChoices().get(0).getName().toLowerCase().contains(key.toLowerCase())) {
+				mapView.setCenterOnLatLong(value);
+			}
+		}
+
 	}
 	
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		mapView.addMapInializedListener(this);
-		setInitialRestaurant();
+		
+		
+		FXMLLoader fxmlLoader = new FXMLLoader();
+		try {
+			Pane p = fxmlLoader.load(getClass().getResource("SessionInterface.fxml").openStream());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		SessionController sessionController = (SessionController) fxmlLoader.getController();
+		//System.out.println(sessionController.getCurrentRestaurant());
+		//setInitialRestaurant();
 	}
 	
 	/**
 	 * Sets up map for first restaurant
 	 */
 	public void setInitialRestaurant() {
-		String name = session.getFiveChoices().get(0).getName();
-		System.out.println(name);
+		
 	}
-
+	
+	public void changeCenterMap() {
+		for(Map.Entry<String, LatLong> entry : RestaurantMapAttributes.locationMap.entrySet()) {
+			String key = (String) entry.getKey();
+			LatLong value = entry.getValue();
+			
+			if(sessionController.getCurrentRestaurant().toLowerCase().contains(key.toLowerCase())) {
+				mapView.setCenterOnLatLong(value);
+			}
+		}
+	}
 }
