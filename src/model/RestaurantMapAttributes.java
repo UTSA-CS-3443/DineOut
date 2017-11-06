@@ -96,6 +96,7 @@ public class RestaurantMapAttributes {
 	public void fillMap() {
 		locationMap.put("The Block SA", theBlockLocation);
 		locationMap.put("Taco Palenque UTSA", tacoPalenqueLocation);
+		locationMap.put("Singapore Chinese & Indochina Restaurant", singaporeChineseIndochinaLocation);
 		locationMap.put("Whiskey Cake", whiskeyCakeLocation);
 		locationMap.put("Little Caesars Pizza", littleCaesarsLocation);
 		locationMap.put("Crazy Carl's Burger Truck", crazyCarlsLocation);
