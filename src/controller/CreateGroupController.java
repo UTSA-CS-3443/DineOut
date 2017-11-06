@@ -16,7 +16,7 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 import model.Person;
 
-public class LoginController {
+public class CreateGroupController {
 	
 	// will pass to screen via initialize() method
 	private static ArrayList<Person> users = new ArrayList<Person>();
@@ -103,6 +103,6 @@ public class LoginController {
     
 	public static ArrayList<Person> getUsers(){
 		return users;
-}
+	}
     
 }
