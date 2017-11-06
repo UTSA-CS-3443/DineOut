@@ -58,7 +58,7 @@ public class MapController implements Initializable, MapComponentInitializedList
 				.streetViewControl(false)
 				.zoomControl(false)
 				.scrollWheel(true)
-				.zoom(18)
+				.zoom(19)
 				.fullscreenControl(false)
 				.mapTypeControl(false);
 		map = mapView.createMap(mapOptions);
@@ -101,7 +101,7 @@ public class MapController implements Initializable, MapComponentInitializedList
 			String key = (String) entry.getKey();
 			Marker value = entry.getValue();
 			
-			if(currentRestaurant.toLowerCase().contains(key.toLowerCase())) {
+			if(currentRestaurant.toLowerCase().equals(key.toLowerCase())) {
 				map.addMarker(value);
 			}
 		}
@@ -112,7 +112,7 @@ public class MapController implements Initializable, MapComponentInitializedList
 			String key = (String) entry.getKey();
 			LatLong value = entry.getValue();
 			
-			if(currentRestaurant.toLowerCase().contains(key.toLowerCase())) {
+			if(currentRestaurant.toLowerCase().equals(key.toLowerCase())) {
 				mapView.setCenterOnLatLong(value);
 			}
 		}

@@ -291,6 +291,7 @@ public class SessionController implements Initializable{
 				}
 			});
 			
+			subStage.setResizable(false);
 	    	subStage.setScene(scene);
 	    	subStage.setTitle("Map");
 	    	subStage.show();
