@@ -56,14 +56,32 @@ public class LoginController {
 
     @FXML
     private Button doneWithScene;
-
-	public static ArrayList<Person> getUsers(){
-    		return users;
-    }
     
     @FXML
     public void done(ActionEvent e) {
 	    	try {  		
+	    		
+	    		Person a = new Person(userNameTextField0.getText());
+	    		Person b = new Person(userNameTextField1.getText());
+	    		Person c = new Person(userNameTextField2.getText());
+	    		Person d = new Person(userNameTextField3.getText());
+	    		Person f = new Person(userNameTextField4.getText());
+	    		Person g = new Person(userNameTextField5.getText());
+	    		Person h = new Person(userNameTextField6.getText());
+	    		Person i = new Person(userNameTextField7.getText());
+	    		Person j = new Person(userNameTextField8.getText());
+	    		Person k = new Person(userNameTextField9.getText());
+	    		users.add(a);
+	    		users.add(b);
+	    		users.add(c);
+	    		users.add(d);
+	    		users.add(f);
+	    		users.add(g);
+	    		users.add(h);
+	    		users.add(i);
+	    		users.add(j);
+	    		users.add(k);
+	    		
 	        	Parent loadSession = FXMLLoader.load(getClass().getResource("../view/SessionInterface.fxml"));
 	        	Scene sessionScene = new Scene(loadSession);
 	        	Stage primaryStage = (Stage) ((Node) e.getSource()).getScene().getWindow();
@@ -80,5 +98,9 @@ public class LoginController {
 	    		e1.printStackTrace();
 	    	}
     }
+    
+	public static ArrayList<Person> getUsers(){
+		return users;
+}
     
 }
