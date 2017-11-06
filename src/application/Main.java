@@ -1,5 +1,8 @@
 package application;
 
+import java.io.IOException;
+
+import controller.SessionController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -10,6 +13,7 @@ import model.Session;
 import model.TwitterClass;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 
 
 public class Main extends Application {
@@ -42,9 +46,11 @@ public class Main extends Application {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		
 	}	
+	
+	//public SessionController getSessionController() {
+	//	return sessionController;
+	//}
 	
 	
 	public static void main(String[] args){

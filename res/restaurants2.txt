@@ -18,7 +18,7 @@ H-E-B UC Subway,1,3.4,Fast Food,http://www.subway.com,University Center
 UC Starbucks,2,3.5,Coffee,http://www.starbucks.com,University Center
 Chili's,2,3.5,Sit Down,http://www.chilis.com,University Center
 Panda Express,1,3.6,Sit Down,http://www.pandaexpress.com,University Center
-Taco Taco Café,1,3.2,Sit Down,https://www.facebook.com/pg/TacoTacoCafe/menu/?p_ref=pa,University Center
+Taco Taco Cafe,1,3.2,Sit Down,https://www.facebook.com/pg/TacoTacoCafe/menu/?p_ref=pa,University Center
 Mooyah,2,2,Sit Down,http://www.mooyah.com,University Center
-Roadrunner Café Rfoc,1,3.5,Sit Down,http://utsa.campusdish.com/Commerce/Catalog/Menus.aspx?LocationId=2935,Road Runner Café
+Roadrunner Cafe,1,3.5,Sit Down,http://utsa.campusdish.com/Commerce/Catalog/Menus.aspx?LocationId=2935,Road Runner Café
 Rowdy Curbside Food Truck,1,3,Truck,http://utsa.campusdish.com/Locations/Rowdy-Curbside-Mobile-Food-Truck.aspx,<Rotates>

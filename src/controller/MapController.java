@@ -19,6 +19,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.layout.Pane;
 import model.RestaurantMapAttributes;
 import model.Session;
@@ -36,11 +37,10 @@ public class MapController implements Initializable, MapComponentInitializedList
 	private Session session = new Session();
 	
 	//SessionController
-	private SessionController sessionController = new SessionController();
+	//private SessionController sessionController = new SessionController();
 	
-	//LocationMap for markers / locations / etc..
-	//MapAttributes only works here for some reason.
-	//private RestaurantMapAttributes mapAttributes = new RestaurantMapAttributes();
+	//String holds current restaurant, passed from SessionController
+	private String currentRestaurant;
 	
 	/**
 	 * Initializes map markers and sets the MapOptions
@@ -61,50 +61,50 @@ public class MapController implements Initializable, MapComponentInitializedList
 				.zoom(18)
 				.fullscreenControl(false)
 				.mapTypeControl(false);
-
 		map = mapView.createMap(mapOptions);
 		RestaurantMapAttributes mapAttributes = new RestaurantMapAttributes();
-		
-		//System.out.println(sessionController.getCurrentRestaurant());
-		//System.out.println(sessionController.restaurantNameLabel.getText());
-		
-		
-		
-		for(Map.Entry<String, LatLong> entry : RestaurantMapAttributes.locationMap.entrySet()) {
-			String key = (String) entry.getKey();
-			LatLong value = entry.getValue();
-			
-			
-			if(session.getFiveChoices().get(0).getName().toLowerCase().contains(key.toLowerCase())) {
-				mapView.setCenterOnLatLong(value);
-			}
-		}
-
+		changeMarker();
+		changeCenterMap();
+	}
+	
+	/**
+	 * Loads restaurant name from SessionController on new stage creation
+	 * @param text The name of a restaurant
+	 */
+	public void loadCurrentRestaurant(String text) {
+		currentRestaurant = text;
+	}
+	
+	/**
+	 * Returns current restaurant name being displayed on SessionInterface
+	 * @return Current restaurant name
+	 */
+	public String getCurrentRestaurant() {
+		return currentRestaurant;
 	}
 	
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		mapView.addMapInializedListener(this);
-		
-		
-		FXMLLoader fxmlLoader = new FXMLLoader();
-		try {
-			Pane p = fxmlLoader.load(getClass().getResource("SessionInterface.fxml").openStream());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		SessionController sessionController = (SessionController) fxmlLoader.getController();
-		//System.out.println(sessionController.getCurrentRestaurant());
+		//System.out.println(currentRestaurant);
 		//setInitialRestaurant();
 	}
 	
-	/**
-	 * Sets up map for first restaurant
-	 */
-	public void setInitialRestaurant() {
-		
+	public GoogleMap getMap() {
+		return map;
+	}
+	
+	
+	public void changeMarker() {
+		for(Map.Entry<String, Marker> entry : RestaurantMapAttributes.markerMap.entrySet()) {
+			String key = (String) entry.getKey();
+			Marker value = entry.getValue();
+			
+			if(currentRestaurant.toLowerCase().contains(key.toLowerCase())) {
+				map.addMarker(value);
+			}
+		}
 	}
 	
 	public void changeCenterMap() {
@@ -112,7 +112,7 @@ public class MapController implements Initializable, MapComponentInitializedList
 			String key = (String) entry.getKey();
 			LatLong value = entry.getValue();
 			
-			if(sessionController.getCurrentRestaurant().toLowerCase().contains(key.toLowerCase())) {
+			if(currentRestaurant.toLowerCase().contains(key.toLowerCase())) {
 				mapView.setCenterOnLatLong(value);
 			}
 		}

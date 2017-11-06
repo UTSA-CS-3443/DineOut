@@ -130,9 +130,9 @@ public class RestaurantMapAttributes {
 		markerMap.put("papa", papaJohnsMarker);
 		markerMap.put("subway", subwayMarker);
 		markerMap.put("sushic", sushicMarker);
-		markerMap.put("smootie", smoothieKingMarker);
+		markerMap.put("smoothie", smoothieKingMarker);
 		markerMap.put("jpl", jplStarbucksMarker);
-		markerMap.put("uC", hebUCSubwayMarker);
+		markerMap.put("subway", hebUCSubwayMarker);
 		markerMap.put("starbucks", ucStarbucksMarker);
 		markerMap.put("chili", chilisMarker);
 		markerMap.put("panda", pandaExpressMarker);

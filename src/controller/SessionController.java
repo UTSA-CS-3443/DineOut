@@ -8,33 +8,20 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-import com.lynden.gmapsfx.GoogleMapView;
-import com.lynden.gmapsfx.MapComponentInitializedListener;
-import com.lynden.gmapsfx.javascript.object.GoogleMap;
-import com.lynden.gmapsfx.javascript.object.LatLong;
-import com.lynden.gmapsfx.javascript.object.MapOptions;
-import com.lynden.gmapsfx.javascript.object.MapTypeIdEnum;
-import com.lynden.gmapsfx.javascript.object.Marker;
-import com.lynden.gmapsfx.javascript.object.MarkerOptions;
-
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Rectangle2D;
-import javafx.scene.Group;
-import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 import model.Restaurant;
 import model.Session;
-import view.MapViewStage;
 
 public class SessionController implements Initializable{
 
@@ -288,7 +275,28 @@ public class SessionController implements Initializable{
 	 * Opens new scene with google maps view
 	 */
 	public void toMapView(ActionEvent e) {
-		new MapViewStage();
+		//new MapViewStage();
+		try {
+			Stage subStage = new Stage();
+			FXMLLoader loader = new FXMLLoader();
+			Pane root = loader.load(getClass().getResource("../view/MapView.fxml").openStream());
+			MapController mapController = (MapController)loader.getController();
+			mapController.loadCurrentRestaurant(getCurrentRestaurant());
+			Scene scene = new Scene(root);
+			
+			subStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+				@Override
+				public void handle(WindowEvent arg0) {
+					mapController.getMap().clearMarkers();
+				}
+			});
+			
+	    	subStage.setScene(scene);
+	    	subStage.setTitle("Map");
+	    	subStage.show();
+			}catch (IOException e1) {
+	    		e1.printStackTrace();
+	    	}
 	}
 
 	// ---------------------------- Utility methods-----------------------
@@ -305,7 +313,7 @@ public class SessionController implements Initializable{
 	public void setRestaurantName(String name) {
 		this.restaurantNameLabel.setText(name);
 	}
-
+	
 	/**
 	 * Sets cuisine type in display
 	 * 
