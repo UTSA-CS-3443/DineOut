@@ -6,29 +6,38 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="275.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+<AnchorPane prefHeight="508.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
    <children>
-      <AnchorPane prefHeight="283.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane layoutY="16.0" prefHeight="486.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label layoutX="88.0" layoutY="22.0" text="DineOut">
                <font>
                   <Font size="32.0" />
                </font>
             </Label>
-            <Label layoutX="67.0" layoutY="86.0" text="Create Username">
+            <Label layoutX="67.0" layoutY="76.0" text="Name your group">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <TextField fx:id="userNameTextField" layoutX="67.0" layoutY="111.0" />
-            <Label layoutX="67.0" layoutY="148.0" text="Twitter Handle">
+            <TextField fx:id="GroupNameTextField" layoutX="67.0" layoutY="98.0" />
+            <Label layoutX="67.0" layoutY="132.0" text="Add your friends">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <TextField fx:id="twitterHandleTextField" layoutX="66.0" layoutY="172.0" />
-            <Button fx:id="addUserButton" layoutX="88.0" layoutY="208.0" mnemonicParsing="false" onAction="#addPerson" text="Add" />
-            <Button fx:id="doneWithScene" layoutX="149.0" layoutY="208.0" mnemonicParsing="false" onAction="#done" text="Done" />
+            <TextField fx:id="userNameTextField" layoutX="67.0" layoutY="156.0" />
+            <TextField fx:id="userNameTextField1" layoutX="67.0" layoutY="187.0" />
+            <TextField fx:id="userNameTextField2" layoutX="67.0" layoutY="218.0" />
+            <TextField fx:id="userNameTextField3" layoutX="67.0" layoutY="249.0" />
+            <TextField fx:id="userNameTextField4" layoutX="67.0" layoutY="280.0" />
+            <TextField fx:id="userNameTextField5" layoutX="67.0" layoutY="311.0" />
+            <TextField fx:id="userNameTextField6" layoutX="67.0" layoutY="342.0" />
+            <TextField fx:id="userNameTextField7" layoutX="67.0" layoutY="373.0" />
+            <TextField fx:id="userNameTextField8" layoutX="67.0" layoutY="404.0" />
+            <TextField fx:id="userNameTextField9" layoutX="67.0" layoutY="435.0" />
+            <Button fx:id="doneWithScene" layoutX="150.0" layoutY="467.0" mnemonicParsing="false" onAction="#done" text="Done" />
+            <Button fx:id="createListButton" layoutX="85.0" layoutY="467.0" mnemonicParsing="false" text="Create" />
          </children>
       </AnchorPane>
    </children>

@@ -22,24 +22,40 @@ public class LoginController {
 	private static ArrayList<Person> users = new ArrayList<Person>();
 	
     @FXML
-    private TextField userNameTextField;
+    private TextField GroupNameTextField;
 
     @FXML
-    private TextField twitterHandleTextField;
+    private TextField userNameTextField0;
 
     @FXML
-    private Button addUserButton;
+    private TextField userNameTextField1;
+
+    @FXML
+    private TextField userNameTextField2;
+
+    @FXML
+    private TextField userNameTextField3;
+
+    @FXML
+    private TextField userNameTextField4;
+
+    @FXML
+    private TextField userNameTextField5;
+
+    @FXML
+    private TextField userNameTextField6;
+
+    @FXML
+    private TextField userNameTextField7;
+
+    @FXML
+    private TextField userNameTextField8;
+
+    @FXML
+    private TextField userNameTextField9;
 
     @FXML
     private Button doneWithScene;
-
-    @FXML
-    public void addPerson(ActionEvent e) {
-    		Person p = new Person(twitterHandleTextField.getText());
-    		users.add(p);
-    		userNameTextField.setText("");
-    		twitterHandleTextField.setText("");
-    }
 
 	public static ArrayList<Person> getUsers(){
     		return users;
@@ -47,7 +63,7 @@ public class LoginController {
     
     @FXML
     public void done(ActionEvent e) {
-	    	try {
+	    	try {  		
 	        	Parent loadSession = FXMLLoader.load(getClass().getResource("../view/SessionInterface.fxml"));
 	        	Scene sessionScene = new Scene(loadSession);
 	        	Stage primaryStage = (Stage) ((Node) e.getSource()).getScene().getWindow();
