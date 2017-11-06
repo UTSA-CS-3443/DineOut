@@ -60,7 +60,8 @@ public class LoginController {
     @FXML
     public void done(ActionEvent e) {
 	    	try {  		
-	    		
+	    		//hardcoding
+	    		//implement to save this info to server
 	    		Person a = new Person(userNameTextField0.getText());
 	    		Person b = new Person(userNameTextField1.getText());
 	    		Person c = new Person(userNameTextField2.getText());
@@ -82,6 +83,7 @@ public class LoginController {
 	    		users.add(j);
 	    		users.add(k);
 	    		
+	    		//-------------- changing scene
 	        	Parent loadSession = FXMLLoader.load(getClass().getResource("../view/SessionInterface.fxml"));
 	        	Scene sessionScene = new Scene(loadSession);
 	        	Stage primaryStage = (Stage) ((Node) e.getSource()).getScene().getWindow();

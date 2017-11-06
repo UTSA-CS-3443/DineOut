@@ -17,7 +17,7 @@ public class CreateSessionLoginController {
     @FXML
     public void create(ActionEvent e) {
 	    	try {
-	        	Parent loadSession = FXMLLoader.load(getClass().getResource("../view/LoginInterface.fxml"));
+	        	Parent loadSession = FXMLLoader.load(getClass().getResource("../view/CreateGroupInterface.fxml"));
 	        	Scene sessionScene = new Scene(loadSession);
 	        	Stage primaryStage = (Stage) ((Node) e.getSource()).getScene().getWindow();
 	        	
