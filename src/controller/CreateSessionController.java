@@ -25,35 +25,35 @@ public class CreateSessionController {
     private TextField groupNameTextField;
 
     @FXML
-    private TextField userNameTextField0;
-
+    private TextField twitterHandleTextField0;
+    
     @FXML
-    private TextField userNameTextField1;
-
+    private TextField twitterHandleTextField1;
+    
     @FXML
-    private TextField userNameTextField2;
-
+    private TextField twitterHandleTextField2;
+    
     @FXML
-    private TextField userNameTextField3;
-
+    private TextField twitterHandleTextField3;
+    
     @FXML
-    private TextField userNameTextField4;
-
+    private TextField twitterHandleTextField4;
+    
     @FXML
-    private TextField userNameTextField5;
-
+    private TextField twitterHandleTextField5;
+    
     @FXML
-    private TextField userNameTextField6;
-
+    private TextField twitterHandleTextField6;
+    
     @FXML
-    private TextField userNameTextField7;
-
+    private TextField twitterHandleTextField7;
+    
     @FXML
-    private TextField userNameTextField8;
-
+    private TextField twitterHandleTextField8;
+    
     @FXML
-    private TextField userNameTextField9;
-
+    private TextField twitterHandleTextField9;
+    
     @FXML
     private Button doneWithScene;
     
@@ -62,16 +62,16 @@ public class CreateSessionController {
 	    	try {  		
 	    		//hardcoding
 	    		//implement to save this info to server along with groupNameTextField
-	    		Person a = new Person(userNameTextField0.getText());
-	    		Person b = new Person(userNameTextField1.getText());
-	    		Person c = new Person(userNameTextField2.getText());
-	    		Person d = new Person(userNameTextField3.getText());
-	    		Person f = new Person(userNameTextField4.getText());
-	    		Person g = new Person(userNameTextField5.getText());
-	    		Person h = new Person(userNameTextField6.getText());
-	    		Person i = new Person(userNameTextField7.getText());
-	    		Person j = new Person(userNameTextField8.getText());
-	    		Person k = new Person(userNameTextField9.getText());
+	    		Person a = new Person(twitterHandleTextField0.getText());
+	    		Person b = new Person(twitterHandleTextField1.getText());
+	    		Person c = new Person(twitterHandleTextField2.getText());
+	    		Person d = new Person(twitterHandleTextField3.getText());
+	    		Person f = new Person(twitterHandleTextField4.getText());
+	    		Person g = new Person(twitterHandleTextField5.getText());
+	    		Person h = new Person(twitterHandleTextField6.getText());
+	    		Person i = new Person(twitterHandleTextField7.getText());
+	    		Person j = new Person(twitterHandleTextField8.getText());
+	    		Person k = new Person(twitterHandleTextField9.getText());
 	    		users.add(a);
 	    		users.add(b);
 	    		users.add(c);
@@ -82,6 +82,16 @@ public class CreateSessionController {
 	    		users.add(i);
 	    		users.add(j);
 	    		users.add(k);
+	    		
+	    		//check users entered have @ handle
+/*	    		for(int s = 0; s < users.size(); s++) {
+	    			if(users.get(s).getHandle().isEmpty() || users.get(s).getHandle().contains("@")) {
+	    				
+	    			}else {
+	    				System.out.println("needs @symbol");
+	    			}
+	    			
+	    		}*/
 	    		
 	    		//-------------- changing scene
 	        	Parent loadSession = FXMLLoader.load(getClass().getResource("../view/SessionInterface.fxml"));

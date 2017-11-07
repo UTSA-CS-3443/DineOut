@@ -26,16 +26,16 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <TextField fx:id="userNameTextField0" layoutX="67.0" layoutY="156.0" />
-            <TextField fx:id="userNameTextField1" layoutX="67.0" layoutY="187.0" />
-            <TextField fx:id="userNameTextField2" layoutX="67.0" layoutY="218.0" />
-            <TextField fx:id="userNameTextField3" layoutX="67.0" layoutY="249.0" />
-            <TextField fx:id="userNameTextField4" layoutX="67.0" layoutY="280.0" />
-            <TextField fx:id="userNameTextField5" layoutX="67.0" layoutY="311.0" />
-            <TextField fx:id="userNameTextField6" layoutX="67.0" layoutY="342.0" />
-            <TextField fx:id="userNameTextField7" layoutX="67.0" layoutY="373.0" />
-            <TextField fx:id="userNameTextField8" layoutX="67.0" layoutY="404.0" />
-            <TextField fx:id="userNameTextField9" layoutX="67.0" layoutY="435.0" />
+            <TextField fx:id="twitterHandleTextField0" layoutX="67.0" layoutY="156.0" />
+            <TextField fx:id="twitterHandleTextField1" layoutX="67.0" layoutY="187.0" />
+            <TextField fx:id="twitterHandleTextField2" layoutX="67.0" layoutY="218.0" />
+            <TextField fx:id="twitterHandleTextField3" layoutX="67.0" layoutY="249.0" />
+            <TextField fx:id="twitterHandleTextField4" layoutX="67.0" layoutY="280.0" />
+            <TextField fx:id="twitterHandleTextField5" layoutX="67.0" layoutY="311.0" />
+            <TextField fx:id="twitterHandleTextField6" layoutX="67.0" layoutY="342.0" />
+            <TextField fx:id="twitterHandleTextField7" layoutX="67.0" layoutY="373.0" />
+            <TextField fx:id="twitterHandleTextField8" layoutX="67.0" layoutY="404.0" />
+            <TextField fx:id="twitterHandleTextField9" layoutX="67.0" layoutY="435.0" />
             <Button fx:id="doneWithScene" layoutX="124.0" layoutY="467.0" mnemonicParsing="false" onAction="#done" text="Done" />
          </children>
       </AnchorPane>
