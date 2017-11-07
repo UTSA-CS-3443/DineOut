@@ -1,10 +1,13 @@
 package application;
-
 import java.util.ArrayList;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
+import model.Person;
+import model.PersonArray;
+import model.Restaurant;
+import model.Session;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 
@@ -21,8 +24,6 @@ public class Main extends Application {
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("DineOut");
 		this.primaryStage.setResizable(false);
-		
-		// calling initLayout() to configure the rootLayout within the scene graph
 		initLayout();
 		
 	}
@@ -30,25 +31,22 @@ public class Main extends Application {
 	
 	public void initLayout() {
 		try {
-			// creating FXMLLoader to pass in .fxml file
 			FXMLLoader loader = new FXMLLoader();
-			// getting .fxml resource
-			loader.setLocation(Main.class.getResource("LoginInterface.fxml"));
-			// loading the .fxml file into the rootLayout
+			loader.setLocation(Main.class.getResource("../view/CreateSessionOrLoginInterface.fxml"));
 			rootLayout = loader.load();
-			// Creating scene with the base as rootLayout (Parent of the scene graph)
 			Scene scene = new Scene( rootLayout );
-			// Appending .css style sheet to scene
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());			
-			// Setting scene for primaryStage with newly created scene
 			primaryStage.setScene(scene);
-			// "Raising the curtains" - allowing primaryStage to show the scene
 			primaryStage.show();
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}	
+	
+	//public SessionController getSessionController() {
+	//	return sessionController;
+	//}
 	
 	
 	public static void main(String[] args){
@@ -93,6 +91,15 @@ public class Main extends Application {
 		group1.vote("@JHorwath18", newVotes);
 		group1.vote("@albertjasso1", newVotes);
 		group1.sendAllUsersAns(group1.allUsersVoted());
+
+		PersonArray userlist = new PersonArray();
+		Restaurant selected = session.getFiveChoices().get(1);
+		
+
+		Person current = new Person("@BrandonLwowski");
+		Person current2 = new Person("@JHorwath18");
+		userlist.addUser(current);
+		userlist.addUser(current2);
 		
 		group1 = group1.createGroupFromTxt();
 		createfile = group1.groupToTextfile();

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CreateSessionOrLoginController">
+   <children>
+      <AnchorPane prefHeight="283.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="88.0" layoutY="22.0" text="DineOut">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Label>
+            <Button fx:id="createButton" layoutX="95.0" layoutY="104.0" mnemonicParsing="false" onAction="#create" text="Create Session" />
+            <Button fx:id="logInButton" layoutX="122.0" layoutY="160.0" mnemonicParsing="false" onAction="#login" text="Log In" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
