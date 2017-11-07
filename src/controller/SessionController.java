@@ -361,6 +361,8 @@ public class SessionController implements Initializable{
 	 * respectfully
 	 */
 	public void addUsers() {
+		//further implementation needs to be done to pull the users from the server and display them
+		
 		ArrayList<Label> userLabels = new ArrayList<Label>();
 		userLabels.add(user1Label);
 		userLabels.add(user2Label);

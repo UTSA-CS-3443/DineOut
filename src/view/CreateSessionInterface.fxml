@@ -10,7 +10,7 @@
    <children>
       <AnchorPane layoutY="16.0" prefHeight="486.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label layoutX="88.0" layoutY="22.0" text="DineOut">
+            <Label layoutX="87.0" layoutY="22.0" text="DineOut">
                <font>
                   <Font size="32.0" />
                </font>

@@ -56,6 +56,14 @@ public class LoginToSessionController {
 	    		
 	    	} catch (IOException e1) {
 	    		e1.printStackTrace();
-	    	}
+	    	} catch (StringIndexOutOfBoundsException e1) {
+	    		System.out.println("you didnt enter a handle");
+	    	} catch (IndexOutOfBoundsException e1) {
+		    	e1.printStackTrace();
+	    	} 
+    			
+	    	
     }
+    		
+    
 }
