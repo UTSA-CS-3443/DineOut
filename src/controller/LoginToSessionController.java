@@ -17,8 +17,11 @@ import javafx.stage.Stage;
 public class LoginToSessionController {
 
     @FXML
+    private TextField groupNameTextField;
+
+    @FXML
     private TextField twitterHandle;
-	
+
     @FXML
     private Button loginButton;
     
