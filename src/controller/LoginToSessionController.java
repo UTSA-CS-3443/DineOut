@@ -9,7 +9,9 @@ import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
@@ -19,10 +21,24 @@ public class LoginToSessionController {
     private TextField twitterHandle;
 	
     @FXML
-    public void done(ActionEvent e) {
+    private Button loginButton;
+    
+    @FXML
+    public void login(ActionEvent e) {
 	    	try {
 	    		//implement
 	    		//retrieve text in twitterHandle to look up in the server 
+	    		//error checking for @ sign
+	    		if(twitterHandle.getText().charAt(0) != '@') {
+	    			Stage subStage = new Stage();
+	    			FXMLLoader loader = new FXMLLoader();
+	    			Pane root = loader.load(getClass().getResource("../view/PopUpError.fxml").openStream());
+	    			Scene scene = new Scene(root);
+	    			subStage.setResizable(false);
+	    			subStage.setScene(scene);
+	    			subStage.setTitle("Error Error");
+	    			subStage.show();
+	    		}else {
 	    		
 	        	Parent loadSession = FXMLLoader.load(getClass().getResource("../view/SessionInterface.fxml"));
 	        	Scene sessionScene = new Scene(loadSession);
@@ -36,6 +52,8 @@ public class LoginToSessionController {
 	        	
 	        	primaryStage.setScene(sessionScene);
 	        	primaryStage.show();
+	    		}
+	    		
 	    	} catch (IOException e1) {
 	    		e1.printStackTrace();
 	    	}

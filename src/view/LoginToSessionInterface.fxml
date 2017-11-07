@@ -18,7 +18,7 @@
             <Label layoutX="44.0" layoutY="86.0" text="Log in by using your twitter handle" />
             <Label layoutX="72.0" layoutY="103.0" text="dont forget the @ symbol" />
             <TextField fx:id="twitterHandle" layoutX="67.0" layoutY="128.0" />
-            <Button layoutX="120.0" layoutY="164.0" mnemonicParsing="false" onAction="#done" text="log in" />
+            <Button fx:id="loginButton" layoutX="120.0" layoutY="164.0" mnemonicParsing="false" onAction="#login" text="log in" />
          </children>
       </AnchorPane>
    </children>
