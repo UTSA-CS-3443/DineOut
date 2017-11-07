@@ -48,26 +48,6 @@ public class Group {
 		return fiveChoices;
 	}
 
-	/*
-	//Select 5 random restaurants from the list of restaurants 
-	public ArrayList<Restaurant> fillRandomList() {
-		Random rand = new Random();
-		ArrayList<Restaurant> tempList = new ArrayList<Restaurant>();
-		int i = rand.nextInt(GlobalRestList.ALL_REST.getRestaurantList().size() - 1);
-		int count = 0;
-		
-		while (count < 5) {
-			Restaurant tempRest = GlobalRestList.ALL_REST.getRestaurantList().get(i);
-			if (tempRest.isSelected() == false) { // meaning its false
-				tempList.add(tempRest);
-				GlobalRestList.ALL_REST.getRestaurantList().get(i).setSelected(true);
-				count++;
-			}
-			i = rand.nextInt(GlobalRestList.ALL_REST.getRestaurantList().size() - 1);
-		}
-		return tempList;
-	}
-	*/
 	
 	//Creates String the the groupname first then the 5 indices of the restaurant array
 	public String createGroupString()
@@ -192,7 +172,7 @@ public class Group {
 				    		return true;
 				    }
 				}
-				    
+				 SCANNER.close();   
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
 			}
@@ -265,6 +245,7 @@ public class Group {
 			
 			TwitterClass Vote = new TwitterClass(this);
 			Vote.sendThanksTweet(personToSearch.getHandle());
+		
 			
 		} else
 			System.out.println("USER DOES NOT EXIST");
@@ -323,6 +304,7 @@ public class Group {
 			    }
 			    
 			}
+			SCANNER.close();
 			return group1;
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -365,6 +347,7 @@ public class Group {
 			    }
 			    
 			}
+			SCANNER.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
