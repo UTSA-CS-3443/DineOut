@@ -16,13 +16,13 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 import model.Person;
 
-public class CreateGroupController {
+public class CreateSessionController {
 	
 	// will pass to screen via initialize() method
 	private static ArrayList<Person> users = new ArrayList<Person>();
 	
     @FXML
-    private TextField GroupNameTextField;
+    private TextField groupNameTextField;
 
     @FXML
     private TextField userNameTextField0;
@@ -61,7 +61,7 @@ public class CreateGroupController {
     public void done(ActionEvent e) {
 	    	try {  		
 	    		//hardcoding
-	    		//implement to save this info to server
+	    		//implement to save this info to server along with groupNameTextField
 	    		Person a = new Person(userNameTextField0.getText());
 	    		Person b = new Person(userNameTextField1.getText());
 	    		Person c = new Person(userNameTextField2.getText());
