@@ -72,6 +72,19 @@ public class CreateSessionController {
 	    		Person i = new Person(twitterHandleTextField7.getText());
 	    		Person j = new Person(twitterHandleTextField8.getText());
 	    		Person k = new Person(twitterHandleTextField9.getText());
+	    		
+	    		Person[] sessionUsers = {a,b,c,d,f,g,h,i,j,k};
+	    		for(Person p : sessionUsers) {
+	    			if(p.getHandle().isEmpty() || p.getHandle() == null) {
+	    				continue;
+	    			}else if(p.getHandle().charAt(0) == '@'){
+	    				users.add(p);
+	    			}else {
+	    				continue;
+	    			}
+	    		}
+	    		
+	    		/*
 	    		users.add(a);
 	    		users.add(b);
 	    		users.add(c);
@@ -82,9 +95,10 @@ public class CreateSessionController {
 	    		users.add(i);
 	    		users.add(j);
 	    		users.add(k);
+	    		*/
 	    		
 	    		//check users entered have @ handle
-/*	    		for(int s = 0; s < users.size(); s++) {
+	    		/*for(int s = 0; s < users.size(); s++) {
 	    			if(users.get(s).getHandle().isEmpty() || users.get(s).getHandle().contains("@")) {
 	    				
 	    			}else {

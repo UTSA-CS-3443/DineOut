@@ -36,7 +36,7 @@ public class LoginToSessionController {
 	    			Scene scene = new Scene(root);
 	    			subStage.setResizable(false);
 	    			subStage.setScene(scene);
-	    			subStage.setTitle("Error Error");
+	    			subStage.setTitle("Error!");
 	    			subStage.show();
 	    		}else {
 	    		
