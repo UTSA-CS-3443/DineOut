@@ -13,7 +13,7 @@ import javafx.scene.control.Button;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
-public class CreateSessionLoginController {
+public class CreateSessionOrLoginController {
 
     @FXML
     private Button createButton;
