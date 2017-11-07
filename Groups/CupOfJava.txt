@@ -1,7 +1,2 @@
-#CupOfJava:1:21:14:4:5
-@BrandonLwowski:3:4:5:1:2
-@JHorwath18:3:4:5:1:2
-@albertjasso1:3:4:5:1:2
-@CookiesKoo1aid:3:4:5:1:2
-@possumIsGoodEat:3:4:5:1:2
-@strongho1d:3:4:5:1:2
+#CupOfJava:16:17:10:12:1
+@BrandonLwowski:0:0:0:0:0

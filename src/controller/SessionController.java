@@ -376,8 +376,8 @@ public class SessionController implements Initializable{
 		userLabels.add(user10Label);
 
 		// Loop for setting users from LoginController to labels in order
-		for (int i = 0; i < CreateSessionController.getUsers().size(); i++) {
-			userLabels.get(i).setText(CreateSessionController.getUsers().get(i).getHandle());
+		for (int i = 0; i < CreateSessionController.getUsers().getArraySize(); i++) {
+			userLabels.get(i).setText(CreateSessionController.getUsers().getUser(i).getHandle());
 		}
 	}
 

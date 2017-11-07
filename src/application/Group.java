@@ -48,7 +48,7 @@ public class Group {
 		return fiveChoices;
 	}
 
-	
+	/*
 	//Select 5 random restaurants from the list of restaurants 
 	public ArrayList<Restaurant> fillRandomList() {
 		Random rand = new Random();
@@ -67,6 +67,7 @@ public class Group {
 		}
 		return tempList;
 	}
+	*/
 	
 	//Creates String the the groupname first then the 5 indices of the restaurant array
 	public String createGroupString()

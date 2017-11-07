@@ -13,7 +13,7 @@ public class Session {
 	// private ArrayList<Person> users = new ArrayList<Person>();
 
 	public Session() {
-		fillRandomList();
+		//fillRandomList();
 	}
 
 	/**
@@ -30,6 +30,7 @@ public class Session {
 				fiveChoices.add(tempRest);
 				restaurants.getRestaurantList().get(i).setSelected(true);
 				count++;
+				System.out.println(count);
 			}
 			i = rand.nextInt(restaurants.getRestaurantList().size() - 1);
 		}

@@ -3,7 +3,9 @@ package controller;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import application.Group;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
@@ -12,14 +14,18 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 import model.Person;
+import model.PersonArray;
+import model.Session;
 
 public class CreateSessionController {
 	
 	// will pass to screen via initialize() method
-	private static ArrayList<Person> users = new ArrayList<Person>();
+	private static PersonArray users = new PersonArray();
 	
     @FXML
     private TextField groupNameTextField;
@@ -57,11 +63,18 @@ public class CreateSessionController {
     @FXML
     private Button doneWithScene;
     
+    private String groupName;
+    
+    
     @FXML
     public void done(ActionEvent e) {
 	    	try {  		
 	    		//hardcoding
 	    		//implement to save this info to server along with groupNameTextField
+	    		
+	    		
+	    		groupName = groupNameTextField.getText();
+	    		
 	    		Person a = new Person(twitterHandleTextField0.getText());
 	    		Person b = new Person(twitterHandleTextField1.getText());
 	    		Person c = new Person(twitterHandleTextField2.getText());
@@ -78,34 +91,27 @@ public class CreateSessionController {
 	    			if(p.getHandle().isEmpty() || p.getHandle() == null) {
 	    				continue;
 	    			}else if(p.getHandle().charAt(0) == '@'){
-	    				users.add(p);
+	    				users.addUser(p);
 	    			}else {
 	    				continue;
 	    			}
 	    		}
 	    		
+	    		Session session = new Session();
+	    		session.fillRandomList();
+	    		
+	    		Group group = new Group(groupName, users);
+	    		group.sendInviteTweets();
+	    		
 	    		/*
-	    		users.add(a);
-	    		users.add(b);
-	    		users.add(c);
-	    		users.add(d);
-	    		users.add(f);
-	    		users.add(g);
-	    		users.add(h);
-	    		users.add(i);
-	    		users.add(j);
-	    		users.add(k);
+	    		for(int l = 0 ; l <= session.getFiveChoices().size() - 1 ; l++) {
+	    			System.out.println(session.getFiveChoices().get(l).getName());
+	    		}
 	    		*/
 	    		
-	    		//check users entered have @ handle
-	    		/*for(int s = 0; s < users.size(); s++) {
-	    			if(users.get(s).getHandle().isEmpty() || users.get(s).getHandle().contains("@")) {
-	    				
-	    			}else {
-	    				System.out.println("needs @symbol");
-	    			}
-	    			
-	    		}*/
+	    		group.setFiveChoices(session.getFiveChoices());
+	    		boolean createfile = group.groupToTextfile();
+	    		
 	    		
 	    		//-------------- changing scene
 	        	Parent loadSession = FXMLLoader.load(getClass().getResource("../view/SessionInterface.fxml"));
@@ -125,7 +131,7 @@ public class CreateSessionController {
 	    	}
     }
     
-	public static ArrayList<Person> getUsers(){
+	public static PersonArray getUsers(){
 		return users;
 	}
     
