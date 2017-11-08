@@ -71,7 +71,6 @@ public class CreateSessionController {
     		TextField tf = (TextField)event.getSource();
     		tf.setText("@");
     		tf.positionCaret(1);
-    		
     }
     
     @FXML

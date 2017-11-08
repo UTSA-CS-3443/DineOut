@@ -26,6 +26,7 @@ public class LoginToSessionController {
     @FXML
     private Button loginButton;
     
+    
     @FXML
     public void login(ActionEvent e) {
 	    	try {
@@ -43,7 +44,7 @@ public class LoginToSessionController {
 	    			subStage.show();
 	    		}else {
 	    			
-	    		Session session = new Session();
+		    	Session session = new Session();
 		    	session.fillRandomList();
 	    		
 	        	Parent loadSession = FXMLLoader.load(getClass().getResource("../view/SessionInterface.fxml"));
