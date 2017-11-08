@@ -108,7 +108,11 @@ public class CreateSessionController {
 	    		session.fillRandomList();
 	    		
 	    		Group group = new Group(groupName, users);
-	    		group.sendInviteTweets();
+	    		
+	    		// Issues with sending invite tweets to users once session is created
+	    		//--------------------------
+	    		//group.sendInviteTweets();
+	    		//--------------------------
 	    		
 	    		/*
 	    		for(int l = 0 ; l <= session.getFiveChoices().size() - 1 ; l++) {
