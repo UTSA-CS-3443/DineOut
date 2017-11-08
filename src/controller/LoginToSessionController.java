@@ -13,6 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import model.Session;
 
 public class LoginToSessionController {
 
@@ -41,6 +42,9 @@ public class LoginToSessionController {
 	    			subStage.setTitle("Error!");
 	    			subStage.show();
 	    		}else {
+	    			
+	    		Session session = new Session();
+		    	session.fillRandomList();
 	    		
 	        	Parent loadSession = FXMLLoader.load(getClass().getResource("../view/SessionInterface.fxml"));
 	        	Scene sessionScene = new Scene(loadSession);

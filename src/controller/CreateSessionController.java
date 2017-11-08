@@ -14,6 +14,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
@@ -65,6 +66,13 @@ public class CreateSessionController {
     
     private String groupName;
     
+    @FXML
+    public void addSymbol(MouseEvent event) {
+    		TextField tf = (TextField)event.getSource();
+    		tf.setText("@");
+    		tf.positionCaret(1);
+    		
+    }
     
     @FXML
     public void done(ActionEvent e) {
