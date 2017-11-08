@@ -26,7 +26,6 @@ public class LoginToSessionController {
     @FXML
     private Button loginButton;
     
-    
     @FXML
     public void login(ActionEvent e) {
 	    	try {
@@ -44,8 +43,13 @@ public class LoginToSessionController {
 	    			subStage.show();
 	    		}else {
 	    			
+	    			
+	    		//needs to be changed, cannot make another session
+	    		//needs method to call the previously made session. 
+	    		//----------------------------???????????????
 		    	Session session = new Session();
 		    	session.fillRandomList();
+		    	//----------------------------???????????????
 	    		
 	        	Parent loadSession = FXMLLoader.load(getClass().getResource("../view/SessionInterface.fxml"));
 	        	Scene sessionScene = new Scene(loadSession);
@@ -68,9 +72,6 @@ public class LoginToSessionController {
 	    	} catch (IndexOutOfBoundsException e1) {
 		    	e1.printStackTrace();
 	    	} 
-    			
-	    	
-    }
-    		
-    
+    	
+    }		 
 }
