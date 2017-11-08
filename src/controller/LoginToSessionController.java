@@ -10,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
@@ -27,23 +28,14 @@ public class LoginToSessionController {
     private Button loginButton;
     
     @FXML
+    public void addSymbol(MouseEvent event) {
+    		twitterHandle.setText("@");
+    		twitterHandle.positionCaret(1);
+    }
+    
+    @FXML
     public void login(ActionEvent e) {
-	    	try {
-	    		//implement
-	    		//retrieve text in twitterHandle to look up in the server 
-	    		//error checking for @ sign
-	    		if(twitterHandle.getText().charAt(0) != '@') {
-	    			Stage subStage = new Stage();
-	    			FXMLLoader loader = new FXMLLoader();
-	    			Pane root = loader.load(getClass().getResource("../view/PopUpError.fxml").openStream());
-	    			Scene scene = new Scene(root);
-	    			subStage.setResizable(false);
-	    			subStage.setScene(scene);
-	    			subStage.setTitle("Error!");
-	    			subStage.show();
-	    		}else {
-	    			
-	    			
+	    	try {	
 	    		//needs to be changed, cannot make another session
 	    		//needs method to call the previously made session. 
 	    		//----------------------------???????????????
@@ -62,15 +54,9 @@ public class LoginToSessionController {
 	        	//----------------------------------------------------------------------------------------
 	        	
 	        	primaryStage.setScene(sessionScene);
-	        	primaryStage.show();
-	    		}
-	    		
+	        	primaryStage.show();	
 	    	} catch (IOException e1) {
 	    		e1.printStackTrace();
-	    	} catch (StringIndexOutOfBoundsException e1) {
-	    		System.out.println("you didnt enter a handle");
-	    	} catch (IndexOutOfBoundsException e1) {
-		    	e1.printStackTrace();
 	    	} 
     	
     }		 

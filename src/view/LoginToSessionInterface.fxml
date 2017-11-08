@@ -18,7 +18,7 @@
             <Label layoutX="67.0" layoutY="76.0" text="Group Name" />
             <TextField fx:id="groupNameTextField" layoutX="67.0" layoutY="98.0" />
             <Label layoutX="67.0" layoutY="131.0" text="Twitter handle" />
-            <TextField fx:id="twitterHandle" layoutX="67.0" layoutY="153.0" />
+            <TextField fx:id="twitterHandle" layoutX="67.0" layoutY="153.0" onMouseClicked="#addSymbol" />
             <Button fx:id="loginButton" layoutX="120.0" layoutY="199.0" mnemonicParsing="false" onAction="#login" text="log in" />
          </children>
       </AnchorPane>
