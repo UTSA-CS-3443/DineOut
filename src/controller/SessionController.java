@@ -191,7 +191,6 @@ public class SessionController implements Initializable{
 	/**
 	 * VERY BASIC CRAPPY UNOPTIMIZED WAY OF GRABBING NEXT RESTAURANT. NEED TO
 	 * IMPLEMENT DIFFERENT APPROACH AND METHOD FOR EASIER GRABBING.
-	 * 
 	 * @param e A reference to an ActionEvent
 	 */
 	@FXML
@@ -223,7 +222,6 @@ public class SessionController implements Initializable{
 	/**
 	 * VERY BASIC CRAPPY UNOPTIMIZED WAY OF GRABBING PREVIOUS RESTAURANT. NEED TO
 	 * IMPLEMENT DIFFERENT APPROACH AND METHOD FOR EASIER GRABBING.
-	 * 
 	 * @param e A reference to an ActionEvent
 	 */
 	@FXML
@@ -253,7 +251,6 @@ public class SessionController implements Initializable{
 	/**
 	 * RUDIMENTARY IF ELSE STATEMENTS JUST TO CHECK IF LABELS / CSV IS WORKING. NEED
 	 * REWORK
-	 * 
 	 * @param e A reference to an ActionEvent
 	 */
 	@FXML
@@ -308,7 +305,6 @@ public class SessionController implements Initializable{
 	
 	/**
 	 * Sets name of restaurant in display
-	 * 
 	 * @param name A reference to the name of a Restaurant 
 	 */
 	public void setRestaurantName(String name) {
@@ -317,7 +313,6 @@ public class SessionController implements Initializable{
 	
 	/**
 	 * Sets cuisine type in display
-	 * 
 	 * @param cuisineType A reference to the cuisine type of a Restaurant 
 	 */
 	public void setCuisineType(String cuisineType) {
@@ -326,7 +321,6 @@ public class SessionController implements Initializable{
 
 	/**
 	 * Sets price in display
-	 * 
 	 * @param price A reference to the price range of a Restaurant
 	 */
 	public void setPrice(int price) {

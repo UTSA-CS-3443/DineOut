@@ -97,10 +97,10 @@ public class CreateSessionController {
 	    		for(Person p : sessionUsers) {
 	    			if(p.getHandle().isEmpty() || p.getHandle() == null) {
 	    				continue;
-	    			}else if(p.getHandle().charAt(0) == '@'){
-	    				users.addUser(p);
-	    			}else {
+	    			}else if(p.getHandle().length() == 1) {
 	    				continue;
+	    			}else {
+	    				users.addUser(p);
 	    			}
 	    		}
 	    		

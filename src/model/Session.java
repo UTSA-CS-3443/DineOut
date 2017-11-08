@@ -13,6 +13,7 @@ public class Session {
 	// private ArrayList<Person> users = new ArrayList<Person>();
 
 	public Session() {
+		//Call fillRandomList(), not included in constructor anymore
 		//fillRandomList();
 	}
 
