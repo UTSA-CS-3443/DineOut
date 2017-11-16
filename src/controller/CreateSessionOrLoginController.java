@@ -29,11 +29,12 @@ public class CreateSessionOrLoginController {
 	        	Stage primaryStage = (Stage) ((Node) e.getSource()).getScene().getWindow();
 	        	
 	        	//------------------Centering LoginInterface on screen ---------------------------------
-	        	Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
+/*	        	Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
 	        	primaryStage.setX(primaryScreenBounds.getMinX() + primaryScreenBounds.getWidth() / 4);
-	        	primaryStage.setY(primaryScreenBounds.getMinY() + primaryScreenBounds.getHeight() / 4.5);
+	        	primaryStage.setY(primaryScreenBounds.getMinY() + primaryScreenBounds.getHeight() / 4.5);*/
 	        	//----------------------------------------------------------------------------------------
 	        	
+	        	primaryStage.centerOnScreen();
 	        	primaryStage.setScene(sessionScene);
 	        	primaryStage.show();
 	    	} catch (IOException e1) {
@@ -49,11 +50,12 @@ public class CreateSessionOrLoginController {
 	        	Stage primaryStage = (Stage) ((Node) e.getSource()).getScene().getWindow();
 	        	
 	        	//------------------Centering LoginInterface on screen ---------------------------------
-	        	Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
+/*	        	Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
 	        	primaryStage.setX(primaryScreenBounds.getMinX() + primaryScreenBounds.getWidth() / 4);
-	        	primaryStage.setY(primaryScreenBounds.getMinY() + primaryScreenBounds.getHeight() / 4.5);
+	        	primaryStage.setY(primaryScreenBounds.getMinY() + primaryScreenBounds.getHeight() / 4.5);*/
 	        	//----------------------------------------------------------------------------------------
 	        	
+	        	primaryStage.centerOnScreen();
 	        	primaryStage.setScene(sessionScene);
 	        	primaryStage.show();
 	    	} catch (IOException e1) {
