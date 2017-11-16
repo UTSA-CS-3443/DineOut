@@ -387,5 +387,22 @@ public class Group {
 		return this.listOfUsers;
 	}
 	
+	public ArrayList<Restaurant> fillRandomList() {
+		Random rand = new Random();
+		ArrayList<Restaurant> tempList = new ArrayList<Restaurant>();
+		int i = rand.nextInt(GlobalRestList.ALL_REST.getRestaurantList().size() - 1);
+		int count = 0;
+		
+		while (count < 5) {
+			Restaurant tempRest = GlobalRestList.ALL_REST.getRestaurantList().get(i);
+			if (tempRest.isSelected() == false) { // meaning its false
+				tempList.add(tempRest);
+				GlobalRestList.ALL_REST.getRestaurantList().get(i).setSelected(true);
+				count++;
+			}
+			i = rand.nextInt(GlobalRestList.ALL_REST.getRestaurantList().size() - 1);
+		}
+		return tempList;
+	}
 }
 	
