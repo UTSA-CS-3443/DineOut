@@ -15,7 +15,7 @@ public class ImageCollection {
 	Image chickFilA = new Image("file:res/images/Chick_Fil_A.jpeg");
 	Image chilis = new Image("file:res/images/Chilis.jpg");
 	Image crazyCarls = new Image("file:res/images/Crazy_Carl's.jpeg");
-	Image einsteinBros = new Image("file:res/images/Einsten_Bros.jpeg");
+	Image einsteinBros = new Image("file:res/images/Einstein_Bros.jpeg");
 	Image greensToGo = new Image("file:res/images/Greens_To_Go.jpeg");
 	Image littleCaesars = new Image("file:res/images/Little_Caesars.png");
 	Image mooyah = new Image("file:res/images/Mooyah.jpg");
@@ -24,7 +24,7 @@ public class ImageCollection {
 	Image picnikinsPatio = new Image("file:res/images/Picnikins_Patio.jpeg");
 	Image roadrunnerCafe = new Image("file:res/images/Roadrunner_Cafe.jpeg");
 	Image rowdyCurbside = new Image("file:res/images/Rowdy_Curbside_Food_Truck.jpeg");
-	Image singaporeChineseIndochina = new Image("file:res/images/Signapore.jpg");
+	Image singaporeChineseIndochina = new Image("file:res/images/Singapore.jpg");
 	Image smoothieKing = new Image("file:res/images/Smoothie_King.jpeg");
 	Image starbucksUC = new Image("file:res/images/Starbucks_UC.jpg");
 	Image starbucks = new Image("file:res/images/Starbucks.jpeg");
