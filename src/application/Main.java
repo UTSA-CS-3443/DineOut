@@ -45,7 +45,7 @@ public class Main extends Application {
 	
 	public static void main(String[] args){
 		launch(args);
-		/*
+		
 		PersonArray userlist1 = new PersonArray();
 		//Create 7 users
 		Person user1 = new Person("@BrandonLwowski");
@@ -102,7 +102,7 @@ public class Main extends Application {
 		
 		group1 = group1.createGroupFromTxt();
 		createfile = group1.groupToTextfile();
-		*/
+		
 	}
 		
 		
