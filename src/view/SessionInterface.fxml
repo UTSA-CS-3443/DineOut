@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="378.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SessionController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="378.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SessionController">
    <children>
       <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -329,7 +329,7 @@
                                              </image>
                                           </ImageView>
                                           <ComboBox fx:id="rankComboBox" layoutX="477.0" layoutY="233.0" prefWidth="50.0" />
-                                          <ImageView fitHeight="296.0" fitWidth="301.0" layoutX="10.0" layoutY="11.0" pickOnBounds="true" smooth="false">
+                                          <ImageView fx:id="images" fitHeight="296.0" fitWidth="301.0" layoutX="10.0" layoutY="11.0" pickOnBounds="true" smooth="false">
                                              <image>
                                                 <Image url="@../../../../Pictures/bXGE2Kw.jpg" />
                                              </image>

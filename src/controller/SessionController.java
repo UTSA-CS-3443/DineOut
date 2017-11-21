@@ -6,6 +6,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
@@ -17,10 +18,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
+import model.ImageCollection;
 import model.Restaurant;
 import model.Session;
 
@@ -29,6 +32,7 @@ public class SessionController implements Initializable{
 	// Session
 	private Session session = new Session();
 	
+	private ImageCollection imageList = new ImageCollection();
 
 	// ----------------------------- Utility variables------------------------------
 	private Restaurant firstRestaurant = session.getFiveChoices().get(0);
@@ -219,6 +223,7 @@ public class SessionController implements Initializable{
 			setCuisineType(fifthRestaurant.getCuisine());
 			setPrice(fifthRestaurant.getPrice());
 		}
+		changePicture();
 		
 		//testLabel.textProperty().bind(restaurantNameLabel.getText());
 	}
@@ -250,6 +255,7 @@ public class SessionController implements Initializable{
 			setCuisineType(firstRestaurant.getCuisine());
 			setPrice(firstRestaurant.getPrice());
 		}
+		changePicture();
 	}
 
 	/**
@@ -343,6 +349,20 @@ public class SessionController implements Initializable{
 			return false;
 		}
 	}
+	
+	/**
+	 * 
+	 */
+	public void changePicture() {
+		for(Map.Entry<String, Image> entry : ImageCollection.images.entrySet()) {
+			String key = (String) entry.getKey();
+			Image value = entry.getValue();
+			
+			if(getCurrentRestaurant().toLowerCase().equals(key.toLowerCase())) {
+				images.setImage(value);
+			}
+		}
+	}
 
 	/**
 	 * Sets initial restaurant on opening scene, will probably need redoing with
@@ -352,6 +372,7 @@ public class SessionController implements Initializable{
 		restaurantNameLabel.setText(session.getFiveChoices().get(0).getName());
 		cuisineTypeLabel.setText(session.getFiveChoices().get(0).getCuisine());
 		priceLabel.setText(String.valueOf(session.getFiveChoices().get(0).getPrice()));
+		changePicture();
 	}
 
 	/**
