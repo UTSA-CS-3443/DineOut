@@ -18,10 +18,10 @@ public class ImageCollection {
 	Image einsteinBros = new Image("file:res/images/Einsten_Bros.jpeg");
 	Image greensToGo = new Image("file:res/images/Greens_To_Go.jpeg");
 	Image littleCaesars = new Image("file:res/images/Little_Caesars.png");
-	Image mooyah = new Image("file:res/images/Mooyahjpg");
+	Image mooyah = new Image("file:res/images/Mooyah.jpg");
 	Image pandaExpress = new Image("file:res/images/Panda_Express.jpeg");
 	Image papaJohns = new Image("file:res/images/Papa_John's.jpeg");
-	Image picnikinsPatio = new Image("file:res/images/Picnikinis_Patio.jpeg");
+	Image picnikinsPatio = new Image("file:res/images/Picnikins_Patio.jpeg");
 	Image roadrunnerCafe = new Image("file:res/images/Roadrunner_Cafe.jpeg");
 	Image rowdyCurbside = new Image("file:res/images/Rowdy_Curbside_Food_Truck.jpeg");
 	Image singaporeChineseIndochina = new Image("file:res/images/Signapore.jpg");
@@ -33,7 +33,7 @@ public class ImageCollection {
 	Image subway = new Image("file:res/images/Subway.jpeg");
 	Image sushic = new Image("file:res/images/Sushic.jpg");
 	Image tacoPalenque = new Image("file:res/images/Taco_Palenque.jpeg");
-	Image tacoTacoCafe = new Image("file:res/images/Taco_Taco_Cafejpg");
+	Image tacoTacoCafe = new Image("file:res/images/Taco_Taco_Cafe.jpg");
 	Image theBlock = new Image("file:res/images/The_Block.png");
 	Image whiskeyCake = new Image("file:res/images/Whiskey_Cake.jpeg");
 	
