@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginToSessionController">
+<AnchorPane prefHeight="256.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginToSessionController">
    <children>
       <AnchorPane prefHeight="283.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -19,7 +19,7 @@
             <TextField fx:id="groupNameTextField" layoutX="67.0" layoutY="98.0" />
             <Label layoutX="67.0" layoutY="131.0" text="Twitter handle" />
             <TextField fx:id="twitterHandle" layoutX="67.0" layoutY="153.0" onMouseClicked="#addSymbol" />
-            <Button fx:id="loginButton" layoutX="120.0" layoutY="199.0" mnemonicParsing="false" onAction="#login" text="log in" />
+            <Button fx:id="loginButton" layoutX="106.0" layoutY="200.0" mnemonicParsing="false" onAction="#login" prefHeight="27.0" prefWidth="89.0" text="Log In" />
          </children>
       </AnchorPane>
    </children>
