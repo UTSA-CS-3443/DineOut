@@ -6,9 +6,12 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -18,22 +21,22 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.Toggle;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
+import model.ChoicePair;
 import model.ImageCollection;
 import model.Restaurant;
 import model.Session;
 
 public class SessionController implements Initializable{
-
-	// Session
-	private Session session = new Session();
 	
-	private ImageCollection imageList = new ImageCollection();
-
+	private Session session = new Session();
 	// ----------------------------- Utility variables------------------------------
 	private Restaurant firstRestaurant = session.getFiveChoices().get(0);
 	private Restaurant secondRestaurant = session.getFiveChoices().get(1);
@@ -78,69 +81,6 @@ public class SessionController implements Initializable{
 	@FXML
 	private Label user10Label;
 
-	// --- Scrapping backgrounds for now until we can get entire program running ---
-	@FXML
-	private Pane user1LabelBackground;
-
-	@FXML
-	private Pane user2LabelBackground;
-
-	@FXML
-	private Pane user3LabelBackground;
-
-	@FXML
-	private Pane user4LabelBackground;
-
-	@FXML
-	private Pane user5LabelBackground;
-
-	@FXML
-	private Pane user6LabelBackground;
-
-	@FXML
-	private Pane user7LabelBackground;
-
-	@FXML
-	private Pane user8LabelBackground;
-
-	@FXML
-	private Pane user9LabelBackground;
-
-	@FXML
-	private Pane user10LabelBackground;
-
-	@FXML
-	private Pane user1IndicatorBackground;
-
-	@FXML
-	private Pane user2IndicatorBackground;
-
-	@FXML
-	private Pane user3IndicatorBackground;
-
-	@FXML
-	private Pane user4IndicatorBackground;
-
-	@FXML
-	private Pane user5IndicatorBackground;
-
-	@FXML
-	private Pane user6IndicatorBackground;
-
-	@FXML
-	private Pane user7IndicatorBackground;
-
-	@FXML
-	private Pane user8IndicatorBackground;
-
-	@FXML
-	private Pane user9IndicatorBackground;
-
-	@FXML
-	private Pane user10IndicatorBackground;
-
-	// -----------------------------------------------------------------------------
-
 	// -------------------------- Main controls ------------------------------------
 	@FXML
 	private Button previousRestaurantButton;
@@ -169,7 +109,20 @@ public class SessionController implements Initializable{
 	@FXML
 	ComboBox<Integer> rankComboBox = new ComboBox<Integer>();
 	
-	Label testLabel = new Label("");
+	@FXML
+	RadioButton loveChoice = new RadioButton();
+	
+	@FXML
+	RadioButton neutralChoice = new RadioButton();
+	
+	@FXML
+	RadioButton hateChoice = new RadioButton();
+	
+	ToggleGroup group = new ToggleGroup();
+	RadioButton choice;
+	public ChoicePair<String, String> choicePair = new ChoicePair<String, String>();
+	private ImageCollection imageList = new ImageCollection();
+	
 	
 	// -----------------------------------------------------------------------------
 
@@ -187,12 +140,9 @@ public class SessionController implements Initializable{
 	 * FXML is loaded into the root layout. Adds listener to mapView
 	 */
 	public void initialize(URL url, ResourceBundle rb) {
-		// add users to labels
 		addUsers();
-		// initialize first restaurant
 		setInitialRestaurant();
-		// initializing combo box
-		rankComboBox.getItems().addAll(1, 2, 3, 4, 5);
+		initRadioBtns();
 	}
 
 
@@ -203,6 +153,7 @@ public class SessionController implements Initializable{
 	 */
 	@FXML
 	public void nextRestaurant(ActionEvent e) {
+		choicePair.addPair(choice.getText(), getCurrentRestaurant());
 		if (currentRestaurantEquals(firstRestaurant)) {
 			setRestaurantName(secondRestaurant.getName());
 			setCuisineType(secondRestaurant.getCuisine());
@@ -224,8 +175,6 @@ public class SessionController implements Initializable{
 			setPrice(fifthRestaurant.getPrice());
 		}
 		changePicture();
-		
-		//testLabel.textProperty().bind(restaurantNameLabel.getText());
 	}
 
 	/**
@@ -235,6 +184,7 @@ public class SessionController implements Initializable{
 	 */
 	@FXML
 	public void previousRestaurant(ActionEvent e) {
+		choicePair.addPair(choice.getText(), getCurrentRestaurant());
 		if (currentRestaurantEquals(fifthRestaurant)) {
 			setRestaurantName(fourthRestaurant.getName());
 			setCuisineType(fourthRestaurant.getCuisine());
@@ -258,6 +208,26 @@ public class SessionController implements Initializable{
 		changePicture();
 	}
 
+	public void initRadioBtns() {
+		hateChoice.setToggleGroup(group);
+		loveChoice.setToggleGroup(group);
+		neutralChoice.setToggleGroup(group);
+		group.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
+		      public void changed(ObservableValue<? extends Toggle> ov, Toggle old_toggle, Toggle new_toggle) {
+		        if (group.getSelectedToggle() != null) {
+		        	choice = (RadioButton) group.getSelectedToggle();
+		        }
+		      }
+		});
+		group.selectToggle(neutralChoice);
+	}
+	
+	@FXML
+	public void submit(ActionEvent e) {
+		choicePair.addPair(choice.getText(), getCurrentRestaurant()); //to record option they click submit on
+		System.out.println(choicePair);
+	}
+	
 	/**
 	 * RUDIMENTARY IF ELSE STATEMENTS JUST TO CHECK IF LABELS / CSV IS WORKING. NEED
 	 * REWORK
@@ -282,7 +252,6 @@ public class SessionController implements Initializable{
 	 * Opens new scene with google maps view
 	 */
 	public void toMapView(ActionEvent e) {
-		//new MapViewStage();
 		try {
 			Stage subStage = new Stage();
 			FXMLLoader loader = new FXMLLoader();
@@ -394,7 +363,6 @@ public class SessionController implements Initializable{
 		userLabels.add(user9Label);
 		userLabels.add(user10Label);
 
-		// Loop for setting users from LoginController to labels in order
 		for (int i = 0; i < CreateSessionController.getUsers().getArraySize(); i++) {
 			userLabels.get(i).setText(CreateSessionController.getUsers().getUser(i).getHandle());
 		}

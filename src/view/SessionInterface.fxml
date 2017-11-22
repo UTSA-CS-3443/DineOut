@@ -2,8 +2,8 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="378.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SessionController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="378.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SessionController">
    <children>
       <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -293,16 +293,6 @@
                                                 <Font size="24.0" />
                                              </font>
                                           </Label>
-                                          <Label layoutX="415.0" layoutY="228.0" text="Rank">
-                                             <font>
-                                                <Font size="24.0" />
-                                             </font>
-                                          </Label>
-                                          <Label layoutX="530.0" layoutY="228.0" text="/5">
-                                             <font>
-                                                <Font size="24.0" />
-                                             </font>
-                                          </Label>
                                           <ImageView fx:id="ratingStar1" fitHeight="50.0" fitWidth="41.0" layoutX="328.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../../res/star.png" />
@@ -328,16 +318,15 @@
                                                 <Image url="@../../res/star.png" />
                                              </image>
                                           </ImageView>
-                                          <ComboBox fx:id="rankComboBox" layoutX="477.0" layoutY="233.0" prefWidth="50.0" />
-                                          <ImageView fx:id="images" fitHeight="296.0" fitWidth="301.0" layoutX="10.0" layoutY="11.0" pickOnBounds="true" smooth="false">
-                                             <image>
-                                                <Image url="@../../../../Pictures/bXGE2Kw.jpg" />
-                                             </image>
-                                          </ImageView>
+                                          <ImageView fx:id="images" fitHeight="296.0" fitWidth="301.0" layoutX="10.0" layoutY="11.0" pickOnBounds="true" smooth="false" />
                                           <Button layoutX="10.0" layoutY="11.0" mnemonicParsing="false" onAction="#toMapView" prefHeight="296.0" prefWidth="301.0" style="-fx-background-color: transparent;">
                                              <tooltip>
                                                 <Tooltip text="Click for map" />
                                              </tooltip></Button>
+                                          <RadioButton fx:id="loveChoice" layoutX="339.0" layoutY="215.0" mnemonicParsing="false" text="I love it" />
+                                          <RadioButton fx:id="neutralChoice" layoutX="448.0" layoutY="215.0" mnemonicParsing="false" text="Neutral" />
+                                          <RadioButton fx:id="hateChoice" layoutX="556.0" layoutY="215.0" mnemonicParsing="false" text="I hate it" />
+                                          <Button fx:id="submit" layoutX="428.0" layoutY="260.0" mnemonicParsing="false" onAction="#submit" prefHeight="25.0" prefWidth="100.0" text="Submit" />
                                        </children>
                                     </Pane>
                                  </children>
