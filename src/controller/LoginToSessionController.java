@@ -25,6 +25,7 @@ import model.Session;
 public class LoginToSessionController {
 
 	private static PersonArray users = new PersonArray();
+	public static Group group = new Group();
 	
     @FXML
     private TextField groupNameTextField;
@@ -57,8 +58,9 @@ public class LoginToSessionController {
 	    		
 //	    		Person user = new Person(twitterHandle.getText());
 //	    		
-//	    		Group group = new Group(groupName);
-//	    		group = group.createGroupFromTxt();
+	    		group.setGroupName(groupName);
+	    		//Group group = new Group(groupName);
+	    		//group = group.createGroupFromTxt();
 		    	
 	    		
 	        	Parent loadSession = FXMLLoader.load(getClass().getResource("../view/SessionInterface.fxml"));
@@ -78,5 +80,12 @@ public class LoginToSessionController {
 	    		e1.printStackTrace();
 	    	} 
     	
-    }		 
+    }	
+    
+    public static String getGroupName(){
+		return group.getGroupName();
+	}
 }
+
+
+
