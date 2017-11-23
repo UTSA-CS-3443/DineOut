@@ -46,7 +46,7 @@ public class SessionController implements Initializable{
 //	private Restaurant fifthRestaurant = session.getFiveChoices().get(4);
 //	// -----------------------------------------------------------------------------
 	
-	private Group group1 = new Group();
+	private Group group1 = new Group("Test");
 	private Restaurant firstRestaurant;
 	private Restaurant secondRestaurant;
 	private Restaurant thirdRestaurant;
@@ -164,7 +164,13 @@ public class SessionController implements Initializable{
 	public void initialize(URL url, ResourceBundle rb) {
 
 
-		//group1 = group1.createGroupFromTxt();
+		group1 = group1.createGroupFromTxt();
+		firstRestaurant = group1.getFiveChoices().get(0);
+		secondRestaurant = group1.getFiveChoices().get(1);
+		thirdRestaurant = group1.getFiveChoices().get(2);
+		fourthRestaurant = group1.getFiveChoices().get(3);
+		fifthRestaurant = group1.getFiveChoices().get(4);
+		
 		//System.out.println(group1.getGroupName());
 		addUsers();
 		setInitialRestaurant();
