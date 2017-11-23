@@ -21,6 +21,7 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import model.Person;
 import model.PersonArray;
+import model.Restaurant;
 import model.Session;
 
 public class CreateSessionController {
@@ -104,10 +105,16 @@ public class CreateSessionController {
 	    			}
 	    		}
 	    		
-	    		Session session = new Session();
-	    		session.fillRandomList();
+//	    		Session session = new Session();
+//	    		session.fillRandomList();
 	    		
 	    		Group group = new Group(groupName, users);
+	    		group.fillRandomList();
+	    		group.setFiveChoices(group.getFiveChoices());
+//	    		group.setFiveChoices(session.getFiveChoices());
+	    		@SuppressWarnings("unused")
+				boolean createfile = group.groupToTextfile();
+	    		
 	    		
 	    		// Issues with sending invite tweets to users once session is created
 	    		//--------------------------
@@ -120,12 +127,16 @@ public class CreateSessionController {
 	    		}
 	    		*/
 	    		
-	    		group.setFiveChoices(session.getFiveChoices());
-	    		boolean createfile = group.groupToTextfile();
+//	    		group.setFiveChoices(session.getFiveChoices());
+//	    		group.setFiveChoices(group.fillRandomList());
+	    		//group.fillRandomList();
+	    		//boolean createfile = group.groupToTextfile();
+
 	    		
 	    		
 	    		//-------------- changing scene
-	        	Parent loadSession = FXMLLoader.load(getClass().getResource("../view/SessionInterface.fxml"));
+//	        	Parent loadSession = FXMLLoader.load(getClass().getResource("../view/SessionInterface.fxml"));
+	    		Parent loadSession = FXMLLoader.load(getClass().getResource("../view/CreateSessionOrLoginInterface.fxml"));
 	        	Scene sessionScene = new Scene(loadSession);
 	        	Stage primaryStage = (Stage) ((Node) e.getSource()).getScene().getWindow();
 	        	

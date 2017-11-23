@@ -29,8 +29,16 @@ public class Group {
 		this.finishedVoting = false;
 		this.selectedRest = 0;
 		this.fiveChoices.clear();
-		
-		
+	}
+	
+	public Group(String name) {
+		this.groupName = name;
+	}
+	
+	public Group() {}
+	
+	public void updateGroup(PersonArray users) {
+		this.listOfUsers = users;
 	}
 	
 	public void sendInviteTweets() {
@@ -295,16 +303,17 @@ public class Group {
 			    		currentUser.setHandle(strArray[0]);
 				    	for( int i = 1; i <= 5; i++) {
 			    			int j = Integer.parseInt(strArray[i]);
-			    			newAns[i-1] = j;
-			    			
+			    			newAns[i-1] = j;	
 				    	}
 				    	currentUser.setAnswersM(newAns);
 				    	usersFromText.addUser(currentUser);
-			    	
 			    }
 			    
 			}
 			SCANNER.close();
+			System.out.println(usersFromText.getHandle(1));
+			//group1.updateGroup(usersFromText);
+			//System.out.println(group1.listOfUsersString());
 			return group1;
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -387,22 +396,39 @@ public class Group {
 		return this.listOfUsers;
 	}
 	
-	public ArrayList<Restaurant> fillRandomList() {
+	public void fillRandomList() {
+		RestaurantArray restaurants = new RestaurantArray();
 		Random rand = new Random();
-		ArrayList<Restaurant> tempList = new ArrayList<Restaurant>();
-		int i = rand.nextInt(GlobalRestList.ALL_REST.getRestaurantList().size() - 1);
+		int i = rand.nextInt(restaurants.getRestaurantList().size() - 1);
 		int count = 0;
-		
 		while (count < 5) {
-			Restaurant tempRest = GlobalRestList.ALL_REST.getRestaurantList().get(i);
+			Restaurant tempRest = restaurants.getRestaurantList().get(i);
 			if (tempRest.isSelected() == false) { // meaning its false
-				tempList.add(tempRest);
-				GlobalRestList.ALL_REST.getRestaurantList().get(i).setSelected(true);
+				fiveChoices.add(tempRest);
+				restaurants.getRestaurantList().get(i).setSelected(true);
 				count++;
 			}
-			i = rand.nextInt(GlobalRestList.ALL_REST.getRestaurantList().size() - 1);
+			i = rand.nextInt(restaurants.getRestaurantList().size() - 1);
 		}
-		return tempList;
 	}
+	
+//	public ArrayList<Restaurant> fillRandomList() {
+//		Random rand = new Random();
+//		ArrayList<Restaurant> tempList = new ArrayList<Restaurant>();
+//		int i = rand.nextInt(GlobalRestList.ALL_REST.getRestaurantList().size() - 1);
+//		int count = 0;
+//		
+//		while (count < 5) {
+//			Restaurant tempRest = GlobalRestList.ALL_REST.getRestaurantList().get(i);
+//			if (tempRest.isSelected() == false) { // meaning its false
+//				tempList.add(tempRest);
+//				GlobalRestList.ALL_REST.getRestaurantList().get(i).setSelected(true);
+//				count++;
+//			}
+//			i = rand.nextInt(GlobalRestList.ALL_REST.getRestaurantList().size() - 1);
+//		}
+//		System.out.println(tempList);
+//		return tempList;
+//	}
 }
 	

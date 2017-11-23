@@ -1,5 +1,9 @@
 package controller;
 
+import application.Group;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,10 +18,14 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import model.Person;
+import model.PersonArray;
 import model.Session;
 
 public class LoginToSessionController {
 
+	private static PersonArray users = new PersonArray();
+	
     @FXML
     private TextField groupNameTextField;
 
@@ -26,6 +34,8 @@ public class LoginToSessionController {
 
     @FXML
     private Button loginButton;
+    
+    private String groupName;
     
     @FXML
     public void addSymbol(MouseEvent event) {
@@ -39,9 +49,17 @@ public class LoginToSessionController {
 	    		//needs to be changed, cannot make another session
 	    		//needs method to call the previously made session. 
 	    		//----------------------------???????????????
-		    	Session session = new Session();
-		    	session.fillRandomList();
+		    //	Session session = new Session();
+		    	//	session.fillRandomList();
 		    	//----------------------------???????????????
+	    		
+	    		groupName = groupNameTextField.getText();
+	    		
+	    		Person user = new Person(twitterHandle.getText());
+	    		
+	    		Group group = new Group(groupName);
+	    		group = group.createGroupFromTxt();
+		    	
 	    		
 	        	Parent loadSession = FXMLLoader.load(getClass().getResource("../view/SessionInterface.fxml"));
 	        	Scene sessionScene = new Scene(loadSession);

@@ -35,7 +35,7 @@ public class Session {
 			}
 			i = rand.nextInt(restaurants.getRestaurantList().size() - 1);
 		}
-
+		System.out.println(restaurants);
 	}
 
 	public ArrayList<Restaurant> getFiveChoices() {

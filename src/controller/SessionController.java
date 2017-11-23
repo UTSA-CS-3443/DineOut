@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
 
+import application.Group;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -36,14 +37,35 @@ import model.Session;
 
 public class SessionController implements Initializable{
 	
-	private Session session = new Session();
-	// ----------------------------- Utility variables------------------------------
-	private Restaurant firstRestaurant = session.getFiveChoices().get(0);
-	private Restaurant secondRestaurant = session.getFiveChoices().get(1);
-	private Restaurant thirdRestaurant = session.getFiveChoices().get(2);
-	private Restaurant fourthRestaurant = session.getFiveChoices().get(3);
-	private Restaurant fifthRestaurant = session.getFiveChoices().get(4);
-	// -----------------------------------------------------------------------------
+//	private Session session = new Session();
+//	// ----------------------------- Utility variables------------------------------
+//	private Restaurant firstRestaurant = session.getFiveChoices().get(0);
+//	private Restaurant secondRestaurant = session.getFiveChoices().get(1);
+//	private Restaurant thirdRestaurant = session.getFiveChoices().get(2);
+//	private Restaurant fourthRestaurant = session.getFiveChoices().get(3);
+//	private Restaurant fifthRestaurant = session.getFiveChoices().get(4);
+//	// -----------------------------------------------------------------------------
+	
+	private Group group1 = new Group();
+	private Restaurant firstRestaurant;
+	private Restaurant secondRestaurant;
+	private Restaurant thirdRestaurant;
+	private Restaurant fourthRestaurant;
+	private Restaurant fifthRestaurant;
+// -----------------------------------------------------------------------------
+	
+	
+	
+//	private Group group1 = new Group();
+//	firstRestaurant = group1.getFiveChoices().get(0);
+//	secondRestaurant = group1.getFiveChoices().get(1);
+//	thirdRestaurant = group1.getFiveChoices().get(2);
+//	fourthRestaurant = group1.getFiveChoices().get(3);
+//	fifthRestaurant = group1.getFiveChoices().get(4);
+	
+	
+	
+	
 
 	@FXML
 	private Label dineOutTitleLabel;
@@ -132,7 +154,7 @@ public class SessionController implements Initializable{
 	 * necessary for the program to run
 	 */
 	@FXML
-	private void initialize() {
+	private void initialize() { 
 	}
 
 	/**
@@ -140,6 +162,10 @@ public class SessionController implements Initializable{
 	 * FXML is loaded into the root layout. Adds listener to mapView
 	 */
 	public void initialize(URL url, ResourceBundle rb) {
+
+
+		//group1 = group1.createGroupFromTxt();
+		//System.out.println(group1.getGroupName());
 		addUsers();
 		setInitialRestaurant();
 		initRadioBtns();
@@ -338,9 +364,9 @@ public class SessionController implements Initializable{
 	 * multiple users
 	 */
 	public void setInitialRestaurant() {
-		restaurantNameLabel.setText(session.getFiveChoices().get(0).getName());
-		cuisineTypeLabel.setText(session.getFiveChoices().get(0).getCuisine());
-		priceLabel.setText(String.valueOf(session.getFiveChoices().get(0).getPrice()));
+		restaurantNameLabel.setText(group1.getFiveChoices().get(0).getName());
+		cuisineTypeLabel.setText(group1.getFiveChoices().get(0).getCuisine());
+		priceLabel.setText(String.valueOf(group1.getFiveChoices().get(0).getPrice()));
 		changePicture();
 	}
 
