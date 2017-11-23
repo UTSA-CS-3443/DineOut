@@ -55,10 +55,10 @@ public class LoginToSessionController {
 	    		
 	    		groupName = groupNameTextField.getText();
 	    		
-	    		Person user = new Person(twitterHandle.getText());
-	    		
-	    		Group group = new Group(groupName);
-	    		group = group.createGroupFromTxt();
+//	    		Person user = new Person(twitterHandle.getText());
+//	    		
+//	    		Group group = new Group(groupName);
+//	    		group = group.createGroupFromTxt();
 		    	
 	    		
 	        	Parent loadSession = FXMLLoader.load(getClass().getResource("../view/SessionInterface.fxml"));
