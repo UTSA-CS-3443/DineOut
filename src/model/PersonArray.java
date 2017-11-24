@@ -42,7 +42,12 @@ public class PersonArray {
 		Person person = this.userList.get(i);
 		return person;
 	}
+	public void updatePersonArray(PersonArray p, int size) {
+		this.userList.clear();
+		this.userList = p.userList;
+		this.arraySize = size;
+		
+	}
 	
-//TODO: addUser needs to send tweet
 	
 }

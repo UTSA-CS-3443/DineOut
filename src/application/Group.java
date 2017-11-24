@@ -38,7 +38,7 @@ public class Group {
 	public Group() {}
 	
 	public void updateGroup(PersonArray users) {
-		this.listOfUsers = users;
+		this.listOfUsers.updatePersonArray(users, users.getArraySize());
 	}
 	
 	public void sendInviteTweets() {
@@ -261,10 +261,8 @@ public class Group {
 		
 	}
 	
-	//TODO: Create Group Object from txt file
 	public Group createGroupFromTxt()
 	{
-		Group group1 = new Group(this.groupName, this.listOfUsers);
 		ArrayList<Restaurant> choices = new ArrayList<Restaurant>();
 		
 		//create scanner  and text file
@@ -274,7 +272,6 @@ public class Group {
 		
 		//create dummy variables for person, int array, and person array
 		PersonArray usersFromText = new PersonArray();
-		Person currentUser = new Person("NULL");
 		int[] newAns = new int[5];
 		
 		
@@ -287,6 +284,7 @@ public class Group {
 			//Loop through text file
 			while(SCANNER.hasNextLine())
 			{
+				Person currentUser = new Person("NULL");
 			    String str = SCANNER.nextLine();
 			    String[] strArray = str.split(":");
 			    if(lineNum == 1)
@@ -297,7 +295,6 @@ public class Group {
 			    			choices.add(newRest);
 			    		}
 			    		lineNum = 2;
-			    		group1.setFiveChoices(choices);
 			    }
 			    else {
 			    		currentUser.setHandle(strArray[0]);
@@ -310,16 +307,20 @@ public class Group {
 			    }
 			    
 			}
+			Group group1 = new Group(this.groupName, usersFromText);
+			group1.setFiveChoices(choices);	
+			for(int m = 0; m < group1.listOfUsers.getArraySize(); m++)
+			{
+				System.out.println(group1.listOfUsers.getHandle(m));
+			}
+			
 			SCANNER.close();
-			System.out.println(usersFromText.getHandle(1));
-			//group1.updateGroup(usersFromText);
-			//System.out.println(group1.listOfUsersString());
 			return group1;
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
 		// Group did not exist
-		group1.setGroupName("NULL");
+		Group group1 = new Group(null, null);
 		return group1;
 	}
 
