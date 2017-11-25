@@ -134,7 +134,6 @@ public class SessionController{
 	 */
 	@FXML
 	public void initialize()throws UserNotFoundException{
-
 		String groupName = LoginToSessionController.getGroupName();
 		String userName = LoginToSessionController.getUserName();
 		group1.setGroupName(groupName);
@@ -145,16 +144,12 @@ public class SessionController{
 			thirdRestaurant = group1.getFiveChoices().get(2);
 			fourthRestaurant = group1.getFiveChoices().get(3);
 			fifthRestaurant = group1.getFiveChoices().get(4);
-			
-			//System.out.println(group1.getGroupName());
 			addUsers(group1);
 			setInitialRestaurant();
 			initRadioBtns();
 		}else {
 			throw new UserNotFoundException(userName + " not found in Group: " + group1.getGroupName());
 		}
-		
-		
 	}
 
 
@@ -420,6 +415,4 @@ public class SessionController{
 			}
 		}
 	}
-	// -------------------------------------------------------------------
-
 }

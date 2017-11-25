@@ -24,9 +24,6 @@ import model.Session;
 
 public class LoginToSessionController {
 
-	private static PersonArray users = new PersonArray();
-	public static Group group = new Group();
-	
     @FXML
     private TextField groupNameTextField;
 
@@ -36,8 +33,7 @@ public class LoginToSessionController {
     @FXML
     private Button loginButton;
     
-    private String groupName;
-    
+    private static String groupName;
     private static String userName;
     
     @FXML
@@ -48,34 +44,17 @@ public class LoginToSessionController {
     
     @FXML
     public void login(ActionEvent e) {
-	    	try {	
-	    		//needs to be changed, cannot make another session
-	    		//needs method to call the previously made session. 
-	    		//----------------------------???????????????
-		    //	Session session = new Session();
-		    	//	session.fillRandomList();
-		    	//----------------------------???????????????
-	    		
+	    	try {	    		
 	    		groupName = groupNameTextField.getText();
 	    		userName = twitterHandle.getText();
-//	    		Person user = new Person(twitterHandle.getText());
-//	    		
-	    		group.setGroupName(groupName);
-	    		//Group group = new Group(groupName);
-	    		//group = group.createGroupFromTxt();
-		    	
-	    		
 	        	Parent loadSession = FXMLLoader.load(getClass().getResource("../view/SessionInterface.fxml"));
 	        	Scene sessionScene = new Scene(loadSession);
-	        	Stage primaryStage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-	        	
+	        	Stage primaryStage = (Stage) ((Node) e.getSource()).getScene().getWindow();        	
 	        	//------------------Centering LoginInterface on screen ---------------------------------
-	       	Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
+	        	Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
 	        	primaryStage.setX(primaryScreenBounds.getMinX() + primaryScreenBounds.getWidth() / 4);
 	        	primaryStage.setY(primaryScreenBounds.getMinY() + primaryScreenBounds.getHeight() / 4.5);
 	        	//----------------------------------------------------------------------------------------
-	        	
-	      //primaryStage.centerOnScreen();
 	        	primaryStage.setScene(sessionScene);
 	        	primaryStage.show();	
 	    	} catch (IOException e1) {
@@ -85,7 +64,7 @@ public class LoginToSessionController {
     }	
     
     public static String getGroupName(){
-		return group.getGroupName();
+		return groupName;
 	}
     
     public static String getUserName() {
