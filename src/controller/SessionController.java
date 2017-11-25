@@ -350,30 +350,6 @@ public class SessionController{
 		priceLabel.setText(String.valueOf(group1.getFiveChoices().get(0).getPrice()));
 		changePicture();
 	}
-
-	/**
-	 * Method for adding users to ArrayList to iterate and set userLabels
-	 * respectfully
-	 */
-	public void addUsers() {
-		//further implementation needs to be done to pull the users from the server and display them
-		
-		ArrayList<Label> userLabels = new ArrayList<Label>();
-		userLabels.add(user1Label);
-		userLabels.add(user2Label);
-		userLabels.add(user3Label);
-		userLabels.add(user4Label);
-		userLabels.add(user5Label);
-		userLabels.add(user6Label);
-		userLabels.add(user7Label);
-		userLabels.add(user8Label);
-		userLabels.add(user9Label);
-		userLabels.add(user10Label);
-
-		for (int i = 0; i < CreateSessionController.getUsers().getArraySize(); i++) {
-			userLabels.get(i).setText(CreateSessionController.getUsers().getUser(i).getHandle());
-		}
-	}
 	
 	/**
      * Method to add users given a PersonArray

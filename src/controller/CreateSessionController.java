@@ -116,22 +116,10 @@ public class CreateSessionController {
 				boolean createfile = group.groupToTextfile();
 	    		
 	    		
-	    		// Issues with sending invite tweets to users once session is created
+	    		// Commented so we don't receive messages 
 	    		//--------------------------
-	    		//group.sendInviteTweets();
+	    		// group.sendInviteTweets();
 	    		//--------------------------
-	    		
-	    		/*
-	    		for(int l = 0 ; l <= session.getFiveChoices().size() - 1 ; l++) {
-	    			System.out.println(session.getFiveChoices().get(l).getName());
-	    		}
-	    		*/
-	    		
-//	    		group.setFiveChoices(session.getFiveChoices());
-//	    		group.setFiveChoices(group.fillRandomList());
-	    		//group.fillRandomList();
-	    		//boolean createfile = group.groupToTextfile();
-
 	    		
 	    		
 	    		//-------------- changing scene
