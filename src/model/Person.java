@@ -32,8 +32,25 @@ public class Person {
 		return this.answersM[i];
 	}
 	
+	public String getAllVotes() {
+		StringBuilder sb = new StringBuilder();
+		for(int i : this.answersM) {
+			sb.append(i + " ");
+		}
+		return sb.toString();
+	}
+	
+	@Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Name: " + this.handle);
+        sb.append(", ");
+        sb.append("Answers:" + getAllVotes());
+        return sb.toString();
+    }
+	
 
 	
-	}
+}
 
 

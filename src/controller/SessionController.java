@@ -173,7 +173,7 @@ public class SessionController implements Initializable{
 		fifthRestaurant = group1.getFiveChoices().get(4);
 		
 		//System.out.println(group1.getGroupName());
-		addUsers();
+		addUsers(group1);
 		setInitialRestaurant();
 		initRadioBtns();
 	}
@@ -400,6 +400,29 @@ public class SessionController implements Initializable{
 			userLabels.get(i).setText(CreateSessionController.getUsers().getUser(i).getHandle());
 		}
 	}
+	
+	/**
+     * Method to add users given a PersonArray
+     * (For logging in)
+     * @param personArray
+     */
+    public void addUsers(Group group) {
+        ArrayList<Label> userLabels = new ArrayList<Label>();
+        userLabels.add(user1Label);
+        userLabels.add(user2Label);
+        userLabels.add(user3Label);
+        userLabels.add(user4Label);
+        userLabels.add(user5Label);
+        userLabels.add(user6Label);
+        userLabels.add(user7Label);
+        userLabels.add(user8Label);
+        userLabels.add(user9Label);
+        userLabels.add(user10Label);
+       
+        for (int i = 0 ; i < group.getListOfUsers().getArraySize() ; i++) {
+            userLabels.get(i).setText(group.getListOfUsers().getUser(i).getHandle());
+        }
+    }
 
 	/**
 	 * Method which opens default browser and links to website specified by

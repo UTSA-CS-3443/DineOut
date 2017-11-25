@@ -42,12 +42,24 @@ public class PersonArray {
 		Person person = this.userList.get(i);
 		return person;
 	}
+	
 	public void updatePersonArray(PersonArray p, int size) {
 		this.userList.clear();
 		this.userList = p.userList;
 		this.arraySize = size;
 		
 	}
+	
+	public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Size: " + getArraySize());
+        sb.append("\n");
+        for(Person p : userList) {
+            sb.append(p);
+            sb.append("\n");
+        }
+        return sb.toString();  
+    }
 	
 	
 }
