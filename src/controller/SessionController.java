@@ -32,20 +32,15 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import model.ChoicePair;
 import model.ImageCollection;
+import model.Person;
 import model.Restaurant;
 import model.Session;
+import model.UserNotFoundException;
 
-public class SessionController implements Initializable{
+public class SessionController{
 	
-//	private Session session = new Session();
-//	// ----------------------------- Utility variables------------------------------
-//	private Restaurant firstRestaurant = session.getFiveChoices().get(0);
-//	private Restaurant secondRestaurant = session.getFiveChoices().get(1);
-//	private Restaurant thirdRestaurant = session.getFiveChoices().get(2);
-//	private Restaurant fourthRestaurant = session.getFiveChoices().get(3);
-//	private Restaurant fifthRestaurant = session.getFiveChoices().get(4);
-//	// -----------------------------------------------------------------------------
-	
+
+// -----------------------------------------------------------------------------
 	private Group group1 = new Group();
 	private Restaurant firstRestaurant;
 	private Restaurant secondRestaurant;
@@ -54,19 +49,6 @@ public class SessionController implements Initializable{
 	private Restaurant fifthRestaurant;
 // -----------------------------------------------------------------------------
 	
-	
-	
-//	private Group group1 = new Group();
-//	firstRestaurant = group1.getFiveChoices().get(0);
-//	secondRestaurant = group1.getFiveChoices().get(1);
-//	thirdRestaurant = group1.getFiveChoices().get(2);
-//	fourthRestaurant = group1.getFiveChoices().get(3);
-//	fifthRestaurant = group1.getFiveChoices().get(4);
-	
-	
-	
-	
-
 	@FXML
 	private Label dineOutTitleLabel;
 
@@ -145,37 +127,34 @@ public class SessionController implements Initializable{
 	public ChoicePair<String, String> choicePair = new ChoicePair<String, String>();
 	private ImageCollection imageList = new ImageCollection();
 	
-	
-	// -----------------------------------------------------------------------------
-
-	/**
-	 * This method is automatically called by FXMLLoader when it gets loaded into
-	 * the root layout. MUST BE NO ARGS Even though it's empty this method is
-	 * necessary for the program to run
-	 */
-	@FXML
-	private void initialize() { 
-	}
-
 	/**
 	 * Initialize method for SessionController, automatically called corresponding
-	 * FXML is loaded into the root layout. Adds listener to mapView
+	 * FXML is loaded into the root layout. Called after all @FXML annotated members
+	 * have been called
 	 */
-	public void initialize(URL url, ResourceBundle rb) {
+	@FXML
+	public void initialize()throws UserNotFoundException{
 
 		String groupName = LoginToSessionController.getGroupName();
+		String userName = LoginToSessionController.getUserName();
 		group1.setGroupName(groupName);
 		group1 = group1.createGroupFromTxt();
-		firstRestaurant = group1.getFiveChoices().get(0);
-		secondRestaurant = group1.getFiveChoices().get(1);
-		thirdRestaurant = group1.getFiveChoices().get(2);
-		fourthRestaurant = group1.getFiveChoices().get(3);
-		fifthRestaurant = group1.getFiveChoices().get(4);
+		if(group1.findUserInFile(new Person(userName))){
+			firstRestaurant = group1.getFiveChoices().get(0);
+			secondRestaurant = group1.getFiveChoices().get(1);
+			thirdRestaurant = group1.getFiveChoices().get(2);
+			fourthRestaurant = group1.getFiveChoices().get(3);
+			fifthRestaurant = group1.getFiveChoices().get(4);
+			
+			//System.out.println(group1.getGroupName());
+			addUsers(group1);
+			setInitialRestaurant();
+			initRadioBtns();
+		}else {
+			throw new UserNotFoundException(userName + " not found in Group: " + group1.getGroupName());
+		}
 		
-		//System.out.println(group1.getGroupName());
-		addUsers(group1);
-		setInitialRestaurant();
-		initRadioBtns();
+		
 	}
 
 

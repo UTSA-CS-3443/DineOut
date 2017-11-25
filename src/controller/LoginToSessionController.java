@@ -38,6 +38,8 @@ public class LoginToSessionController {
     
     private String groupName;
     
+    private static String userName;
+    
     @FXML
     public void addSymbol(MouseEvent event) {
     		twitterHandle.setText("@");
@@ -55,7 +57,7 @@ public class LoginToSessionController {
 		    	//----------------------------???????????????
 	    		
 	    		groupName = groupNameTextField.getText();
-	    		
+	    		userName = twitterHandle.getText();
 //	    		Person user = new Person(twitterHandle.getText());
 //	    		
 	    		group.setGroupName(groupName);
@@ -85,6 +87,10 @@ public class LoginToSessionController {
     public static String getGroupName(){
 		return group.getGroupName();
 	}
+    
+    public static String getUserName() {
+    	return userName;
+    }
 }
 
 
