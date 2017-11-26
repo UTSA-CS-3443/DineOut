@@ -42,6 +42,7 @@ public class SessionController{
 
 // -----------------------------------------------------------------------------
 	private Group group1 = new Group();
+	private String currentUser;
 	private Restaurant firstRestaurant;
 	private Restaurant secondRestaurant;
 	private Restaurant thirdRestaurant;
@@ -147,6 +148,7 @@ public class SessionController{
 			addUsers(group1);
 			setInitialRestaurant();
 			initRadioBtns();
+			this.currentUser = userName;
 		}else {
 			throw new UserNotFoundException(userName + " not found in Group: " + group1.getGroupName());
 		}
@@ -232,7 +234,15 @@ public class SessionController{
 	@FXML
 	public void submit(ActionEvent e) {
 		choicePair.addPair(choice.getText(), getCurrentRestaurant()); //to record option they click submit on
-		System.out.println(choicePair);
+		choicePair.fillAnswerChoices();
+		int[] ans = choicePair.getAnswersM();
+		this.group1.vote(this.currentUser, ans);
+		boolean createfile = this.group1.groupToTextfile();
+		
+		
+		//Fill users answers list and create new text file
+		
+
 	}
 	
 	/**

@@ -189,6 +189,15 @@ public class Group {
 		return false;
 	}
 	
+	public int findUserIndex(String name) {
+		for(int i = 0; i<this.listOfUsers.getArraySize(); i++)
+		{
+			if(this.listOfUsers.getHandle(i).equals(name))
+				return i;
+		}
+		return -1;
+	}
+	
 	
 	
 	

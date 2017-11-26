@@ -8,12 +8,14 @@ public class ChoicePair<T,U> {
 	//ArrayLists 
 	private List<T> ranks = new ArrayList<T>();
 	private List<U> restaurants = new ArrayList<U>();
+	private int[] answersM = new int[5];
 	
 	public ChoicePair() {}
 	
 	public ChoicePair(ArrayList<T> ranks, ArrayList<U> restaurants) {
 		this.ranks = ranks;
 		this.restaurants = restaurants;
+	
 	}
 	
 	public void addPair(T rank, U restaurant) {
@@ -44,5 +46,36 @@ public class ChoicePair<T,U> {
 		}
 		return sb.toString();
 	}
+
+	public void fillAnswerChoices() {
+		Iterator<T> rankIterator = ranks.iterator();
+		StringBuilder sb = new StringBuilder();
+		while(rankIterator.hasNext())
+		{
+			sb.append(rankIterator.next());
+			sb.append(",");
+		}
+		String ans = sb.toString();
+		String[] ansArray = ans.split(",");
+		for(int i = 0; i <5; i++)
+		{
+			if(ansArray[i].equals("Neutral"))
+				this.answersM[i]= 0;
+			else if(ansArray[i].equals("I hate it"))
+				this.answersM[i] = -1;
+			else
+				this.answersM[i] = 1;
+		}
+	}
+
+	public int[] getAnswersM() {
+		return answersM;
+	}
+
+	public void setAnswersM(int[] answersM) {
+		this.answersM = answersM;
+	}
+	
+	
 
 }
