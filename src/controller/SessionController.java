@@ -43,6 +43,7 @@ public class SessionController{
 // -----------------------------------------------------------------------------
 	private Group group1 = new Group();
 	private String currentUser;
+	private String currentGroupName;
 	private Restaurant firstRestaurant;
 	private Restaurant secondRestaurant;
 	private Restaurant thirdRestaurant;
@@ -137,9 +138,10 @@ public class SessionController{
 	public void initialize()throws UserNotFoundException{
 		String groupName = LoginToSessionController.getGroupName();
 		String userName = LoginToSessionController.getUserName();
-		group1.setGroupName(groupName);
-		group1 = group1.createGroupFromTxt();
+		this.currentGroupName = groupName;
+		this.group1.setGroupName(groupName);
 		if(group1.findUserInFile(new Person(userName))){
+			this.group1 = group1.createGroupFromTxt();
 			firstRestaurant = group1.getFiveChoices().get(0);
 			secondRestaurant = group1.getFiveChoices().get(1);
 			thirdRestaurant = group1.getFiveChoices().get(2);
@@ -235,8 +237,8 @@ public class SessionController{
 	public void submit(ActionEvent e) {
 		choicePair.addPair(choice.getText(), getCurrentRestaurant()); //to record option they click submit on
 		choicePair.fillAnswerChoices();
-		int[] ans = choicePair.getAnswersM();
-		this.group1.vote(this.currentUser, ans);
+		int[] ansArray = choicePair.getAnswersM();
+		this.group1.vote(this.currentUser, ansArray);
 		boolean createfile = this.group1.groupToTextfile();
 		boolean doneVoting = this.group1.allUsersVoted();
 		// IF DONE VOTING CALCUATE WINNER AND SEND MESSAGE

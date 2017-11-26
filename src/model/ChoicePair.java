@@ -60,11 +60,11 @@ public class ChoicePair<T,U> {
 		for(int i = 0; i <5; i++)
 		{
 			if(ansArray[i].equals("Neutral"))
-				this.answersM[i]= 0;
+				this.answersM[i]= 1;
 			else if(ansArray[i].equals("I hate it"))
-				this.answersM[i] = -1;
+				this.answersM[i] = 2;
 			else
-				this.answersM[i] = 1;
+				this.answersM[i] = 3;
 		}
 	}
 

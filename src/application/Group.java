@@ -273,17 +273,12 @@ public class Group {
 	public Group createGroupFromTxt()
 	{
 		ArrayList<Restaurant> choices = new ArrayList<Restaurant>();
-		
+		PersonArray usersFromText = new PersonArray();
 		//create scanner  and text file
 		Scanner SCANNER;
 		String txtFile = "Groups/" + this.groupName + ".txt";	
 		File file = new File(txtFile);
-		
-		//create dummy variables for person, int array, and person array
-		PersonArray usersFromText = new PersonArray();
-		int[] newAns = new int[5];
-		
-		
+			
 		int lineNum = 1;
 		
 		//Scan through file and save users to group
@@ -294,8 +289,11 @@ public class Group {
 			while(SCANNER.hasNextLine())
 			{
 				Person currentUser = new Person("NULL");
+				int[] newAns = new int[5];
 			    String str = SCANNER.nextLine();
 			    String[] strArray = str.split(":");
+			   
+			    
 			    if(lineNum == 1)
 			    {
 			    		for( int i = 1; i <= 5; i++) {
@@ -307,9 +305,10 @@ public class Group {
 			    }
 			    else {
 			    		currentUser.setHandle(strArray[0]);
-				    	for( int i = 1; i <= 5; i++) {
+				    	for( int i = 1; i <= 5; i++) 
+				    	{
 			    			int j = Integer.parseInt(strArray[i]);
-			    			newAns[i-1] = j;	
+			    			newAns[i-1] = j;
 				    	}
 				    	currentUser.setAnswersM(newAns);
 				    	usersFromText.addUser(currentUser);
@@ -318,11 +317,6 @@ public class Group {
 			}
 			Group group1 = new Group(this.groupName, usersFromText);
 			group1.setFiveChoices(choices);	
-			for(int m = 0; m < group1.listOfUsers.getArraySize(); m++)
-			{
-				System.out.println(group1.listOfUsers.getHandle(m));
-			}
-			
 			SCANNER.close();
 			return group1;
 		} catch (FileNotFoundException e) {
