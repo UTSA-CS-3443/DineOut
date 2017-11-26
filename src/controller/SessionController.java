@@ -238,9 +238,9 @@ public class SessionController{
 		int[] ans = choicePair.getAnswersM();
 		this.group1.vote(this.currentUser, ans);
 		boolean createfile = this.group1.groupToTextfile();
-		
-		
-		//Fill users answers list and create new text file
+		boolean doneVoting = this.group1.allUsersVoted();
+		// IF DONE VOTING CALCUATE WINNER AND SEND MESSAGE
+	
 		
 
 	}
