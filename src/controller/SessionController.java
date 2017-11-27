@@ -286,9 +286,9 @@ public class SessionController{
 			});
 			
 			subStage.setResizable(false);
-	    	subStage.setScene(scene);
-	    	subStage.setTitle("Map");
-	    	subStage.show();
+	    		subStage.setScene(scene);
+	    		subStage.setTitle("Map");
+	    		subStage.show();
 			}catch (IOException e1) {
 	    		e1.printStackTrace();
 	    	}

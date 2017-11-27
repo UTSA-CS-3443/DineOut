@@ -46,6 +46,8 @@ public class MapController implements Initializable, MapComponentInitializedList
 				.fullscreenControl(false)
 				.mapTypeControl(false);
 		map = mapView.createMap(mapOptions);
+		@SuppressWarnings("unused")
+		RestaurantMapAttributes mapAttributes = new RestaurantMapAttributes();
 		changeMarker();
 		changeCenterMap();
 	}
