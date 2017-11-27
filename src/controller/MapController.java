@@ -1,11 +1,8 @@
 package controller;
 
-import java.io.IOException;
 import java.net.URL;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
-
 import com.lynden.gmapsfx.GoogleMapView;
 import com.lynden.gmapsfx.MapComponentInitializedListener;
 import com.lynden.gmapsfx.javascript.object.GoogleMap;
@@ -13,16 +10,9 @@ import com.lynden.gmapsfx.javascript.object.LatLong;
 import com.lynden.gmapsfx.javascript.object.MapOptions;
 import com.lynden.gmapsfx.javascript.object.MapTypeIdEnum;
 import com.lynden.gmapsfx.javascript.object.Marker;
-import com.lynden.gmapsfx.javascript.object.MarkerOptions;
-
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.layout.Pane;
 import model.RestaurantMapAttributes;
-import model.Session;
 
 public class MapController implements Initializable, MapComponentInitializedListener {
 	
@@ -32,12 +22,6 @@ public class MapController implements Initializable, MapComponentInitializedList
 	// MapView container for map
 	@FXML
 	private GoogleMapView mapView;
-	
-	//Session 
-	private Session session = new Session();
-	
-	//SessionController
-	//private SessionController sessionController = new SessionController();
 	
 	//String holds current restaurant, passed from SessionController
 	private String currentRestaurant;
@@ -62,7 +46,6 @@ public class MapController implements Initializable, MapComponentInitializedList
 				.fullscreenControl(false)
 				.mapTypeControl(false);
 		map = mapView.createMap(mapOptions);
-		RestaurantMapAttributes mapAttributes = new RestaurantMapAttributes();
 		changeMarker();
 		changeCenterMap();
 	}
@@ -87,8 +70,6 @@ public class MapController implements Initializable, MapComponentInitializedList
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		mapView.addMapInializedListener(this);
-		//System.out.println(currentRestaurant);
-		//setInitialRestaurant();
 	}
 	
 	public GoogleMap getMap() {

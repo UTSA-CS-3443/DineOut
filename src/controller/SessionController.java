@@ -4,12 +4,8 @@ import java.awt.Desktop;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
-import java.util.ResourceBundle;
-
 import application.Group;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -17,7 +13,6 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -34,15 +29,14 @@ import model.ChoicePair;
 import model.ImageCollection;
 import model.Person;
 import model.Restaurant;
-import model.Session;
 import model.UserNotFoundException;
 
 public class SessionController{
-	
 
 // -----------------------------------------------------------------------------
 	private Group group1 = new Group();
 	private String currentUser;
+	@SuppressWarnings("unused")
 	private String currentGroupName;
 	private Restaurant firstRestaurant;
 	private Restaurant secondRestaurant;
@@ -127,6 +121,7 @@ public class SessionController{
 	ToggleGroup group = new ToggleGroup();
 	RadioButton choice;
 	public ChoicePair<String, String> choicePair = new ChoicePair<String, String>();
+	@SuppressWarnings("unused")
 	private ImageCollection imageList = new ImageCollection();
 	
 	/**
@@ -239,6 +234,7 @@ public class SessionController{
 		choicePair.fillAnswerChoices();
 		int[] ansArray = choicePair.getAnswersM();
 		this.group1.vote(this.currentUser, ansArray);
+		@SuppressWarnings("unused")
 		boolean createfile = this.group1.groupToTextfile();
 		boolean doneVoting = this.group1.allUsersVoted();
 		System.out.println(doneVoting);
@@ -248,8 +244,6 @@ public class SessionController{
 			int selected = this.group1.getSelectedRest();
 			System.out.println(this.group1.getFiveChoices().get(selected));
 		}
-	
-
 	}
 	
 	/**

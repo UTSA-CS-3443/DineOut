@@ -1,9 +1,5 @@
 package controller;
 
-import application.Group;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,12 +11,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Pane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
-import model.Person;
-import model.PersonArray;
-import model.Session;
 
 public class LoginToSessionController {
 
@@ -55,6 +47,7 @@ public class LoginToSessionController {
 	        	primaryStage.setX(primaryScreenBounds.getMinX() + primaryScreenBounds.getWidth() / 4);
 	        	primaryStage.setY(primaryScreenBounds.getMinY() + primaryScreenBounds.getHeight() / 4.5);
 	        	//----------------------------------------------------------------------------------------
+	        	//primaryStage.centerOnScreen();
 	        	primaryStage.setScene(sessionScene);
 	        	primaryStage.show();	
 	    	} catch (IOException e1) {

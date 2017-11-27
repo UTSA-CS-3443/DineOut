@@ -1,4 +1,5 @@
 package application;
+
 import model.*;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -11,8 +12,6 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
-
-import twitter4j.Twitter;
 
 public class Group {
 	private String groupName;
@@ -180,7 +179,7 @@ public class Group {
 				    		return true;
 				    }
 				}
-				 SCANNER.close();   
+				SCANNER.close();   
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
 			}

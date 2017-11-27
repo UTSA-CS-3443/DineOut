@@ -1,7 +1,5 @@
 package model;
 
-import java.util.ArrayList;
-
 public class Person {
 	private String handle;
 	private int[] answersM = new int[5];
@@ -13,7 +11,6 @@ public class Person {
 		{
 			answersM[i] = 0;
 		}
-
 	}	
 
 	public String getHandle() {
@@ -48,9 +45,6 @@ public class Person {
         sb.append("Answers:" + getAllVotes());
         return sb.toString();
     }
-	
-
-	
 }
 
 

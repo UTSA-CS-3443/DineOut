@@ -1,11 +1,8 @@
 package controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
-
 import application.Group;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
@@ -15,14 +12,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Pane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 import model.Person;
 import model.PersonArray;
-import model.Restaurant;
-import model.Session;
 
 public class CreateSessionController {
 	
@@ -104,19 +97,11 @@ public class CreateSessionController {
 	    		Group group = new Group(groupName, users);
 	    		group.fillRandomList();
 	    		group.setFiveChoices(group.getFiveChoices());
-//	    		group.setFiveChoices(session.getFiveChoices());
-	    		@SuppressWarnings("unused")
-				boolean createfile = group.groupToTextfile();
-	    		
-	    		
-	    		// Commented so we don't receive messages 
-	    		//--------------------------
-	    		 group.sendInviteTweets();
-	    		//--------------------------
-	    		
+			boolean createfile = group.groupToTextfile();
+	    		if (createfile == true)
+	    			group.sendInviteTweets();
 	    		
 	    		//-------------- changing scene
-//	        	Parent loadSession = FXMLLoader.load(getClass().getResource("../view/SessionInterface.fxml"));
 	    		Parent loadSession = FXMLLoader.load(getClass().getResource("../view/CreateSessionOrLoginInterface.fxml"));
 	        	Scene sessionScene = new Scene(loadSession);
 	        	Stage primaryStage = (Stage) ((Node) e.getSource()).getScene().getWindow();
@@ -124,9 +109,9 @@ public class CreateSessionController {
 	        	//------------------Centering SessionInterface on screen ---------------------------------
 	        	Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
 	        	primaryStage.setX(primaryScreenBounds.getMinX() + primaryScreenBounds.getWidth() / 4);
-	        	primaryStage.setY(primaryScreenBounds.getMinY() + primaryScreenBounds.getHeight() / 4.5);
+	        	primaryStage.setY(primaryScreenBounds.getMinY() + primaryScreenBounds.getHeight() / 5.5);
 	        	//----------------------------------------------------------------------------------------
-	        	
+	        	primaryStage.centerOnScreen();
 	        	primaryStage.setScene(sessionScene);
 	        	primaryStage.show();
 	    	} catch (IOException e1) {
