@@ -76,11 +76,7 @@ public class CreateSessionController {
     
     @FXML
     public void done(ActionEvent e) {
-	    	try {  		
-	    		//hardcoding
-	    		//implement to save this info to server along with groupNameTextField
-	    		
-	    		
+	    	try {
 	    		groupName = groupNameTextField.getText();
 	    		
 	    		Person a = new Person(twitterHandleTextField0.getText());
@@ -105,9 +101,6 @@ public class CreateSessionController {
 	    			}
 	    		}
 	    		
-//	    		Session session = new Session();
-//	    		session.fillRandomList();
-	    		
 	    		Group group = new Group(groupName, users);
 	    		group.fillRandomList();
 	    		group.setFiveChoices(group.getFiveChoices());
@@ -118,7 +111,7 @@ public class CreateSessionController {
 	    		
 	    		// Commented so we don't receive messages 
 	    		//--------------------------
-	    		// group.sendInviteTweets();
+	    		 group.sendInviteTweets();
 	    		//--------------------------
 	    		
 	    		
