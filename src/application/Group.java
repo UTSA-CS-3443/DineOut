@@ -417,7 +417,7 @@ public class Group {
 	}
 
 	
-	public int[] calcVotes()
+	public int calcVotes()
 	{
 		Scanner SCANNER;
 		String txtFile = "Groups/" + this.groupName + ".txt";	
@@ -451,12 +451,23 @@ public class Group {
 			    }
 			    
 			}
+			int maxVotes = 0;
+			for(int m = 0; m<5; m++)
+			{
+				if(sumVotes[m] >= maxVotes)
+					maxVotes = m;
+			}
 			SCANNER.close();
-			return sumVotes;
+			return maxVotes;
+			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-			return sumVotes;
+			return -1;
 		}
+	}
+
+	public void setSelectedRest(int selectedRest) {
+		this.selectedRest = selectedRest;
 	}
 	
 
