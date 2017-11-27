@@ -84,6 +84,37 @@ public class SessionController{
 
 	@FXML
 	private Label user10Label;
+	
+	@FXML
+    private ImageView ratingStar1L;
+	
+	@FXML
+    private ImageView ratingStar1R;
+	
+	@FXML
+    private ImageView ratingStar2L;
+	
+	@FXML
+    private ImageView ratingStar2R;
+	
+	@FXML
+    private ImageView ratingStar3L;
+	
+	@FXML
+    private ImageView ratingStar3R;
+	
+	@FXML
+    private ImageView ratingStar4L;
+	
+	@FXML
+    private ImageView ratingStar4R;
+	
+	@FXML
+    private ImageView ratingStar5L;
+	
+	@FXML
+    private ImageView ratingStar5R;
+	
 
 	// -------------------------- Main controls ------------------------------------
 	@FXML
@@ -148,6 +179,7 @@ public class SessionController{
 			fifthRestaurant = group1.getFiveChoices().get(4);
 			addUsers(group1);
 			setInitialRestaurant();
+			setCurrentUser(userName);
 			initRadioBtns();
 			this.currentUser = userName;
 		}else {
@@ -168,21 +200,25 @@ public class SessionController{
 			setRestaurantName(secondRestaurant.getName());
 			setCuisineType(secondRestaurant.getCuisine());
 			setPrice(secondRestaurant.getPrice());
+			setStars(secondRestaurant.getRating());
 
 		} else if (currentRestaurantEquals(secondRestaurant)) {
 			setRestaurantName(thirdRestaurant.getName());
 			setCuisineType(thirdRestaurant.getCuisine());
 			setPrice(thirdRestaurant.getPrice());
+			setStars(thirdRestaurant.getRating());
 
 		} else if (currentRestaurantEquals(thirdRestaurant)) {
 			setRestaurantName(fourthRestaurant.getName());
 			setCuisineType(fourthRestaurant.getCuisine());
 			setPrice(fourthRestaurant.getPrice());
+			setStars(fourthRestaurant.getRating());
 
 		} else if (currentRestaurantEquals(fourthRestaurant)) {
 			setRestaurantName(fifthRestaurant.getName());
 			setCuisineType(fifthRestaurant.getCuisine());
 			setPrice(fifthRestaurant.getPrice());
+			setStars(fifthRestaurant.getRating());
 		}
 		changePicture();
 	}
@@ -199,21 +235,25 @@ public class SessionController{
 			setRestaurantName(fourthRestaurant.getName());
 			setCuisineType(fourthRestaurant.getCuisine());
 			setPrice(fourthRestaurant.getPrice());
+			setStars(fourthRestaurant.getRating());
 
 		} else if (currentRestaurantEquals(fourthRestaurant)) {
 			setRestaurantName(thirdRestaurant.getName());
 			setCuisineType(thirdRestaurant.getCuisine());
 			setPrice(thirdRestaurant.getPrice());
+			setStars(thirdRestaurant.getRating());
 
 		} else if (currentRestaurantEquals(thirdRestaurant)) {
 			setRestaurantName(secondRestaurant.getName());
 			setCuisineType(secondRestaurant.getCuisine());
 			setPrice(secondRestaurant.getPrice());
+			setStars(secondRestaurant.getRating());
 
 		} else if (currentRestaurantEquals(secondRestaurant)) {
 			setRestaurantName(firstRestaurant.getName());
 			setCuisineType(firstRestaurant.getCuisine());
 			setPrice(firstRestaurant.getPrice());
+			setStars(firstRestaurant.getRating());
 		}
 		changePicture();
 	}
@@ -345,7 +385,14 @@ public class SessionController{
 	 * @param price A reference to the price range of a Restaurant
 	 */
 	public void setPrice(int price) {
-		this.priceLabel.setText(String.valueOf(price));
+		if (price == 1)
+			this.priceLabel.setText(" $");
+		if (price == 2)
+			this.priceLabel.setText(" $$");
+		if (price == 3)
+			this.priceLabel.setText(" $$$");
+		
+		//this.priceLabel.setText(String.valueOf(price));
 	}
 
 	/**
@@ -382,8 +429,91 @@ public class SessionController{
 	public void setInitialRestaurant() {
 		restaurantNameLabel.setText(group1.getFiveChoices().get(0).getName());
 		cuisineTypeLabel.setText(group1.getFiveChoices().get(0).getCuisine());
-		priceLabel.setText(String.valueOf(group1.getFiveChoices().get(0).getPrice()));
+		setPrice(group1.getFiveChoices().get(0).getPrice());
+		setStars(group1.getFiveChoices().get(0).getRating());
 		changePicture();
+	}
+	
+	/**
+	 * Highlight user that logged in.
+	 */
+	public void setCurrentUser(String userName) {
+		if ( user1Label.getText().equals(userName) )
+			user1Label.setStyle("-fx-background-color:lightblue");
+		if ( user2Label.getText().equals(userName) )
+			user2Label.setStyle("-fx-background-color:lightblue");
+		if ( user3Label.getText().equals(userName) )
+			user3Label.setStyle("-fx-background-color:lightblue");
+		if ( user4Label.getText().equals(userName) )
+			user4Label.setStyle("-fx-background-color:lightblue");
+		if ( user5Label.getText().equals(userName) )
+			user5Label.setStyle("-fx-background-color:lightblue");
+		if ( user6Label.getText().equals(userName) )
+			user6Label.setStyle("-fx-background-color:lightblue");
+		if ( user7Label.getText().equals(userName) )
+			user7Label.setStyle("-fx-background-color:lightblue");
+		if ( user8Label.getText().equals(userName) )
+			user8Label.setStyle("-fx-background-color:lightblue");
+		if ( user9Label.getText().equals(userName) )
+			user9Label.setStyle("-fx-background-color:lightblue");
+		if ( user10Label.getText().equals(userName) )
+			user10Label.setStyle("-fx-background-color:lightblue");
+	}
+	
+	/**
+	 * Highlight user that logged in.
+	 */
+	public void setStars(double rating) {
+//		if (rating == 0.5)
+//			ratingStar1L.setVisibility(true);
+//		if (rating == 1.0) {
+//			ratingStar1L.setVisibility(true); ratingStar1R.setVisibility(true);
+//		}
+//		if (rating == 1.5) {
+//			ratingStar1L.setVisibility(true); ratingStar1R.setVisibility(true);
+//			ratingStar2L.setVisibility(true);
+//		}
+//		if (rating == 2.0) {
+//			ratingStar1L.setVisibility(true); ratingStar1R.setVisibility(true);
+//			ratingStar2L.setVisibility(true); ratingStar2R.setVisibility(true);
+//		}
+//		if (rating == 2.5) {
+//			ratingStar1L.setVisibility(true); ratingStar1R.setVisibility(true);
+//			ratingStar2L.setVisibility(true); ratingStar2R.setVisibility(true);
+//			ratingStar3L.setVisibility(true);
+//		}
+//		if (rating == 3.0) {
+//			ratingStar1L.setVisibility(true); ratingStar1R.setVisibility(true);
+//			ratingStar2L.setVisibility(true); ratingStar2R.setVisibility(true);
+//			ratingStar3L.setVisibility(true); ratingStar3R.setVisibility(true);
+//		}
+//		if (rating == 3.5) {
+//			ratingStar1L.setVisibility(true); ratingStar1R.setVisibility(true);
+//			ratingStar2L.setVisibility(true); ratingStar2R.setVisibility(true);
+//			ratingStar3L.setVisibility(true); ratingStar3R.setVisibility(true);
+//			ratingStar4L.setVisibility(true);
+//		}
+//		if (rating == 4.0) {
+//			ratingStar1L.setVisibility(true); ratingStar1R.setVisibility(true);
+//			ratingStar2L.setVisibility(true); ratingStar2R.setVisibility(true);
+//			ratingStar3L.setVisibility(true); ratingStar3R.setVisibility(true);
+//			ratingStar4L.setVisibility(true); ratingStar4R.setVisibility(true);
+//		}
+//		if (rating == 4.5) {
+//			ratingStar1L.setVisibility(true); ratingStar1R.setVisibility(true);
+//			ratingStar2L.setVisibility(true); ratingStar2R.setVisibility(true);
+//			ratingStar3L.setVisibility(true); ratingStar3R.setVisibility(true);
+//			ratingStar4L.setVisibility(true); ratingStar4R.setVisibility(true);
+//			ratingStar5L.setVisibility(true);
+//		}
+//		if (rating == 5.0) {
+//			ratingStar1L.setVisibility(true); ratingStar1R.setVisibility(true);
+//			ratingStar2L.setVisibility(true); ratingStar2R.setVisibility(true);
+//			ratingStar3L.setVisibility(true); ratingStar3R.setVisibility(true);
+//			ratingStar4L.setVisibility(true); ratingStar4R.setVisibility(true);
+//			ratingStar5L.setVisibility(true); ratingStar5R.setVisibility(true);
+//		}
+//			
 	}
 	
 	/**
