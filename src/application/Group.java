@@ -416,23 +416,47 @@ public class Group {
 		}
 	}
 	
-//	public ArrayList<Restaurant> fillRandomList() {
-//		Random rand = new Random();
-//		ArrayList<Restaurant> tempList = new ArrayList<Restaurant>();
-//		int i = rand.nextInt(GlobalRestList.ALL_REST.getRestaurantList().size() - 1);
-//		int count = 0;
-//		
-//		while (count < 5) {
-//			Restaurant tempRest = GlobalRestList.ALL_REST.getRestaurantList().get(i);
-//			if (tempRest.isSelected() == false) { // meaning its false
-//				tempList.add(tempRest);
-//				GlobalRestList.ALL_REST.getRestaurantList().get(i).setSelected(true);
-//				count++;
-//			}
-//			i = rand.nextInt(GlobalRestList.ALL_REST.getRestaurantList().size() - 1);
-//		}
-//		System.out.println(tempList);
-//		return tempList;
-//	}
+	public int[] calcVotes()
+	{
+		Scanner SCANNER;
+		String txtFile = "Groups/" + this.groupName + ".txt";	
+		File file = new File(txtFile);
+		int [] sumVotes = {0,0,0,0,0};
+		
+		//create dummy variables for person, int array, and person array
+		int lineNum = 1;
+		
+		//Scan through file and save users to group
+		try {
+			SCANNER = new Scanner(file);
+			
+			//Loop through text file
+			while(SCANNER.hasNextLine())
+			{
+			    String str = SCANNER.nextLine();
+			    String[] strArray = str.split(":");
+			    if(lineNum == 1)
+			    {
+			    		lineNum = 2;
+			    		continue;
+			    }
+			    else {
+				    	for( int i = 1; i <= 5; i++) {
+			    			int j = Integer.parseInt(strArray[i]);
+			    			sumVotes[i-1] += j;
+			    			
+			    			
+				    	}
+			    }
+			    
+			}
+			SCANNER.close();
+			return sumVotes;
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+			return sumVotes;
+		}
+	}
+	
 }
 	

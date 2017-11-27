@@ -241,7 +241,18 @@ public class SessionController{
 		this.group1.vote(this.currentUser, ansArray);
 		boolean createfile = this.group1.groupToTextfile();
 		boolean doneVoting = this.group1.allUsersVoted();
-		// IF DONE VOTING CALCUATE WINNER AND SEND MESSAGE
+		System.out.println(doneVoting);
+		if(doneVoting)
+		{	
+			int[] sumVotes = this.group1.calcVotes();
+			for(int m = 0; m<5; m++)
+			{
+				System.out.println(sumVotes[m]);
+			}
+		}
+		
+		// IF DONE VOTING CALCUATE WINNER AND SEND MESSAG
+
 	
 		
 
