@@ -451,13 +451,17 @@ public class Group {
 			    
 			}
 			int maxVotes = 0;
+			int iRest = -1;
 			for(int m = 0; m<5; m++)
 			{
 				if(sumVotes[m] >= maxVotes)
-					maxVotes = m;
+				{
+					maxVotes = sumVotes[m];
+					iRest = m;
+				}
 			}
 			SCANNER.close();
-			return maxVotes;
+			return iRest;
 			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
