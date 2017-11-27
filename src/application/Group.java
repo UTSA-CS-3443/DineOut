@@ -415,7 +415,7 @@ public class Group {
 			i = rand.nextInt(restaurants.getRestaurantList().size() - 1);
 		}
 	}
-<<<<<<< HEAD
+
 	
 	public int[] calcVotes()
 	{
@@ -459,7 +459,6 @@ public class Group {
 		}
 	}
 	
-=======
->>>>>>> eaff274bf2bd417648644373769dff96c22efd4a
+
 }
 	
