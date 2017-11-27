@@ -13,6 +13,9 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -23,6 +26,7 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import model.ChoicePair;
@@ -243,6 +247,26 @@ public class SessionController{
 			this.group1.setSelectedRest(this.group1.calcVotes());
 			int selected = this.group1.getSelectedRest();
 			System.out.println(this.group1.getFiveChoices().get(selected));
+		}
+		
+		
+		Parent loadSession;
+		try {
+			loadSession = FXMLLoader.load(getClass().getResource("../view/ThankYouScreen.fxml"));
+			Scene sessionScene = new Scene(loadSession);
+        		Stage primaryStage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+        		//------------------Centering LoginInterface on screen ---------------------------------
+        		Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
+        		primaryStage.setX(primaryScreenBounds.getMinX() + primaryScreenBounds.getWidth() / 4);
+        		primaryStage.setY(primaryScreenBounds.getMinY() + primaryScreenBounds.getHeight() / 4.5);
+        		//----------------------------------------------------------------------------------------
+        	
+        		primaryStage.centerOnScreen();
+        		primaryStage.setScene(sessionScene);
+        		primaryStage.show();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
 		}
 	}
 	
