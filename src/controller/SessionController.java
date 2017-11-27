@@ -241,6 +241,7 @@ public class SessionController{
 		this.group1.vote(this.currentUser, ansArray);
 		boolean createfile = this.group1.groupToTextfile();
 		boolean doneVoting = this.group1.allUsersVoted();
+<<<<<<< HEAD
 		System.out.println(doneVoting);
 		if(doneVoting)
 		{	
@@ -255,6 +256,10 @@ public class SessionController{
 
 	
 		
+=======
+		if (doneVoting == true)
+			this.group1.sendAllUsersAns(doneVoting);
+>>>>>>> eaff274bf2bd417648644373769dff96c22efd4a
 
 	}
 	
