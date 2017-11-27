@@ -244,9 +244,9 @@ public class SessionController{
 		System.out.println(doneVoting);
 		if(doneVoting)
 		{	
-			this.group1.setSelectedRest(this.group1.calcVotes());
-			int selected = this.group1.getSelectedRest();
-			System.out.println(this.group1.getFiveChoices().get(selected));
+			this.group1.setSelectedRest(-1);
+			System.out.println(this.group1.calcVotes());
+			System.out.println(this.group1.getFiveChoices().get(this.group1.calcVotes()));
 		}
 		
 		
