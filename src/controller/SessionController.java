@@ -200,24 +200,28 @@ public class SessionController{
 			setRestaurantName(secondRestaurant.getName());
 			setCuisineType(secondRestaurant.getCuisine());
 			setPrice(secondRestaurant.getPrice());
+			clearStars();
 			setStars(secondRestaurant.getRating());
 
 		} else if (currentRestaurantEquals(secondRestaurant)) {
 			setRestaurantName(thirdRestaurant.getName());
 			setCuisineType(thirdRestaurant.getCuisine());
 			setPrice(thirdRestaurant.getPrice());
+			clearStars();
 			setStars(thirdRestaurant.getRating());
 
 		} else if (currentRestaurantEquals(thirdRestaurant)) {
 			setRestaurantName(fourthRestaurant.getName());
 			setCuisineType(fourthRestaurant.getCuisine());
 			setPrice(fourthRestaurant.getPrice());
+			clearStars();
 			setStars(fourthRestaurant.getRating());
 
 		} else if (currentRestaurantEquals(fourthRestaurant)) {
 			setRestaurantName(fifthRestaurant.getName());
 			setCuisineType(fifthRestaurant.getCuisine());
 			setPrice(fifthRestaurant.getPrice());
+			clearStars();
 			setStars(fifthRestaurant.getRating());
 		}
 		changePicture();
@@ -235,24 +239,28 @@ public class SessionController{
 			setRestaurantName(fourthRestaurant.getName());
 			setCuisineType(fourthRestaurant.getCuisine());
 			setPrice(fourthRestaurant.getPrice());
+			clearStars();
 			setStars(fourthRestaurant.getRating());
 
 		} else if (currentRestaurantEquals(fourthRestaurant)) {
 			setRestaurantName(thirdRestaurant.getName());
 			setCuisineType(thirdRestaurant.getCuisine());
 			setPrice(thirdRestaurant.getPrice());
+			clearStars();
 			setStars(thirdRestaurant.getRating());
 
 		} else if (currentRestaurantEquals(thirdRestaurant)) {
 			setRestaurantName(secondRestaurant.getName());
 			setCuisineType(secondRestaurant.getCuisine());
 			setPrice(secondRestaurant.getPrice());
+			clearStars();
 			setStars(secondRestaurant.getRating());
 
 		} else if (currentRestaurantEquals(secondRestaurant)) {
 			setRestaurantName(firstRestaurant.getName());
 			setCuisineType(firstRestaurant.getCuisine());
 			setPrice(firstRestaurant.getPrice());
+			clearStars();
 			setStars(firstRestaurant.getRating());
 		}
 		changePicture();
@@ -430,6 +438,7 @@ public class SessionController{
 		restaurantNameLabel.setText(group1.getFiveChoices().get(0).getName());
 		cuisineTypeLabel.setText(group1.getFiveChoices().get(0).getCuisine());
 		setPrice(group1.getFiveChoices().get(0).getPrice());
+		clearStars();
 		setStars(group1.getFiveChoices().get(0).getRating());
 		changePicture();
 	}
@@ -461,59 +470,70 @@ public class SessionController{
 	}
 	
 	/**
-	 * Highlight user that logged in.
+	 * Set restaurant's rating
 	 */
 	public void setStars(double rating) {
 //		if (rating == 0.5)
-//			ratingStar1L.setVisibility(true);
+//			ratingStar1L.setVisible(true);
 //		if (rating == 1.0) {
-//			ratingStar1L.setVisibility(true); ratingStar1R.setVisibility(true);
+//			ratingStar1L.setVisible(true); ratingStar1R.setVisible(true);
 //		}
 //		if (rating == 1.5) {
-//			ratingStar1L.setVisibility(true); ratingStar1R.setVisibility(true);
-//			ratingStar2L.setVisibility(true);
+//			ratingStar1L.setVisible(true); ratingStar1R.setVisible(true);
+//			ratingStar2L.setVisible(true);
 //		}
 //		if (rating == 2.0) {
-//			ratingStar1L.setVisibility(true); ratingStar1R.setVisibility(true);
-//			ratingStar2L.setVisibility(true); ratingStar2R.setVisibility(true);
+//			ratingStar1L.setVisible(true); ratingStar1R.setVisible(true);
+//			ratingStar2L.setVisible(true); ratingStar2R.setVisible(true);
 //		}
 //		if (rating == 2.5) {
-//			ratingStar1L.setVisibility(true); ratingStar1R.setVisibility(true);
-//			ratingStar2L.setVisibility(true); ratingStar2R.setVisibility(true);
-//			ratingStar3L.setVisibility(true);
+//			ratingStar1L.setVisible(true); ratingStar1R.setVisible(true);
+//			ratingStar2L.setVisible(true); ratingStar2R.setVisible(true);
+//			ratingStar3L.setVisible(true);
 //		}
 //		if (rating == 3.0) {
-//			ratingStar1L.setVisibility(true); ratingStar1R.setVisibility(true);
-//			ratingStar2L.setVisibility(true); ratingStar2R.setVisibility(true);
-//			ratingStar3L.setVisibility(true); ratingStar3R.setVisibility(true);
+//			ratingStar1L.setVisible(true); ratingStar1R.setVisible(true);
+//			ratingStar2L.setVisible(true); ratingStar2R.setVisible(true);
+//			ratingStar3L.setVisible(true); ratingStar3R.setVisible(true);
 //		}
 //		if (rating == 3.5) {
-//			ratingStar1L.setVisibility(true); ratingStar1R.setVisibility(true);
-//			ratingStar2L.setVisibility(true); ratingStar2R.setVisibility(true);
-//			ratingStar3L.setVisibility(true); ratingStar3R.setVisibility(true);
-//			ratingStar4L.setVisibility(true);
+//			ratingStar1L.setVisible(true); ratingStar1R.setVisible(true);
+//			ratingStar2L.setVisible(true); ratingStar2R.setVisible(true);
+//			ratingStar3L.setVisible(true); ratingStar3R.setVisible(true);
+//			ratingStar4L.setVisible(true);
 //		}
 //		if (rating == 4.0) {
-//			ratingStar1L.setVisibility(true); ratingStar1R.setVisibility(true);
-//			ratingStar2L.setVisibility(true); ratingStar2R.setVisibility(true);
-//			ratingStar3L.setVisibility(true); ratingStar3R.setVisibility(true);
-//			ratingStar4L.setVisibility(true); ratingStar4R.setVisibility(true);
+//			ratingStar1L.setVisible(true); ratingStar1R.setVisible(true);
+//			ratingStar2L.setVisible(true); ratingStar2R.setVisible(true);
+//			ratingStar3L.setVisible(true); ratingStar3R.setVisible(true);
+//			ratingStar4L.setVisible(true); ratingStar4R.setVisible(true);
 //		}
 //		if (rating == 4.5) {
-//			ratingStar1L.setVisibility(true); ratingStar1R.setVisibility(true);
-//			ratingStar2L.setVisibility(true); ratingStar2R.setVisibility(true);
-//			ratingStar3L.setVisibility(true); ratingStar3R.setVisibility(true);
-//			ratingStar4L.setVisibility(true); ratingStar4R.setVisibility(true);
-//			ratingStar5L.setVisibility(true);
+//			ratingStar1L.setVisible(true); ratingStar1R.setVisible(true);
+//			ratingStar2L.setVisible(true); ratingStar2R.setVisible(true);
+//			ratingStar3L.setVisible(true); ratingStar3R.setVisible(true);
+//			ratingStar4L.setVisible(true); ratingStar4R.setVisible(true);
+//			ratingStar5L.setVisible(true);
 //		}
 //		if (rating == 5.0) {
-//			ratingStar1L.setVisibility(true); ratingStar1R.setVisibility(true);
-//			ratingStar2L.setVisibility(true); ratingStar2R.setVisibility(true);
-//			ratingStar3L.setVisibility(true); ratingStar3R.setVisibility(true);
-//			ratingStar4L.setVisibility(true); ratingStar4R.setVisibility(true);
-//			ratingStar5L.setVisibility(true); ratingStar5R.setVisibility(true);
+//			ratingStar1L.setVisible(true); ratingStar1R.setVisible(true);
+//			ratingStar2L.setVisible(true); ratingStar2R.setVisible(true);
+//			ratingStar3L.setVisible(true); ratingStar3R.setVisible(true);
+//			ratingStar4L.setVisible(true); ratingStar4R.setVisible(true);
+//			ratingStar5L.setVisible(true); ratingStar5R.setVisible(true);
 //		}
 //			
+	}
+	
+	/**
+	 * clear restaurant's rating
+	 */
+	public void clearStars() {
+//		ratingStar1L.setVisible(false); ratingStar1R.setVisible(false);
+//		ratingStar2L.setVisible(false); ratingStar2R.setVisible(false);
+//		ratingStar3L.setVisible(false); ratingStar3R.setVisible(false);
+//		ratingStar4L.setVisible(false); ratingStar4R.setVisible(false);
+//		ratingStar5L.setVisible(false); ratingStar5R.setVisible(false);
 	}
 	
 	/**
