@@ -298,9 +298,9 @@
                                              <tooltip>
                                                 <Tooltip text="Click for map" />
                                              </tooltip></Button>
-                                          <RadioButton fx:id="loveChoice" layoutX="339.0" layoutY="215.0" mnemonicParsing="false" text="I love it" />
-                                          <RadioButton fx:id="neutralChoice" layoutX="448.0" layoutY="215.0" mnemonicParsing="false" text="Neutral" />
-                                          <RadioButton fx:id="hateChoice" layoutX="556.0" layoutY="215.0" mnemonicParsing="false" text="I hate it" />
+                                          <RadioButton fx:id="loveChoice" layoutX="566.0" layoutY="215.0" mnemonicParsing="false" text="I love it" />
+                                          <RadioButton fx:id="neutralChoice" layoutX="447.0" layoutY="215.0" mnemonicParsing="false" text="Neutral" />
+                                          <RadioButton fx:id="hateChoice" layoutX="324.0" layoutY="215.0" mnemonicParsing="false" text="I hate it" />
                                           <Button fx:id="submit" layoutX="428.0" layoutY="260.0" mnemonicParsing="false" onAction="#submit" prefHeight="25.0" prefWidth="100.0" text="Submit" />
                                           <ImageView fx:id="ratingStar1L" fitHeight="50.0" fitWidth="50.0" layoutX="323.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true" visible="false">
                                              <image>
