@@ -443,7 +443,7 @@ public class SessionController{
 				user5Label, user6Label, user7Label, user7Label, user9Label, user10Label};
 		for(Label current : userLables) {
 			if(current.getText().equals(userName)) {
-				user1Label.setStyle("-fx-background-color:lightblue");
+				current.setStyle("-fx-background-color:lightblue");
 			}
 		}
 	}
