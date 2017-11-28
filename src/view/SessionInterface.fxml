@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="378.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SessionController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="378.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SessionController">
    <children>
       <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -302,52 +302,52 @@
                                           <RadioButton fx:id="neutralChoice" layoutX="448.0" layoutY="215.0" mnemonicParsing="false" text="Neutral" />
                                           <RadioButton fx:id="hateChoice" layoutX="556.0" layoutY="215.0" mnemonicParsing="false" text="I hate it" />
                                           <Button fx:id="submit" layoutX="428.0" layoutY="260.0" mnemonicParsing="false" onAction="#submit" prefHeight="25.0" prefWidth="100.0" text="Submit" />
-                                          <ImageView fx:id="ratingStar1L" fitHeight="50.0" fitWidth="50.0" layoutX="323.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                          <ImageView fx:id="ratingStar1L" fitHeight="50.0" fitWidth="50.0" layoutX="323.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true" visible="false">
                                              <image>
                                                 <Image url="@starLeft.png" />
                                              </image>
                                           </ImageView>
-                                          <ImageView fx:id="ratingStar1R" fitHeight="50.0" fitWidth="50.0" layoutX="323.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                          <ImageView fx:id="ratingStar1R" fitHeight="50.0" fitWidth="50.0" layoutX="323.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true" visible="false">
                                              <image>
                                                 <Image url="@starRight.png" />
                                              </image>
                                           </ImageView>
-                                          <ImageView fx:id="ratingStar2L" fitHeight="50.0" fitWidth="50.0" layoutX="390.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                          <ImageView fx:id="ratingStar2L" fitHeight="50.0" fitWidth="50.0" layoutX="390.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true" visible="false">
                                              <image>
                                                 <Image url="@starLeft.png" />
                                              </image>
                                           </ImageView>
-                                          <ImageView fx:id="ratingStar2R" fitHeight="50.0" fitWidth="50.0" layoutX="390.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                          <ImageView fx:id="ratingStar2R" fitHeight="50.0" fitWidth="50.0" layoutX="390.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true" visible="false">
                                              <image>
                                                 <Image url="@starRight.png" />
                                              </image>
                                           </ImageView>
-                                          <ImageView fx:id="ratingStar3L" fitHeight="50.0" fitWidth="50.0" layoutX="457.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                          <ImageView fx:id="ratingStar3L" fitHeight="50.0" fitWidth="50.0" layoutX="457.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true" visible="false">
                                              <image>
                                                 <Image url="@starLeft.png" />
                                              </image>
                                           </ImageView>
-                                          <ImageView fx:id="ratingStar4L" fitHeight="50.0" fitWidth="50.0" layoutX="523.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                          <ImageView fx:id="ratingStar4L" fitHeight="50.0" fitWidth="50.0" layoutX="523.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true" visible="false">
                                              <image>
                                                 <Image url="@starLeft.png" />
                                              </image>
                                           </ImageView>
-                                          <ImageView fx:id="ratingStar3R" fitHeight="49.0" fitWidth="80.0" layoutX="457.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                          <ImageView fx:id="ratingStar3R" fitHeight="49.0" fitWidth="80.0" layoutX="457.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true" visible="false">
                                              <image>
                                                 <Image url="@starRight.png" />
                                              </image>
                                           </ImageView>
-                                          <ImageView fx:id="ratingStar4R" fitHeight="50.0" fitWidth="50.0" layoutX="523.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                          <ImageView fx:id="ratingStar4R" fitHeight="50.0" fitWidth="50.0" layoutX="523.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true" visible="false">
                                              <image>
                                                 <Image url="@starRight.png" />
                                              </image>
                                           </ImageView>
-                                          <ImageView fx:id="ratingStar5L" fitHeight="50.0" fitWidth="50.0" layoutX="586.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                          <ImageView fx:id="ratingStar5L" fitHeight="50.0" fitWidth="50.0" layoutX="586.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true" visible="false">
                                              <image>
                                                 <Image url="@starLeft.png" />
                                              </image>
                                           </ImageView>
-                                          <ImageView fx:id="ratingStar5R" fitHeight="50.0" fitWidth="50.0" layoutX="586.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                          <ImageView fx:id="ratingStar5R" fitHeight="50.0" fitWidth="50.0" layoutX="586.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true" visible="false">
                                              <image>
                                                 <Image url="@starRight.png" />
                                              </image>
