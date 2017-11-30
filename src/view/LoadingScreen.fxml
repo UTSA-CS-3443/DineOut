@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoadingScreenController">
+   <children>
+      <ImageView fx:id="logo" fitHeight="400.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Logo.png" />
+         </image>
+      </ImageView>
+      <ProgressBar fx:id="progressBar" layoutX="100.0" layoutY="358.0" prefWidth="200.0" progress="0.0" />
+      <Button fx:id="startButton" layoutX="327.0" layoutY="355.0" mnemonicParsing="false" onAction="#start" text="Start" visible="false" />
+   </children>
+</AnchorPane>
