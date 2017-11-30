@@ -43,7 +43,6 @@ public class MapController implements Initializable, MapComponentInitializedList
 				.zoomControl(false)
 				.scrollWheel(true)
 				.zoom(19)
-				.fullscreenControl(false)
 				.mapTypeControl(false);
 		map = mapView.createMap(mapOptions);
 		@SuppressWarnings("unused")
@@ -94,9 +93,10 @@ public class MapController implements Initializable, MapComponentInitializedList
 		for(Map.Entry<String, LatLong> entry : RestaurantMapAttributes.locationMap.entrySet()) {
 			String key = (String) entry.getKey();
 			LatLong value = entry.getValue();
-			
+			double lat = value.getLatitude();
+			double lon = value.getLongitude();
 			if(currentRestaurant.toLowerCase().equals(key.toLowerCase())) {
-				mapView.setCenterOnLatLong(value);
+				mapView.setCenter(lat, lon);
 			}
 		}
 	}
